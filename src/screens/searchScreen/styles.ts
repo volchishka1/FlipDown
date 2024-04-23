@@ -9,7 +9,10 @@ export type Styles = {
 };
 
 export const searchScreenStyles = StyleSheet.create<Styles>({
-  rootContainer: { backgroundColor: '#1d014b', flex: 1 },
+  rootContainer: {
+    backgroundColor: '#1d014b',
+    flex: 1,
+  },
   inputContainer: {
     flexDirection: 'row',
     marginHorizontal: '5%',
