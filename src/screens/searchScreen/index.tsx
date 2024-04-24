@@ -60,7 +60,7 @@ export const SearchScreen = () => {
 
   return (
     <SearchScreenView
-      text={link !== '' ? data?.music.title : ''}
+      text={link !== '' ? data?.video.id : ''}
       link={link}
       setLink={setLink}
       setInputValue={setInputValue}
