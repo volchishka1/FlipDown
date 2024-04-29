@@ -47,6 +47,13 @@ export const SearchScreen = () => {
     setData(dataRedux);
   };
 
+  const saveMusic = () => {
+    Alert.alert(`${data?.music?.url}`);
+  };
+  const saveVideo = () => {
+    Alert.alert(`${data?.video?.url}`);
+  };
+
   const setTextValue = () => {
     link ? dispatch(setText(link)) : Alert.alert('Enter your link please');
   };
@@ -60,7 +67,11 @@ export const SearchScreen = () => {
 
   return (
     <SearchScreenView
-      text={link !== '' ? data?.video.id : ''}
+      musicUrl={link !== '' ? data?.music?.url : ''}
+      videoUrl={link !== '' ? data?.video?.url : ''}
+      saveMusic={saveMusic}
+      saveVideo={saveVideo}
+      preview={data?.video?.cover}
       link={link}
       setLink={setLink}
       setInputValue={setInputValue}
