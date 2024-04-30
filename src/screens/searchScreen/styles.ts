@@ -1,4 +1,4 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleSheet, ViewStyle, ImageStyle } from 'react-native';
 
 export type Styles = {
   rootContainer: ViewStyle;
@@ -7,6 +7,8 @@ export type Styles = {
   buttonDataContainer: ViewStyle;
   dataContainer: ViewStyle;
   buttonStyle: ViewStyle;
+  bottomContainer: ViewStyle;
+  imageStyle: ImageStyle;
 };
 
 export const searchScreenStyles = StyleSheet.create<Styles>({
@@ -29,7 +31,6 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
   },
   dataContainer: {
     flexDirection: 'row',
-    backgroundColor: 'red',
     width: '90%',
     justifyContent: 'space-around',
   },
@@ -39,5 +40,16 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
   },
   buttonStyle: {
     borderRadius: 7,
+  },
+  imageStyle: {
+    width: 100,
+    height: 180,
+  },
+  bottomContainer: {
+    width: '100%',
+    height: 200,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
   },
 });
