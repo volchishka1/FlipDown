@@ -30,6 +30,8 @@ export const SearchScreen = () => {
   const getInputText = useAppSelector(getText);
   const getDataRedux: Data[] = useAppSelector(getLoadData);
   const [data, setData] = useState<Data | undefined>();
+  const [isLoad, setIsLoad] = useState(false);
+  const [showLoad, setShowLoad] = useState(false);
 
   const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${getInputText}`;
@@ -45,6 +47,8 @@ export const SearchScreen = () => {
   const dataRedux = () => {
     const dataRedux = getDataRedux;
     setData(dataRedux);
+    setIsLoad(false);
+    setShowLoad(true);
   };
 
   const saveMusic = () => {
@@ -63,6 +67,7 @@ export const SearchScreen = () => {
     setTextValue();
     dispatch(addIsActive(true));
     setTimeout(dataRedux, 3000);
+    setIsLoad(true);
   };
 
   return (
@@ -75,6 +80,8 @@ export const SearchScreen = () => {
       link={link}
       setLink={setLink}
       setInputValue={setInputValue}
+      isLoad={isLoad}
+      showLoad={showLoad}
     />
   );
 };
