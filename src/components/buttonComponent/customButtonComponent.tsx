@@ -8,10 +8,11 @@ export type CustomButtonProps = {
   onPress: () => void;
   textButton: string;
   style?: any;
+  isLoad?: boolean;
 };
 
 export const CustomButton: FC<CustomButtonProps> = (props) => {
-  const { onPress, textButton, style } = props;
+  const { onPress, textButton, style, isLoad } = props;
 
   return (
     <TouchableOpacity
@@ -19,8 +20,11 @@ export const CustomButton: FC<CustomButtonProps> = (props) => {
       accessibilityLabel={'button'}
       onPress={onPress}
     >
-      <Text style={customButtonStyles.textButton}>{textButton}</Text>
-      <ActivityIndicator size={'small'} color={'white'} />
+      {isLoad === false ? (
+        <Text style={customButtonStyles.textButton}>{textButton}</Text>
+      ) : (
+        <ActivityIndicator size={'small'} color={'white'} />
+      )}
     </TouchableOpacity>
   );
 };
