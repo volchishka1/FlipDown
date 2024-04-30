@@ -16,6 +16,8 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     saveMusic = () => {},
     saveVideo = () => {},
     setLink = () => {},
+    isLoad = false,
+    showLoad = false,
   } = props;
   return (
     <View style={searchScreenStyles.rootContainer}>
@@ -27,33 +29,28 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
           accessibilityLabel={'Text input field'}
           style={searchScreenStyles.input}
         />
-        <CustomButton onPress={setInputValue} textButton={'Скачать'} />
+        <CustomButton onPress={setInputValue} textButton={'Скачать'} isLoad={isLoad} />
       </View>
-      <View
-        style={{
-          width: '100%',
-          height: 200,
-          backgroundColor: 'white',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: 20,
-        }}
-      >
-        <View style={searchScreenStyles.dataContainer}>
-          <Image style={{ height: 180, width: 100 }} source={{ uri: `${preview}` }} />
-          <View style={searchScreenStyles.buttonDataContainer}>
-            <CustomButton
-              onPress={saveVideo}
-              textButton={'Скачать видео'}
-              style={searchScreenStyles.buttonStyle}
-            />
-            <CustomButton
-              onPress={saveMusic}
-              textButton={'Скачать mp3'}
-              style={searchScreenStyles.buttonStyle}
-            />
+      <View style={searchScreenStyles.bottomContainer}>
+        {showLoad && (
+          <View style={searchScreenStyles.dataContainer}>
+            <Image style={searchScreenStyles.imageStyle} source={{ uri: `${preview}` }} />
+            <View style={searchScreenStyles.buttonDataContainer}>
+              <CustomButton
+                onPress={saveVideo}
+                textButton={'Скачать видео'}
+                style={searchScreenStyles.buttonStyle}
+                isLoad={false}
+              />
+              <CustomButton
+                onPress={saveMusic}
+                textButton={'Скачать mp3'}
+                style={searchScreenStyles.buttonStyle}
+                isLoad={false}
+              />
+            </View>
           </View>
-        </View>
+        )}
       </View>
     </View>
   );
