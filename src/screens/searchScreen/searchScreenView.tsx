@@ -18,9 +18,11 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     setLink = () => {},
     isLoad = false,
     showLoad = false,
+    // hasPermission = false,
   } = props;
   return (
     <View style={searchScreenStyles.rootContainer}>
+      {/*{hasPermission ? Alert.alert('Granted ✅') : Alert.alert('Denied ❌')}*/}
       <LogoComponent />
       <View style={searchScreenStyles.inputContainer}>
         <TextInput
