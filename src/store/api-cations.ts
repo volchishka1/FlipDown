@@ -9,7 +9,7 @@ export const loadData =
     const resp = await api.get(`https://fliptok.app/api/fetch?url=/${url}`);
     if (urlData !== '') {
       dispatch(saveData(resp.data));
-      console.log('resp' + resp);
+      console.log('resp', resp);
     } else {
       console.log('false to send');
     }
