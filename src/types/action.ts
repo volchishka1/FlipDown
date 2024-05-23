@@ -1,5 +1,6 @@
-import { Action, ThunkAction } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
+import { Action } from 'redux';
+import { ThunkAction } from 'redux-thunk';
 
 import { RootState } from '../store/root-reducer';
 
