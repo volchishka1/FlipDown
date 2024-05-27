@@ -144,45 +144,24 @@ export const SearchScreen = () => {
   //     .catch(() => {});
   // }, [checkPermission]);
 
-  const getData = () => {
+  // const getData = () => {
+  //   const apiUrl = `https://fliptok.app/api/fetch?url=${getInputText}`;
+  //   axios
+  //     .get(apiUrl)
+  //     .then((resp) => {
+  //       const allPersons = resp.data;
+  //       dispatch(saveData(allPersons));
+  //       console.log('allPersons', allPersons);
+  //     })
+  //     .catch(() => {});
+  // };
+
+  const getData = async () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${getInputText}`;
-    axios
-      .get(apiUrl)
-      .then((resp) => {
-        const allPersons = resp.data;
-        dispatch(saveData(allPersons));
-        console.log('allPersons', allPersons);
-      })
-      .catch(() => {});
+    const response = await axios.get(apiUrl);
+    const allPersons = response.data;
+    dispatch(saveData(allPersons));
   };
-
-  let url = `https://tttcdn.online/?url=${data?.download_video_url}&type=mp4`;
-  console.log('lolIos', url);
-
-  const saveImageOnIphone = useCallback(() => {
-    Alert.alert('Do you want to save this image', '', [
-      {
-        isPreferred: true,
-        text: 'Yes',
-        onPress: async () => {
-          const res = await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' });
-          console.log('res', res);
-          if (res) {
-            Alert.alert('Image saved');
-          } else {
-            console.log('error saved');
-          }
-        },
-        style: 'default',
-      },
-      {
-        isPreferred: false,
-        text: 'No',
-        onPress: () => {},
-        style: 'destructive',
-      },
-    ]);
-  }, []);
 
   const checkAndroidPermission = async () => {
     try {
@@ -194,22 +173,38 @@ export const SearchScreen = () => {
     }
   };
 
-  // let url = `https://tttcdn.online/?url=${data?.download_video_url}&type=mp4`;
-  // console.log('url', url);
+  let url = `https://tttcdn.online/?url=${data?.download_video_url}&type=mp4`;
+  console.log('lolIos', url);
 
-  const saveImageOnAndroid = async () => {
-    await checkAndroidPermission();
+  const saveImageOnPhone = async (): Promise<void> => {
+    Platform.OS === 'android' && (await checkAndroidPermission());
     const res = await RNFetchBlob.config({
       fileCache: true,
       appendExt: 'mp4',
-    })
-      .fetch('GET', url)
-      .then((res) => {
-        url = res.path();
-      });
+    }).fetch('GET', url);
+    url = res.path();
     console.log('urlFetch', url);
     await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' });
   };
+
+  const saveImageOnAndroid = useCallback(() => {
+    Alert.alert('Do you want to save this video', '', [
+      {
+        isPreferred: true,
+        text: 'Yes',
+        onPress: () => {
+          saveImageOnPhone();
+        },
+        style: 'default',
+      },
+      {
+        isPreferred: false,
+        text: 'No',
+        onPress: () => {},
+        style: 'destructive',
+      },
+    ]);
+  }, []);
 
   const dataRedux = () => {
     const dataOfRedux = getDataRedux;
@@ -223,7 +218,7 @@ export const SearchScreen = () => {
     Alert.alert(`${data?.music?.url}`);
   };
   const saveVideo = () => {
-    Platform.OS === 'android' ? saveImageOnAndroid() : saveImageOnIphone();
+    saveImageOnAndroid();
   };
 
   const setTextValue = () => {
@@ -231,7 +226,9 @@ export const SearchScreen = () => {
   };
 
   const setInputValue = () => {
-    getData();
+    getData()
+      .then()
+      .catch(() => {});
     setTextValue();
     dispatch(addIsActive(true));
     setTimeout(dataRedux, 3000);
@@ -248,7 +245,6 @@ export const SearchScreen = () => {
       setInputValue={setInputValue}
       isLoad={isLoad}
       showLoad={showLoad}
-      // hasPermission={hasPermission}
     />
   );
 };
