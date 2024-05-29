@@ -5,5 +5,5 @@ export type Styles = {
 };
 
 export const downloadScreenStyles = StyleSheet.create<Styles>({
-  rootContainer: { backgroundColor: '#1d014b', flex: 1 },
+  rootContainer: { backgroundColor: '#1d014b', flex: 1, flexDirection: 'row' },
 });
