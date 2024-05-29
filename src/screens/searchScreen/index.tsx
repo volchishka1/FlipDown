@@ -1,13 +1,13 @@
 import { Alert, PermissionsAndroid, Platform } from 'react-native';
 
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
 import axios from 'axios';
 import RNFetchBlob from 'rn-fetch-blob';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { addIsActive, saveData, setText } from '../../store/actions';
+import { saveData } from '../../store/actions';
 import { getLoadData, getText } from '../../store/homeScreen/selectors';
 
 import { SearchScreenView } from './searchScreenView';
@@ -144,24 +144,21 @@ export const SearchScreen = () => {
   //     .catch(() => {});
   // }, [checkPermission]);
 
-  // const getData = () => {
-  //   const apiUrl = `https://fliptok.app/api/fetch?url=${getInputText}`;
-  //   axios
-  //     .get(apiUrl)
-  //     .then((resp) => {
-  //       const allPersons = resp.data;
-  //       dispatch(saveData(allPersons));
-  //       console.log('allPersons', allPersons);
-  //     })
-  //     .catch(() => {});
-  // };
-
-  const getData = async () => {
-    const apiUrl = `https://fliptok.app/api/fetch?url=${getInputText}`;
-    const response = await axios.get(apiUrl);
-    const allPersons = response.data;
-    dispatch(saveData(allPersons));
+  const getData = () => {
+    const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        dispatch(saveData(response.data));
+      })
+      .catch(() => {});
+    setIsLoad(true);
   };
+
+  useEffect(() => {
+    setData(getDataRedux);
+    console.log('getDataRedux', getDataRedux);
+  }, [getDataRedux]);
 
   const checkAndroidPermission = async () => {
     try {
@@ -173,8 +170,20 @@ export const SearchScreen = () => {
     }
   };
 
-  let url = `https://tttcdn.online/?url=${data?.download_video_url}&type=mp4`;
+  const videoUrl = data?.download_video_url;
+  let url = `https://tttcdn.online/?url=${videoUrl}&type=mp4`;
+  const musicUrl = data?.download_music_url;
+  let urlMusic = `https://tttcdn.online/?url=${musicUrl}&type=mp3`;
   console.log('lolIos', url);
+
+  const saveMusicOnPhone = async (): Promise<void> => {
+    const res = await RNFetchBlob.config({
+      fileCache: true,
+      appendExt: 'mp3',
+    }).fetch('GET', urlMusic);
+    urlMusic = res.path();
+    console.log('UrlFetchMusic', urlMusic);
+  };
 
   const saveImageOnPhone = async (): Promise<void> => {
     Platform.OS === 'android' && (await checkAndroidPermission());
@@ -193,7 +202,9 @@ export const SearchScreen = () => {
         isPreferred: true,
         text: 'Yes',
         onPress: () => {
-          saveImageOnPhone();
+          saveImageOnPhone()
+            .then()
+            .catch(() => {});
         },
         style: 'default',
       },
@@ -207,32 +218,28 @@ export const SearchScreen = () => {
   }, []);
 
   const dataRedux = () => {
-    const dataOfRedux = getDataRedux;
-    setData(dataOfRedux);
-    console.log('data', data);
-    setIsLoad(false);
     setShowLoad(true);
+    setIsLoad(false);
   };
 
   const saveMusic = () => {
-    Alert.alert(`${data?.music?.url}`);
+    saveMusicOnPhone()
+      .then()
+      .catch(() => {});
   };
   const saveVideo = () => {
     saveImageOnAndroid();
   };
 
   const setTextValue = () => {
-    link ? dispatch(setText(link)) : Alert.alert('Enter your link please');
+    link !== '' ? setLink(link) : Alert.alert('Enter your link please');
+    console.log(link);
   };
 
   const setInputValue = () => {
-    getData()
-      .then()
-      .catch(() => {});
     setTextValue();
-    dispatch(addIsActive(true));
+    getData();
     setTimeout(dataRedux, 3000);
-    setIsLoad(true);
   };
 
   return (
