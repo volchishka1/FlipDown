@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { Image, SafeAreaView } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -6,10 +6,12 @@ import { downloadScreenStyles } from './styles';
 import { DownloadScreenProps } from './types';
 
 export const DownloadScreenView: FC<DownloadScreenProps> = (props) => {
-  const {} = props;
+  const { photos } = props;
   return (
-    <View style={downloadScreenStyles.rootContainer}>
-      <Text style={{ color: 'white' }}>{'Hello app'}</Text>
-    </View>
+    <SafeAreaView style={downloadScreenStyles.rootContainer}>
+      {photos.map((obj, index) => (
+        <Image key={index} style={{ width: '20%', height: '10%' }} source={obj.node.image} />
+      ))}
+    </SafeAreaView>
   );
 };
