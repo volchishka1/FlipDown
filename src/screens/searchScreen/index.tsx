@@ -1,6 +1,6 @@
 import { Alert, PermissionsAndroid, Platform } from 'react-native';
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
 import axios from 'axios';
@@ -37,113 +37,6 @@ export const SearchScreen = () => {
   const [isLoad, setIsLoad] = useState(false);
   const [showLoad, setShowLoad] = useState(false);
 
-  // const [hasPermission, setHasPermission] = useState<boolean>(false);
-  //
-  // const openSettingsAlert = useCallback(({ title }: { title: string }) => {
-  //   Alert.alert(title, '', [
-  //     {
-  //       isPreferred: true,
-  //       style: 'default',
-  //       text: 'Open Settings',
-  //       onPress: void (() => Linking?.openSettings()),
-  //     },
-  //     {
-  //       isPreferred: false,
-  //       style: 'destructive',
-  //       text: 'Cancel',
-  //       onPress: () => {},
-  //     },
-  //   ]);
-  // }, []);
-  //
-  // const checkAndroidPermissions = useCallback(async () => {
-  //   if (parseInt(Platform.Version as string, 10) >= 33) {
-  //     const permissions = await Permissions.checkMultiple([
-  //       PERMISSIONS.ANDROID.READ_MEDIA_IMAGES,
-  //       PERMISSIONS.ANDROID.READ_MEDIA_VIDEO,
-  //     ]);
-  //     if (
-  //       permissions[PERMISSIONS.ANDROID.READ_MEDIA_IMAGES] === Permissions.RESULTS.GRANTED &&
-  //       permissions[PERMISSIONS.ANDROID.READ_MEDIA_VIDEO] === Permissions.RESULTS.GRANTED
-  //     ) {
-  //       setHasPermission(true);
-  //       return;
-  //     }
-  //     const res = await Permissions.requestMultiple([
-  //       PERMISSIONS.ANDROID.READ_MEDIA_IMAGES,
-  //       PERMISSIONS.ANDROID.READ_MEDIA_VIDEO,
-  //     ]);
-  //     if (
-  //       res[PERMISSIONS.ANDROID.READ_MEDIA_IMAGES] === Permissions.RESULTS.GRANTED &&
-  //       res[PERMISSIONS.ANDROID.READ_MEDIA_VIDEO] === Permissions.RESULTS.GRANTED
-  //     ) {
-  //       setHasPermission(true);
-  //     }
-  //     if (
-  //       res[PERMISSIONS.ANDROID.READ_MEDIA_IMAGES] === Permissions.RESULTS.DENIED ||
-  //       res[PERMISSIONS.ANDROID.READ_MEDIA_VIDEO] === Permissions.RESULTS.DENIED
-  //     ) {
-  //       checkAndroidPermissions();
-  //     }
-  //     if (
-  //       res[PERMISSIONS.ANDROID.READ_MEDIA_IMAGES] === Permissions.RESULTS.BLOCKED ||
-  //       res[PERMISSIONS.ANDROID.READ_MEDIA_VIDEO] === Permissions.RESULTS.BLOCKED
-  //     ) {
-  //       openSettingsAlert({
-  //         title: 'Please allow access to your photos and videos from settings',
-  //       });
-  //     }
-  //   } else {
-  //     const permission = await Permissions.check(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE);
-  //     if (permission === Permissions.RESULTS.GRANTED) {
-  //       setHasPermission(true);
-  //       return;
-  //     }
-  //     const res = await Permissions.request(PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE);
-  //     if (res === Permissions.RESULTS.GRANTED) {
-  //       setHasPermission(true);
-  //     }
-  //     if (res === Permissions.RESULTS.DENIED) {
-  //       checkAndroidPermissions();
-  //     }
-  //     if (res === Permissions.RESULTS.BLOCKED) {
-  //       openSettingsAlert({
-  //         title: 'Please allow access to the photo library from settings',
-  //       });
-  //     }
-  //   }
-  // }, [openSettingsAlert]);
-  //
-  // const checkPermission = useCallback(async (): Promise<void> => {
-  //   if (Platform.OS === 'ios') {
-  //     const permission = await Permissions.check(PERMISSIONS.IOS.PHOTO_LIBRARY);
-  //     if (
-  //       permission === Permissions.RESULTS.GRANTED ||
-  //       permission === Permissions.RESULTS.LIMITED
-  //     ) {
-  //       setHasPermission(true);
-  //       return;
-  //     }
-  //     const res = await Permissions.request(PERMISSIONS.IOS.PHOTO_LIBRARY);
-  //     if (res === Permissions.RESULTS.GRANTED || res === Permissions.RESULTS.LIMITED) {
-  //       setHasPermission(true);
-  //     }
-  //     if (res === Permissions.RESULTS.BLOCKED) {
-  //       openSettingsAlert({
-  //         title: 'Please allow access to the photo library from settings',
-  //       });
-  //     }
-  //   } else if (Platform.OS === 'android') {
-  //     checkAndroidPermissions();
-  //   }
-  // }, [checkAndroidPermissions, openSettingsAlert]);
-  //
-  // useEffect(() => {
-  //   checkPermission()
-  //     .then(() => console.log('this will succeed'))
-  //     .catch(() => {});
-  // }, [checkPermission]);
-
   const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
     axios
@@ -152,11 +45,12 @@ export const SearchScreen = () => {
         dispatch(saveData(response.data));
       })
       .catch(() => {});
-    setIsLoad(true);
+    link !== '' ? setIsLoad(true) : setIsLoad(false);
   };
 
   useEffect(() => {
-    setData(getDataRedux);
+    const allData = getDataRedux;
+    setData(allData);
     console.log('getDataRedux', getDataRedux);
   }, [getDataRedux]);
 
@@ -177,9 +71,10 @@ export const SearchScreen = () => {
   console.log('lolIos', url);
 
   const saveMusicOnPhone = async (): Promise<void> => {
+    const path = RNFetchBlob.fs.dirs.DocumentDir;
     const res = await RNFetchBlob.config({
       fileCache: true,
-      appendExt: 'mp3',
+      path: path + '/sound.mp3',
     }).fetch('GET', urlMusic);
     urlMusic = res.path();
     console.log('UrlFetchMusic', urlMusic);
@@ -194,9 +89,20 @@ export const SearchScreen = () => {
     url = res.path();
     console.log('urlFetch', url);
     await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' });
+    Alert.alert('Video added');
   };
 
-  const saveImageOnAndroid = useCallback(() => {
+  const dataRedux = () => {
+    link !== '' ? setShowLoad(true) : setShowLoad(false);
+    setIsLoad(false);
+  };
+
+  const saveMusic = () => {
+    saveMusicOnPhone()
+      .then()
+      .catch(() => {});
+  };
+  const saveVideo = () => {
     Alert.alert('Do you want to save this video', '', [
       {
         isPreferred: true,
@@ -215,25 +121,10 @@ export const SearchScreen = () => {
         style: 'destructive',
       },
     ]);
-  }, []);
-
-  const dataRedux = () => {
-    setShowLoad(true);
-    setIsLoad(false);
-  };
-
-  const saveMusic = () => {
-    saveMusicOnPhone()
-      .then()
-      .catch(() => {});
-  };
-  const saveVideo = () => {
-    saveImageOnAndroid();
   };
 
   const setTextValue = () => {
     link !== '' ? setLink(link) : Alert.alert('Enter your link please');
-    console.log(link);
   };
 
   const setInputValue = () => {
