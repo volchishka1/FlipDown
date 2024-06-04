@@ -68,13 +68,76 @@ export const SearchScreen = () => {
   let url = `https://tttcdn.online/?url=${videoUrl}&type=mp4`;
   const musicUrl = data?.download_music_url;
   let urlMusic = `https://tttcdn.online/?url=${musicUrl}&type=mp3`;
-  console.log('lolIos', url);
+  const musicTitle = data?.music?.title;
+  const type = 'mp3';
+  console.log('lolIos', urlMusic);
 
+  const getMimeType = (type) => {
+    switch (type) {
+      case 'doc':
+        return 'application/msword';
+      case 'docx':
+        return 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+      case 'ppt':
+        return 'application/vnd.ms-powerpoint';
+      case 'pptx':
+        return 'application/vnd.openxmlformats-officedocument.presentationml.presentation';
+      case 'xls':
+        return 'application/vnd.ms-excel';
+      case 'xlsx':
+        return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+      case 'pdf':
+        return 'application/pdf';
+      case 'png':
+        return 'image/png';
+      case 'bmp':
+        return 'application/x-MS-bmp';
+      case 'gif':
+        return 'image/gif';
+      case 'jpg':
+        return 'image/jpeg';
+      case 'jpeg':
+        return 'image/jpeg';
+      case 'avi':
+        return 'video/x-msvideo';
+      case 'aac':
+        return 'audio/x-aac';
+      case 'mp3':
+        return 'audio/mpeg';
+      case 'mp4':
+        return 'video/mp4';
+      case 'apk':
+        return 'application/vnd.Android.package-archive';
+      case 'txt':
+      case 'log':
+      case 'h':
+      case 'cpp':
+      case 'js':
+      case 'html':
+        return 'text/plain';
+      default:
+        return '*/*';
+    }
+  };
   const saveMusicOnPhone = async (): Promise<void> => {
-    const path = RNFetchBlob.fs.dirs.DocumentDir;
+    Platform.OS === 'android' && (await checkAndroidPermission());
+    const fileName = musicTitle;
+    const path =
+      Platform.OS === 'android'
+        ? RNFetchBlob.fs.dirs.DownloadDir + '/' + `${fileName}.${type}`
+        : RNFetchBlob.fs.dirs.DocumentDir + '/' + `${fileName}.${type}`;
     const res = await RNFetchBlob.config({
       fileCache: true,
-      path: path + '/sound.mp3',
+      appendExt: 'mp3',
+      path: path,
+      addAndroidDownloads: {
+        // useDownloadManager: true,
+        mediaScannable: true,
+        notification: true,
+        title: path,
+        description: `Downloading${path}`,
+        mime: getMimeType(type),
+      },
     }).fetch('GET', urlMusic);
     urlMusic = res.path();
     console.log('UrlFetchMusic', urlMusic);
