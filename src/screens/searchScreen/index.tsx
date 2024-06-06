@@ -36,6 +36,7 @@ export const SearchScreen = () => {
   const [data, setData] = useState<Data | undefined>();
   const [isLoad, setIsLoad] = useState(false);
   const [showLoad, setShowLoad] = useState(false);
+  const [status, setStatus] = useState(0);
 
   const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
@@ -44,17 +45,17 @@ export const SearchScreen = () => {
       .then((response) => {
         const res = response.data;
         dispatch(saveData(res));
-        console.log(res);
+        setStatus(response.status);
       })
-      .catch((err) => {
-        link === '' ? Alert.alert('Oops. Enter your link') : Alert.alert(err);
+      .catch((err: string) => {
+        Alert.alert(err);
       });
-    link !== '' ? setIsLoad(true) : setIsLoad(false);
+    link.length === 32 ? setIsLoad(true) : setIsLoad(false);
   };
 
   useEffect(() => {
     const allData = getDataRedux;
-    setData(allData);
+    link.length === 32 ? setData(allData) : setData(null);
   }, [getDataRedux]);
 
   const checkAndroidPermission = async () => {
@@ -167,7 +168,7 @@ export const SearchScreen = () => {
   };
 
   const dataRedux = () => {
-    link !== '' ? setShowLoad(true) : setShowLoad(false);
+    status === 200 ? setShowLoad(true) : setShowLoad(false);
     setIsLoad(false);
   };
 
@@ -202,7 +203,13 @@ export const SearchScreen = () => {
   };
 
   const setTextValue = () => {
-    setLink(link);
+    if (link.length === 32) {
+      setLink(link);
+    } else if (link === '') {
+      Alert.alert('Enter your link');
+    } else {
+      Alert.alert('Enter your link correctly');
+    }
   };
 
   const setInputValue = () => {
