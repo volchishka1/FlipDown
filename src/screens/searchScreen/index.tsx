@@ -42,16 +42,19 @@ export const SearchScreen = () => {
     axios
       .get(apiUrl)
       .then((response) => {
-        dispatch(saveData(response.data));
+        const res = response.data;
+        dispatch(saveData(res));
+        console.log(res);
       })
-      .catch(() => {});
+      .catch((err) => {
+        link === '' ? Alert.alert('Oops. Enter your link') : Alert.alert(err);
+      });
     link !== '' ? setIsLoad(true) : setIsLoad(false);
   };
 
   useEffect(() => {
     const allData = getDataRedux;
     setData(allData);
-    console.log('getDataRedux', getDataRedux);
   }, [getDataRedux]);
 
   const checkAndroidPermission = async () => {
@@ -69,63 +72,60 @@ export const SearchScreen = () => {
   const musicUrl = data?.download_music_url;
   let urlMusic = `https://tttcdn.online/?url=${musicUrl}&type=mp3`;
   const musicTitle = data?.music?.title;
-  const type = 'mp3';
+  // const type = 'mp3';
   console.log('lolIos', urlMusic);
 
-  const getMimeType = (type) => {
-    switch (type) {
-      case 'doc':
-        return 'application/msword';
-      case 'docx':
-        return 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
-      case 'ppt':
-        return 'application/vnd.ms-powerpoint';
-      case 'pptx':
-        return 'application/vnd.openxmlformats-officedocument.presentationml.presentation';
-      case 'xls':
-        return 'application/vnd.ms-excel';
-      case 'xlsx':
-        return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-      case 'pdf':
-        return 'application/pdf';
-      case 'png':
-        return 'image/png';
-      case 'bmp':
-        return 'application/x-MS-bmp';
-      case 'gif':
-        return 'image/gif';
-      case 'jpg':
-        return 'image/jpeg';
-      case 'jpeg':
-        return 'image/jpeg';
-      case 'avi':
-        return 'video/x-msvideo';
-      case 'aac':
-        return 'audio/x-aac';
-      case 'mp3':
-        return 'audio/mpeg';
-      case 'mp4':
-        return 'video/mp4';
-      case 'apk':
-        return 'application/vnd.Android.package-archive';
-      case 'txt':
-      case 'log':
-      case 'h':
-      case 'cpp':
-      case 'js':
-      case 'html':
-        return 'text/plain';
-      default:
-        return '*/*';
-    }
-  };
-  const saveMusicOnPhone = async (): Promise<void> => {
-    Platform.OS === 'android' && (await checkAndroidPermission());
-    const fileName = musicTitle;
-    const path =
-      Platform.OS === 'android'
-        ? RNFetchBlob.fs.dirs.DownloadDir + '/' + `${fileName}.${type}`
-        : RNFetchBlob.fs.dirs.DocumentDir + '/' + `${fileName}.${type}`;
+  // const getMimeType = (type) => {
+  //   switch (type) {
+  //     case 'doc':
+  //       return 'application/msword';
+  //     case 'docx':
+  //       return 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+  //     case 'ppt':
+  //       return 'application/vnd.ms-powerpoint';
+  //     case 'pptx':
+  //       return 'application/vnd.openxmlformats-officedocument.presentationml.presentation';
+  //     case 'xls':
+  //       return 'application/vnd.ms-excel';
+  //     case 'xlsx':
+  //       return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+  //     case 'pdf':
+  //       return 'application/pdf';
+  //     case 'png':
+  //       return 'image/png';
+  //     case 'bmp':
+  //       return 'application/x-MS-bmp';
+  //     case 'gif':
+  //       return 'image/gif';
+  //     case 'jpg':
+  //       return 'image/jpeg';
+  //     case 'jpeg':
+  //       return 'image/jpeg';
+  //     case 'avi':
+  //       return 'video/x-msvideo';
+  //     case 'aac':
+  //       return 'audio/x-aac';
+  //     case 'mp3':
+  //       return 'audio/mpeg';
+  //     case 'mp4':
+  //       return 'video/mp4';
+  //     case 'apk':
+  //       return 'application/vnd.Android.package-archive';
+  //     case 'txt':
+  //     case 'log':
+  //     case 'h':
+  //     case 'cpp':
+  //     case 'js':
+  //     case 'html':
+  //       return 'text/plain';
+  //     default:
+  //       return '*/*';
+  //   }
+  // };
+  const saveMusicOnAndroid = async (): Promise<void> => {
+    await checkAndroidPermission();
+    const path = RNFetchBlob.fs.dirs.DownloadDir + '/' + `${musicTitle}.mp3`;
+
     const res = await RNFetchBlob.config({
       fileCache: true,
       appendExt: 'mp3',
@@ -136,14 +136,25 @@ export const SearchScreen = () => {
         notification: true,
         title: path,
         description: `Downloading${path}`,
-        mime: getMimeType(type),
+        mime: 'audio/mpeg',
       },
     }).fetch('GET', urlMusic);
     urlMusic = res.path();
     console.log('UrlFetchMusic', urlMusic);
   };
 
-  const saveImageOnPhone = async (): Promise<void> => {
+  const saveMusicOnIos = async (): Promise<void> => {
+    const path = RNFetchBlob.fs.dirs.DocumentDir + '/' + `${musicTitle}` + '.mp3';
+    const res = await RNFetchBlob.config({
+      fileCache: true,
+      appendExt: 'mp3',
+      path: path,
+    }).fetch('GET', urlMusic);
+    urlMusic = res.path();
+    console.log('UrlMusic', urlMusic);
+  };
+
+  const saveVideoOnPhone = async (): Promise<void> => {
     Platform.OS === 'android' && (await checkAndroidPermission());
     const res = await RNFetchBlob.config({
       fileCache: true,
@@ -161,9 +172,13 @@ export const SearchScreen = () => {
   };
 
   const saveMusic = () => {
-    saveMusicOnPhone()
-      .then()
-      .catch(() => {});
+    Platform.OS === 'android'
+      ? saveMusicOnAndroid()
+          .then()
+          .catch(() => {})
+      : saveMusicOnIos()
+          .then()
+          .catch(() => {});
   };
   const saveVideo = () => {
     Alert.alert('Do you want to save this video', '', [
@@ -171,7 +186,7 @@ export const SearchScreen = () => {
         isPreferred: true,
         text: 'Yes',
         onPress: () => {
-          saveImageOnPhone()
+          saveVideoOnPhone()
             .then()
             .catch(() => {});
         },
@@ -187,7 +202,7 @@ export const SearchScreen = () => {
   };
 
   const setTextValue = () => {
-    link !== '' ? setLink(link) : Alert.alert('Enter your link please');
+    setLink(link);
   };
 
   const setInputValue = () => {
