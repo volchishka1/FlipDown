@@ -1,5 +1,5 @@
 export type HomeScreen = {
   isActive: boolean;
-  text: string;
+  status: number;
   itemData: [];
 };

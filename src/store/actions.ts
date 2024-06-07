@@ -10,6 +10,6 @@ export const saveData = createAction(ActionType.SaveData, (saveData: any) => ({
   payload: saveData,
 }));
 
-export const setText = createAction(ActionType.SetText, (SetText: string) => ({
-  payload: SetText,
+export const setStatus = createAction(ActionType.SetStatus, (SetStatus: number) => ({
+  payload: SetStatus,
 }));
