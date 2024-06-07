@@ -7,8 +7,8 @@ import axios from 'axios';
 import RNFetchBlob from 'rn-fetch-blob';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { saveData } from '../../store/actions';
-import { getLoadData, getText } from '../../store/homeScreen/selectors';
+import { saveData, setStatus } from '../../store/actions';
+import { getLoadData, getStatus } from '../../store/homeScreen/selectors';
 
 import { SearchScreenView } from './searchScreenView';
 
@@ -31,12 +31,12 @@ export interface Data {
 export const SearchScreen = () => {
   const [link, setLink] = useState('');
   const dispatch = useAppDispatch();
-  const getInputText = useAppSelector(getText);
+  const responseStatus = useAppSelector(getStatus);
   const getDataRedux: Data[] = useAppSelector(getLoadData);
   const [data, setData] = useState<Data | undefined>();
   const [isLoad, setIsLoad] = useState(false);
   const [showLoad, setShowLoad] = useState(false);
-  const [status, setStatus] = useState(0);
+  const [status, setResponseStatus] = useState(0);
 
   const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
@@ -44,8 +44,9 @@ export const SearchScreen = () => {
       .get(apiUrl)
       .then((response) => {
         const res = response.data;
+        const resStatus = response.status;
         dispatch(saveData(res));
-        setStatus(response.status);
+        dispatch(setStatus(resStatus));
       })
       .catch((err: string) => {
         Alert.alert(err);
@@ -55,7 +56,9 @@ export const SearchScreen = () => {
 
   useEffect(() => {
     const allData = getDataRedux;
-    link.length === 32 ? setData(allData) : setData(null);
+    const getStatus = responseStatus;
+    setData(allData);
+    setResponseStatus(getStatus);
   }, [getDataRedux]);
 
   const checkAndroidPermission = async () => {
@@ -74,7 +77,7 @@ export const SearchScreen = () => {
   let urlMusic = `https://tttcdn.online/?url=${musicUrl}&type=mp3`;
   const musicTitle = data?.music?.title;
   // const type = 'mp3';
-  console.log('lolIos', urlMusic);
+  console.log('musicUrl', urlMusic);
 
   // const getMimeType = (type) => {
   //   switch (type) {
@@ -145,14 +148,14 @@ export const SearchScreen = () => {
   };
 
   const saveMusicOnIos = async (): Promise<void> => {
-    const path = RNFetchBlob.fs.dirs.DocumentDir + '/' + `${musicTitle}` + '.mp3';
+    const path = RNFetchBlob.fs.dirs.DownloadDir + '/' + `${musicTitle}` + '/sound.mp3';
     const res = await RNFetchBlob.config({
       fileCache: true,
       appendExt: 'mp3',
       path: path,
     }).fetch('GET', urlMusic);
     urlMusic = res.path();
-    console.log('UrlMusic', urlMusic);
+    console.log('UrlFetchMusic', urlMusic);
   };
 
   const saveVideoOnPhone = async (): Promise<void> => {
