@@ -7,12 +7,12 @@ import axios from 'axios';
 import RNFetchBlob from 'rn-fetch-blob';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { saveData, setStatus } from '../../store/actions';
+import { saveData } from '../../store/actions';
 import { getLoadData, getStatus } from '../../store/homeScreen/selectors';
 
 import { SearchScreenView } from './searchScreenView';
 
-export interface Data {
+export interface ResponseData {
   music: {
     id: string;
     title: string;
@@ -32,33 +32,31 @@ export const SearchScreen = () => {
   const [link, setLink] = useState('');
   const dispatch = useAppDispatch();
   const responseStatus = useAppSelector(getStatus);
-  const getDataRedux: Data[] = useAppSelector(getLoadData);
-  const [data, setData] = useState<Data | undefined>();
+  const getDataRedux: ResponseData[] = useAppSelector(getLoadData);
+  const [data, setData] = useState<ResponseData | undefined>();
   const [isLoad, setIsLoad] = useState(false);
   const [showLoad, setShowLoad] = useState(false);
-  const [status, setResponseStatus] = useState(0);
 
-  const getData = () => {
+  const getData = async (): Promise<void> => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
-    axios
-      .get(apiUrl)
-      .then((response) => {
-        const res = response.data;
-        const resStatus = response.status;
-        dispatch(saveData(res));
-        dispatch(setStatus(resStatus));
-      })
-      .catch((err: string) => {
-        Alert.alert(err);
-      });
-    link.length === 32 ? setIsLoad(true) : setIsLoad(false);
+    const response = await axios.get(apiUrl);
+    const res = response.data;
+    const resStatus = response.status;
+    if (resStatus) {
+      dispatch(saveData(res));
+      setIsLoad(true);
+      setTimeout(() => {
+        setShowLoad(true);
+        setIsLoad(false);
+      }, 3000);
+    } else {
+      Alert.alert('Oops');
+    }
   };
 
   useEffect(() => {
     const allData = getDataRedux;
-    const getStatus = responseStatus;
     setData(allData);
-    setResponseStatus(getStatus);
   }, [getDataRedux]);
 
   const checkAndroidPermission = async () => {
@@ -76,56 +74,8 @@ export const SearchScreen = () => {
   const musicUrl = data?.download_music_url;
   let urlMusic = `https://tttcdn.online/?url=${musicUrl}&type=mp3`;
   const musicTitle = data?.music?.title;
-  // const type = 'mp3';
   console.log('musicUrl', urlMusic);
 
-  // const getMimeType = (type) => {
-  //   switch (type) {
-  //     case 'doc':
-  //       return 'application/msword';
-  //     case 'docx':
-  //       return 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
-  //     case 'ppt':
-  //       return 'application/vnd.ms-powerpoint';
-  //     case 'pptx':
-  //       return 'application/vnd.openxmlformats-officedocument.presentationml.presentation';
-  //     case 'xls':
-  //       return 'application/vnd.ms-excel';
-  //     case 'xlsx':
-  //       return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-  //     case 'pdf':
-  //       return 'application/pdf';
-  //     case 'png':
-  //       return 'image/png';
-  //     case 'bmp':
-  //       return 'application/x-MS-bmp';
-  //     case 'gif':
-  //       return 'image/gif';
-  //     case 'jpg':
-  //       return 'image/jpeg';
-  //     case 'jpeg':
-  //       return 'image/jpeg';
-  //     case 'avi':
-  //       return 'video/x-msvideo';
-  //     case 'aac':
-  //       return 'audio/x-aac';
-  //     case 'mp3':
-  //       return 'audio/mpeg';
-  //     case 'mp4':
-  //       return 'video/mp4';
-  //     case 'apk':
-  //       return 'application/vnd.Android.package-archive';
-  //     case 'txt':
-  //     case 'log':
-  //     case 'h':
-  //     case 'cpp':
-  //     case 'js':
-  //     case 'html':
-  //       return 'text/plain';
-  //     default:
-  //       return '*/*';
-  //   }
-  // };
   const saveMusicOnAndroid = async (): Promise<void> => {
     await checkAndroidPermission();
     const path = RNFetchBlob.fs.dirs.DownloadDir + '/' + `${musicTitle}.mp3`;
@@ -170,11 +120,6 @@ export const SearchScreen = () => {
     Alert.alert('Video added');
   };
 
-  const dataRedux = () => {
-    status === 200 ? setShowLoad(true) : setShowLoad(false);
-    setIsLoad(false);
-  };
-
   const saveMusic = () => {
     Platform.OS === 'android'
       ? saveMusicOnAndroid()
@@ -208,17 +153,20 @@ export const SearchScreen = () => {
   const setTextValue = () => {
     if (link.length === 32) {
       setLink(link);
+      getData()
+        .then()
+        .catch((err: string) => {
+          Alert.alert(err);
+        });
     } else if (link === '') {
-      Alert.alert('Enter your link');
+      Alert.alert('Enter your link. Example: https://vm.tiktok.com/ZMr8THxT2/');
     } else {
-      Alert.alert('Enter your link correctly');
+      Alert.alert('Enter your link correctly. Example: https://vm.tiktok.com/ZMr8THxT2/');
     }
   };
 
   const setInputValue = () => {
     setTextValue();
-    getData();
-    setTimeout(dataRedux, 3000);
   };
 
   return (
