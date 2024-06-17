@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -9,9 +9,18 @@ export type ContactsScreenProps = {
 };
 export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomSheet }) => {
   return (
-    <View>
+    <ScrollView>
       <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
-      <Text>{'Contacts'}</Text>
-    </View>
+      <Text>
+        {'Contact us\n' +
+          'You can contact us using the following contact data:\n' +
+          '\n' +
+          'Email: fliptokapp@gmail.com\n' +
+          '\n' +
+          'If you have questions, suggestions or comments, please do not hesitate to contact us. We are always ready to help you and answer all your questions.\n' +
+          '\n' +
+          'We value your attention to our site and are always ready to help you. Regardless of questions or requests, you can be sure that you will receive our professional and friendly support.'}
+      </Text>
+    </ScrollView>
   );
 };
