@@ -9,5 +9,6 @@ export type InfoScreenViewProps = {
   goToPrivacyPolicyModal: TouchableOpacityProps['onPress'];
   goToContactsModal: TouchableOpacityProps['onPress'];
   goToCloseBottomSheet: TouchableOpacityProps['onPress'];
+  goToAboutSheet: TouchableOpacityProps['onPress'];
   actionTriggered: TextProps['children'];
 };
