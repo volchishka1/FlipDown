@@ -23,6 +23,11 @@ export const InfoScreen: FC<InfoScreenProps> = (props) => {
     setActionTriggered('contacts');
   };
 
+  const goToAboutSheet = () => {
+    bottomSheetModalRef.current?.present();
+    setActionTriggered('about');
+  };
+
   const goToCloseBottomSheet = () => {
     bottomSheetModalRef.current?.close();
   };
@@ -36,6 +41,7 @@ export const InfoScreen: FC<InfoScreenProps> = (props) => {
       goToTermsAndConditionalsModal={goToTermsAndConditionalsModal}
       goToContactsModal={goToContactsModal}
       goToCloseBottomSheet={goToCloseBottomSheet}
+      goToAboutSheet={goToAboutSheet}
     />
   );
 };
