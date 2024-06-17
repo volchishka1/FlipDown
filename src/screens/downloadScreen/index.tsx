@@ -8,7 +8,7 @@ export const DownloadScreen = () => {
   const [photos, setPhotos] = useState<PhotoIdentifier[] | undefined>([]);
   const fetchPhotos = useCallback(async () => {
     const res = await CameraRoll.getPhotos({
-      first: 10,
+      first: 100,
       assetType: 'Videos',
     });
     setPhotos(res?.edges);
