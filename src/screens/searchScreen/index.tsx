@@ -113,6 +113,7 @@ export const SearchScreen = () => {
     const res = await RNFetchBlob.config({
       fileCache: true,
       appendExt: 'mp4',
+      indicator: true,
     }).fetch('GET', url);
     url = res.path();
     console.log('urlFetch', url);
