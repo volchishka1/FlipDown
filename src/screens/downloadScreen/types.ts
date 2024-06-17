@@ -1,1 +1,3 @@
-export type DownloadScreenProps = {};
+export type DownloadScreenProps = {
+  photos: any;
+};
