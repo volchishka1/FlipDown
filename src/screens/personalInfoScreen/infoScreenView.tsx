@@ -16,6 +16,7 @@ export const InfoScreenView: FC<InfoScreenViewProps> = (props) => {
     goToPrivacyPolicyModal = () => {},
     goToContactsModal = () => {},
     goToCloseBottomSheet = () => {},
+    goToAboutSheet = () => {},
   } = props;
 
   return (
@@ -35,6 +36,9 @@ export const InfoScreenView: FC<InfoScreenViewProps> = (props) => {
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToContactsModal}>
           <Text style={{ color: 'white' }}>{'Contacts'}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity accessibilityRole={'button'} onPress={goToAboutSheet}>
+          <Text style={{ color: 'white' }}>{'About'}</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
