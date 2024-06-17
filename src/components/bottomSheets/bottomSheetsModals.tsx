@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 import { BottomSheetModal } from '@gorhom/bottom-sheet/src';
 
+import { AboutScreenView } from '../../screens/aboutScreen/aboutScreenView';
 import { ContactsScreenView } from '../../screens/contactsScreen/contactsScreenView';
 import { PrivacyPolicyScreenView } from '../../screens/privacyPolicyScreen/privacyPolicyScreenView';
 import { TermsAndConditionComponent } from '../../screens/termsAndConditionScreen/termsAndConditionsScreenView';
@@ -31,8 +32,10 @@ export const BottomSheetsModals: FC<BottomSheetsModalsProps> = (props) => {
         <TermsAndConditionComponent goToCloseBottomSheet={goToCloseBottomSheet} />
       ) : actionTriggered === 'privacyPolicy' ? (
         <PrivacyPolicyScreenView goToCloseBottomSheet={goToCloseBottomSheet} />
-      ) : (
+      ) : actionTriggered === 'contacts' ? (
         <ContactsScreenView goToCloseBottomSheet={goToCloseBottomSheet} />
+      ) : (
+        <AboutScreenView goToCloseBottomSheet={goToCloseBottomSheet} />
       )}
     </BottomSheetModal>
   );
