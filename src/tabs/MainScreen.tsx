@@ -2,11 +2,9 @@ import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { FolderSvg } from '../../assets/folder';
 import { SearchSvg } from '../../assets/search';
 import { SettingSvg } from '../../assets/setting';
 import { ROUTES } from '../constants/routes';
-import { DownloadScreen } from '../screens/downloadScreen';
 import { InfoScreen } from '../screens/personalInfoScreen';
 import { SearchScreen } from '../screens/searchScreen';
 
@@ -30,16 +28,16 @@ export const MainScreen = () => {
           },
         }}
       />
-      <Tab.Screen
-        name={ROUTES.DOWNLOAD_SCREEN}
-        component={DownloadScreen}
-        options={{
-          tabBarLabel: 'Downloads',
-          tabBarIcon: (focused) => {
-            return <FolderSvg />;
-          },
-        }}
-      />
+      {/*<Tab.Screen*/}
+      {/*  name={ROUTES.DOWNLOAD_SCREEN}*/}
+      {/*  component={DownloadScreen}*/}
+      {/*  options={{*/}
+      {/*    tabBarLabel: 'Downloads',*/}
+      {/*    tabBarIcon: (focused) => {*/}
+      {/*      return <FolderSvg />;*/}
+      {/*    },*/}
+      {/*  }}*/}
+      {/*/>*/}
       <Tab.Screen
         name={ROUTES.PERSONAL_INFO}
         component={InfoScreen}
