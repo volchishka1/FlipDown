@@ -27,18 +27,18 @@ export const InfoScreenView: FC<InfoScreenViewProps> = (props) => {
         snapPoints={snapPoints}
         goToCloseBottomSheet={goToCloseBottomSheet}
       />
-      <View>
+      <View style={infoScreenStyles.centerContainer}>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToTermsAndConditionalsModal}>
-          <Text style={{ color: 'white' }}>{'Terms and conditions'}</Text>
+          <Text style={infoScreenStyles.textStyle}>{'Terms and conditions'}</Text>
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToPrivacyPolicyModal}>
-          <Text style={{ color: 'white' }}>{'Privacy policy'}</Text>
+          <Text style={infoScreenStyles.textStyle}>{'Privacy policy'}</Text>
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToContactsModal}>
-          <Text style={{ color: 'white' }}>{'Contacts'}</Text>
+          <Text style={infoScreenStyles.textStyle}>{'Contacts'}</Text>
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToAboutSheet}>
-          <Text style={{ color: 'white' }}>{'About'}</Text>
+          <Text style={infoScreenStyles.textStyle}>{'About'}</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
