@@ -1,6 +1,8 @@
-import { ScrollView, Text } from 'react-native';
+import { Text } from 'react-native';
 
 import React, { FC } from 'react';
+
+import { ScrollView } from 'react-native-gesture-handler';
 
 import { CloseWindowComponent } from '../../components/closeWindowComponent/closeWindowComponent';
 
