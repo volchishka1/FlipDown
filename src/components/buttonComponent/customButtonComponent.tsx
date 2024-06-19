@@ -7,7 +7,7 @@ import { customButtonStyles } from './styles';
 export type CustomButtonProps = {
   onPress: () => void;
   textButton: string;
-  style?: any;
+  style?: [string, any];
   isLoad?: boolean;
 };
 
