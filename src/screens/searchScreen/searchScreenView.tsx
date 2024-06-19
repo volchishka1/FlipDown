@@ -29,7 +29,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
           accessibilityLabel={'Text input field'}
           style={searchScreenStyles.input}
         />
-        <CustomButton onPress={setInputValue} textButton={'Скачать'} isLoad={isLoad} />
+        <CustomButton onPress={setInputValue} textButton={'Download'} isLoad={isLoad} />
       </View>
       <View style={searchScreenStyles.bottomContainer}>
         {showLoad && (
@@ -38,13 +38,13 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
             <View style={searchScreenStyles.buttonDataContainer}>
               <CustomButton
                 onPress={saveVideo}
-                textButton={'Скачать видео'}
+                textButton={'Download video'}
                 style={searchScreenStyles.buttonStyle}
                 isLoad={false}
               />
               <CustomButton
                 onPress={saveMusic}
-                textButton={'Скачать mp3'}
+                textButton={'Download mp3'}
                 style={searchScreenStyles.buttonStyle}
                 isLoad={false}
               />
