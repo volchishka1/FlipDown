@@ -6,7 +6,6 @@ export type LogoComponentStyles = {
 
 export const logoComponentStyles = StyleSheet.create<LogoComponentStyles>({
   centerContainer: {
-    marginVertical: '30%',
     alignItems: 'center',
     borderRadius: 100,
   },
