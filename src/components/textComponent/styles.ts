@@ -14,6 +14,12 @@ export const textStyle = StyleSheet.create<TextStyleProps>({
   rootTextContainer: {
     marginBottom: 30,
   },
-  textStyle: {},
-  paragraphStyle: {},
+  textStyle: {
+    fontFamily: 'Roboto',
+    color: '#ffffff',
+  },
+  paragraphStyle: {
+    fontFamily: 'Roboto-Medium',
+    color: '#c9c9c9',
+  },
 });
