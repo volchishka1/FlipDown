@@ -1,4 +1,4 @@
-import { Image, TextInput, View } from 'react-native';
+import { Image, SafeAreaView, TextInput, View } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -20,8 +20,10 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     showLoad = false,
   } = props;
   return (
-    <View style={searchScreenStyles.rootContainer}>
-      <LogoComponent />
+    <SafeAreaView style={searchScreenStyles.rootContainer}>
+      <View style={searchScreenStyles.topContainer}>
+        <LogoComponent />
+      </View>
       <View style={searchScreenStyles.inputContainer}>
         <TextInput
           value={link}
@@ -52,6 +54,6 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
           </View>
         )}
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
