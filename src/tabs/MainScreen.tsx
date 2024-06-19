@@ -16,7 +16,7 @@ export const MainScreen = () => {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: true,
-        tabBarLabelStyle: { color: '#6563ff', fontSize: 12 },
+        tabBarLabelStyle: { color: '#6563ff', fontSize: 12, fontFamily: 'Roboto-Medium' },
       }}>
       <Tab.Screen
         name={ROUTES.SEARCH_SCREEN}
