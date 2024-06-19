@@ -16,6 +16,7 @@ export const customButtonStyles = StyleSheet.create<CustomButtonStylesProps>({
     alignItems: 'center',
   },
   textButton: {
+    fontFamily: 'Roboto-Medium',
     color: 'white',
   },
 });
