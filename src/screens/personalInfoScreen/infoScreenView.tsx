@@ -3,6 +3,8 @@ import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import React, { FC } from 'react';
 
 import { BottomSheetsModals } from '../../components/bottomSheets/bottomSheetsModals';
+import { LogoComponent } from '../../components/logoComponent/logoComponent';
+import { TextComponent } from '../../components/textComponent/textComponent';
 
 import { infoScreenStyles } from './styles';
 import { InfoScreenViewProps } from './types';
@@ -40,6 +42,12 @@ export const InfoScreenView: FC<InfoScreenViewProps> = (props) => {
         <TouchableOpacity accessibilityRole={'button'} onPress={goToAboutSheet}>
           <Text style={infoScreenStyles.textStyle}>{'About'}</Text>
         </TouchableOpacity>
+      </View>
+      <View style={infoScreenStyles.bottomContainer}>
+        <LogoComponent />
+        <View style={infoScreenStyles.textDescriptionContainer}>
+          <TextComponent text={'© 2024 FlipTok. All rights reserved.'} />
+        </View>
       </View>
     </SafeAreaView>
   );
