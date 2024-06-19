@@ -11,7 +11,7 @@ export const ParagraphComponent: FC<ParagraphComponentProps> = (props) => {
   const { paragraphName } = props;
   return (
     <View style={textStyle.rootParagraphContainer}>
-      <Text style={{ color: 'white' }}>{paragraphName}</Text>
+      <Text style={textStyle.paragraphStyle}>{paragraphName}</Text>
     </View>
   );
 };
