@@ -14,11 +14,12 @@ export const infoScreenStyles = StyleSheet.create<Styles>({
   centerContainer: {
     justifyContent: 'space-between',
     marginTop: '15%',
-    height: '30%',
-    marginHorizontal: '2%',
+    height: '25%',
+    marginHorizontal: '3%',
   },
   textStyle: {
-    color: 'white',
+    fontFamily: 'Roboto-Bold',
+    color: '#ffffff',
     fontSize: 20,
   },
 });
