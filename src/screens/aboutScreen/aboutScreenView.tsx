@@ -1,10 +1,12 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import React, { FC } from 'react';
 
 import { ScrollView } from 'react-native-gesture-handler';
 
 import { CloseWindowComponent } from '../../components/closeWindowComponent/closeWindowComponent';
+import { ParagraphComponent } from '../../components/textComponent/paragraphComponent';
+import { TextComponent } from '../../components/textComponent/textComponent';
 
 import { aboutScreenStyles } from './styles';
 
@@ -17,8 +19,9 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
     <View style={aboutScreenStyles.rootContainer}>
       <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
       <ScrollView style={aboutScreenStyles.centerContainer}>
-        <Text>
-          {'What is the FlipTok Project?\n' +
+        <ParagraphComponent paragraphName={'What is the FlipTok Project?'} />
+        <TextComponent
+          text={
             'If you need to download videos from TikTok and you do not know how to do it, we advise you to pay attention to the FlipTok project. FlipTok is a website that allows you to deal with the task in just a few seconds. The service is characterized by a simple and clear interface, which means that it allows you to find and download any videos from TikTok, and will be easy to understand for teenagers and older users. There will be no difficulties because we offer the best solution to save clips on any device.\n' +
             '\n' +
             'How to use the service?\n' +
@@ -45,8 +48,9 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
             '\n' +
             'Downloading is fast, literally in a few seconds for standard-sized videos up to 60 seconds long. Longer videos will take longer to save, but the quality will remain original.\n' +
             '\n' +
-            "Are you ready to get acquainted with FlipTok service? Hurry up and enjoy videos from TikTok without using the app and internet connection. Our service has already been chosen by hundreds of users of the popular application. It's really the easiest and most convenient way to download clips without watermarking and registration that you and your loved ones are sure to enjoy!"}
-        </Text>
+            "Are you ready to get acquainted with FlipTok service? Hurry up and enjoy videos from TikTok without using the app and internet connection. Our service has already been chosen by hundreds of users of the popular application. It's really the easiest and most convenient way to download clips without watermarking and registration that you and your loved ones are sure to enjoy!"
+          }
+        />
       </ScrollView>
     </View>
   );
