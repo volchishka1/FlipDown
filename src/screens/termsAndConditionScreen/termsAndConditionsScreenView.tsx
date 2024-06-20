@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -18,7 +18,7 @@ export const TermsAndConditionComponent: FC<TermsAndConditionsTypes> = ({
   goToCloseBottomSheet,
 }) => {
   return (
-    <View style={termsAndConditionsStyles.rootContainer}>
+    <SafeAreaView style={termsAndConditionsStyles.rootContainer}>
       <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
       <ScrollView style={termsAndConditionsStyles.centerContainer}>
         <ParagraphComponent paragraphName={'TERMS AND CONDITIONS'} />
@@ -251,6 +251,6 @@ export const TermsAndConditionComponent: FC<TermsAndConditionsTypes> = ({
             'fliptokapp@gmail.com'}
         </Text>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -16,7 +16,7 @@ export type AboutScreenProps = {
 
 export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) => {
   return (
-    <View style={aboutScreenStyles.rootContainer}>
+    <SafeAreaView style={aboutScreenStyles.rootContainer}>
       <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
       <ScrollView style={aboutScreenStyles.centerContainer}>
         <ParagraphComponent paragraphName={'What is the FlipTok Project?'} />
@@ -52,6 +52,6 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           }
         />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -15,7 +15,7 @@ export type ContactsScreenProps = {
 };
 export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomSheet }) => {
   return (
-    <View style={contactScreenStyles.rootContainer}>
+    <SafeAreaView style={contactScreenStyles.rootContainer}>
       <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
       <ScrollView style={contactScreenStyles.centerContainer}>
         <ParagraphComponent paragraphName={'Contact us'} />
@@ -31,6 +31,6 @@ export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomShe
           }
         />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

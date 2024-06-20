@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { SafeAreaView, Text } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -14,7 +14,7 @@ export type PrivacyPolicyScreenTypes = {
 
 export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToCloseBottomSheet }) => {
   return (
-    <View style={privacyPolicyScreenStyles.rootContainer}>
+    <SafeAreaView style={privacyPolicyScreenStyles.rootContainer}>
       <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
       <ScrollView style={privacyPolicyScreenStyles.centerContainer}>
         <Text>
@@ -382,6 +382,6 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
             'Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it.'}
         </Text>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
