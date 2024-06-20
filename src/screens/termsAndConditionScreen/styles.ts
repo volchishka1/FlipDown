@@ -11,5 +11,6 @@ export const termsAndConditionsStyles = StyleSheet.create<TermsAndConditionStyle
   },
   centerContainer: {
     marginHorizontal: '3%',
+    marginBottom: '10%',
   },
 });

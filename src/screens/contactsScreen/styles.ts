@@ -12,5 +12,6 @@ export const contactScreenStyles = StyleSheet.create<ContactScreenStyles>({
   },
   centerContainer: {
     marginHorizontal: '3%',
+    marginBottom: '10%',
   },
 });

@@ -11,5 +11,6 @@ export const privacyPolicyScreenStyles = StyleSheet.create<PrivacyPolicyScreenSt
   },
   centerContainer: {
     marginHorizontal: '3%',
+    marginBottom: '10%',
   },
 });

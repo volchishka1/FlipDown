@@ -11,5 +11,6 @@ export const aboutScreenStyles = StyleSheet.create<AboutScreenStyles>({
   },
   centerContainer: {
     marginHorizontal: '3%',
+    marginBottom: '10%',
   },
 });
