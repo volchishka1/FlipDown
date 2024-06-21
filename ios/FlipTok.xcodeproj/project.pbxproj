@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* FlipTokTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FlipTokTests.m */; };
+		0145FE905A4A4A2A85E31C34 /* SFPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E374148393FA486CAE649BC0 /* SFPro-Medium.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-FlipTok.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-FlipTok.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-FlipTok-FlipTokTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-FlipTok-FlipTokTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		B8479FFF9D09B9B0FE576C86 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EDF9AEF1A5C4821E0B707C16 /* PrivacyInfo.xcprivacy */; };
-		3CB0E203541E49FE9F7A244B /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5058F345803D409FA6510F1C /* Inter-Regular.ttf */; };
-		D313D1E0F78B4650B9F0F6AB /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7130FA845C48D88EAEB57A /* Roboto-Bold.ttf */; };
-		7B7EDD848024491B978A4158 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DF3C287CEFA4E12AF3CD70F /* Roboto-Medium.ttf */; };
-		F502E0B980A54F61BEFD0D46 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E05F7B2C155466EB982079C /* Roboto.ttf */; };
-		F9FBD4B33FF64929B23C64ED /* SFPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D57F6EDA8474C2F903743AB /* SFPro-Bold.ttf */; };
-		0145FE905A4A4A2A85E31C34 /* SFPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E374148393FA486CAE649BC0 /* SFPro-Medium.ttf */; };
 		1A02E942C8E0479D89EC390B /* SFPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C0E665ED47044CCA27F0C0E /* SFPro-Semibold.ttf */; };
 		386FFD5E846B49219974857B /* SFPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2035921560754B2195483F1A /* SFPro.ttf */; };
+		3CB0E203541E49FE9F7A244B /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5058F345803D409FA6510F1C /* Inter-Regular.ttf */; };
 		5E0C509A055B4A78A840C338 /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A746CFCC89A483892434BDB /* SFProText-Semibold.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-FlipTok-FlipTokTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-FlipTok-FlipTokTests.a */; };
+		7B7EDD848024491B978A4158 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DF3C287CEFA4E12AF3CD70F /* Roboto-Medium.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8A70DCD2E0E948A9B2F98791 /* SFProText.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 168BB338680F473786A70108 /* SFProText.ttf */; };
+		B8479FFF9D09B9B0FE576C86 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EDF9AEF1A5C4821E0B707C16 /* PrivacyInfo.xcprivacy */; };
+		D313D1E0F78B4650B9F0F6AB /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB7130FA845C48D88EAEB57A /* Roboto-Bold.ttf */; };
+		F502E0B980A54F61BEFD0D46 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E05F7B2C155466EB982079C /* Roboto.ttf */; };
+		F9FBD4B33FF64929B23C64ED /* SFPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D57F6EDA8474C2F903743AB /* SFPro-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,25 +48,25 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FlipTok/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FlipTok/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = FlipTok/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		168BB338680F473786A70108 /* SFProText.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SFProText.ttf; path = ../assets/fonts/SFProText.ttf; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-FlipTok-FlipTokTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTok-FlipTokTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF3C287CEFA4E12AF3CD70F /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		2035921560754B2195483F1A /* SFPro.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SFPro.ttf; path = ../assets/fonts/SFPro.ttf; sourceTree = "<group>"; };
+		2A746CFCC89A483892434BDB /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Semibold.ttf"; path = "../assets/fonts/SFProText-Semibold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-FlipTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTok.debug.xcconfig"; path = "Target Support Files/Pods-FlipTok/Pods-FlipTok.debug.xcconfig"; sourceTree = "<group>"; };
+		4E05F7B2C155466EB982079C /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = ../assets/fonts/Roboto.ttf; sourceTree = "<group>"; };
+		5058F345803D409FA6510F1C /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-FlipTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTok.release.xcconfig"; path = "Target Support Files/Pods-FlipTok/Pods-FlipTok.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-FlipTok-FlipTokTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTok-FlipTokTests.debug.xcconfig"; path = "Target Support Files/Pods-FlipTok-FlipTokTests/Pods-FlipTok-FlipTokTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-FlipTok.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlipTok.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C0E665ED47044CCA27F0C0E /* SFPro-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFPro-Semibold.ttf"; path = "../assets/fonts/SFPro-Semibold.ttf"; sourceTree = "<group>"; };
+		6D57F6EDA8474C2F903743AB /* SFPro-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFPro-Bold.ttf"; path = "../assets/fonts/SFPro-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FlipTok/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-FlipTok-FlipTokTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlipTok-FlipTokTests.release.xcconfig"; path = "Target Support Files/Pods-FlipTok-FlipTokTests/Pods-FlipTok-FlipTokTests.release.xcconfig"; sourceTree = "<group>"; };
+		BB7130FA845C48D88EAEB57A /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		E374148393FA486CAE649BC0 /* SFPro-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFPro-Medium.ttf"; path = "../assets/fonts/SFPro-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EDF9AEF1A5C4821E0B707C16 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = FlipTok/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		5058F345803D409FA6510F1C /* Inter-Regular.ttf */ = {isa = PBXFileReference; name = "Inter-Regular.ttf"; path = "../assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		BB7130FA845C48D88EAEB57A /* Roboto-Bold.ttf */ = {isa = PBXFileReference; name = "Roboto-Bold.ttf"; path = "../assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1DF3C287CEFA4E12AF3CD70F /* Roboto-Medium.ttf */ = {isa = PBXFileReference; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4E05F7B2C155466EB982079C /* Roboto.ttf */ = {isa = PBXFileReference; name = "Roboto.ttf"; path = "../assets/fonts/Roboto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6D57F6EDA8474C2F903743AB /* SFPro-Bold.ttf */ = {isa = PBXFileReference; name = "SFPro-Bold.ttf"; path = "../assets/fonts/SFPro-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E374148393FA486CAE649BC0 /* SFPro-Medium.ttf */ = {isa = PBXFileReference; name = "SFPro-Medium.ttf"; path = "../assets/fonts/SFPro-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6C0E665ED47044CCA27F0C0E /* SFPro-Semibold.ttf */ = {isa = PBXFileReference; name = "SFPro-Semibold.ttf"; path = "../assets/fonts/SFPro-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2035921560754B2195483F1A /* SFPro.ttf */ = {isa = PBXFileReference; name = "SFPro.ttf"; path = "../assets/fonts/SFPro.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2A746CFCC89A483892434BDB /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; name = "SFProText-Semibold.ttf"; path = "../assets/fonts/SFProText-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		168BB338680F473786A70108 /* SFProText.ttf */ = {isa = PBXFileReference; name = "SFProText.ttf"; path = "../assets/fonts/SFProText.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,19 +163,8 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3B4392A12AC88292D35C810B /* Pods-FlipTok.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-FlipTok.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-FlipTok-FlipTokTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-FlipTok-FlipTokTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		A3DA779228C5464AAA6CCE52 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				5058F345803D409FA6510F1C /* Inter-Regular.ttf */,
 				BB7130FA845C48D88EAEB57A /* Roboto-Bold.ttf */,
@@ -189,8 +178,19 @@
 				168BB338680F473786A70108 /* SFProText.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
+		};
+		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B4392A12AC88292D35C810B /* Pods-FlipTok.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-FlipTok.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-FlipTok-FlipTokTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-FlipTok-FlipTokTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
