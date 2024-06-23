@@ -14,8 +14,7 @@ export const textStyle = StyleSheet.create<TextStyleProps>({
     marginBottom: 10,
   },
   rootTextContainer: {
-    marginTop: 10,
-    // backgroundColor: 'blue',
+    marginRight: '5%',
   },
   rootHeaderContainer: {
     marginBottom: 10,
