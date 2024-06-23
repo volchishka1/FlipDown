@@ -8,10 +8,11 @@ export type DotComponentStyles = {
 export const dotComponentStyles = StyleSheet.create<DotComponentStyles>({
   rootContainer: {
     flexDirection: 'row',
-    marginHorizontal: 5,
-    backgroundColor: 'green',
+    alignItems: 'center',
+    marginHorizontal: '2%',
   },
   dot: {
+    marginRight: 10,
     width: 6,
     height: 6,
     borderRadius: 5,
