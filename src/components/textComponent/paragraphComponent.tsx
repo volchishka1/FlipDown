@@ -5,13 +5,14 @@ import React, { FC } from 'react';
 import { textStyle } from './styles';
 
 export interface ParagraphComponentProps {
-  paragraphName: string;
+  paragraphName?: string;
+  textStyles?: any;
 }
 export const ParagraphComponent: FC<ParagraphComponentProps> = (props) => {
-  const { paragraphName } = props;
+  const { paragraphName, textStyles } = props;
   return (
     <View style={textStyle.rootParagraphContainer}>
-      <Text style={textStyle.paragraphStyle}>{paragraphName}</Text>
+      <Text style={[textStyle.paragraphStyle, textStyles]}>{paragraphName}</Text>
     </View>
   );
 };
