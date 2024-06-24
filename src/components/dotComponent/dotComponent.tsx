@@ -15,7 +15,9 @@ export const DotComponent: FC<DotComponentProps> = (props) => {
   return (
     <View style={[dotComponentStyles.rootContainer, style]}>
       <View style={dotComponentStyles.dot} />
-      <TextComponent text={text} />
+      <View style={dotComponentStyles.textContainer}>
+        <TextComponent text={text} />
+      </View>
     </View>
   );
 };
