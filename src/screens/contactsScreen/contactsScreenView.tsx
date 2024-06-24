@@ -19,14 +19,15 @@ export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomShe
       <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
       <ScrollView style={contactScreenStyles.centerContainer}>
         <ParagraphComponent paragraphName={'Contact us'} />
+        <TextComponent text={'You can contact us using the following contact data:'} />
+        <TextComponent text={'Email: fliptokapp@gmail.com'} />
         <TextComponent
           text={
-            'You can contact us using the following contact data:\n' +
-            '\n' +
-            'Email: fliptokapp@gmail.com\n' +
-            '\n' +
-            'If you have questions, suggestions or comments, please do not hesitate to contact us. We are always ready to help you and answer all your questions.\n' +
-            '\n' +
+            'If you have questions, suggestions or comments, please do not hesitate to contact us. We are always ready to help you and answer all your questions.'
+          }
+        />
+        <TextComponent
+          text={
             'We value your attention to our site and are always ready to help you. Regardless of questions or requests, you can be sure that you will receive our professional and friendly support.'
           }
         />
