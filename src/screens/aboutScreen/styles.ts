@@ -5,6 +5,7 @@ export type AboutScreenStyles = {
   centerContainer: ViewStyle;
   dotComponent: ViewStyle;
   textStyle: TextStyle;
+  paragraphStyle: TextStyle;
 };
 
 export const aboutScreenStyles = StyleSheet.create<AboutScreenStyles>({
@@ -21,5 +22,8 @@ export const aboutScreenStyles = StyleSheet.create<AboutScreenStyles>({
   },
   textStyle: {
     marginBottom: 10,
+  },
+  paragraphStyle: {
+    fontSize: 18,
   },
 });
