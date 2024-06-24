@@ -22,52 +22,131 @@ export const TermsAndConditionComponent: FC<TermsAndConditionsTypes> = ({
       <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
       <ScrollView style={termsAndConditionsStyles.centerContainer}>
         <ParagraphComponent paragraphName={'TERMS AND CONDITIONS'} />
-        <TextComponent text={'Last updated May 10, 2023'} />
-        <ParagraphComponent paragraphName={'AGREEMENT TO OUR LEGAL TERMS'} />
-        <TextComponent text={'We are FlipTok ("Company," "we," "us," "our").'} />
+        <TextComponent
+          text={'Last updated May 10, 2023'}
+          style={termsAndConditionsStyles.descriptionUpdated}
+        />
+        <ParagraphComponent
+          textStyles={termsAndConditionsStyles.paragraphText}
+          paragraphName={'AGREEMENT TO OUR LEGAL TERMS'}
+        />
+        <TextComponent
+          style={termsAndConditionsStyles.descriptionText}
+          text={'We are FlipTok ("Company," "we," "us," "our").'}
+        />
+        <TextComponent
+          style={termsAndConditionsStyles.descriptionText}
+          text={
+            'We operate the website https://fliptok.app (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").'
+          }
+        />
+        <TextComponent
+          style={termsAndConditionsStyles.descriptionText}
+          text={'You can contact us by email at fliptokapp@gmail.com'}
+        />
+        <TextComponent
+          style={termsAndConditionsStyles.descriptionText}
+          text={
+            'These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and FlipTok, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.'
+          }
+        />
+        <TextComponent
+          style={termsAndConditionsStyles.descriptionText}
+          text={
+            'Supplemental terms and conditions or documents that may be posted on the Services from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Legal Terms from time to time. We will alert you about any changes by updating the "Last updated" date of these Legal Terms, and you waive any right to receive specific notice of each such change. It is your responsibility to periodically review these Legal Terms to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Legal Terms by your continued use of the Services after the date such revised Legal Terms are posted.'
+          }
+        />
+        <TextComponent
+          style={termsAndConditionsStyles.descriptionText}
+          text={
+            'All users who are minors in the jurisdiction in which they reside (generally under the age of 18) must have the permission of, and be directly supervised by, their parent or guardian to use the Services. If you are a minor, you must have your parent or guardian read and agree to these Legal Terms prior to you using the Services.'
+          }
+        />
+        <TextComponent
+          style={termsAndConditionsStyles.descriptionText}
+          text={'We recommend that you print a copy of these Legal Terms for your records.'}
+        />
+        <ParagraphComponent
+          textStyles={termsAndConditionsStyles.paragraphText}
+          paragraphName={'TABLE OF CONTENTS'}
+        />
+        <TextComponent text={'1. OUR SERVICES'} />
+        <TextComponent text={'2. INTELLECTUAL PROPERTY RIGHTS'} />
+        <TextComponent text={'3. USER REPRESENTATIONS'} />
+        <TextComponent text={'4. PROHIBITED ACTIVITIES'} />
+        <TextComponent text={'5. USER GENERATED CONTRIBUTIONS'} />
+        <TextComponent text={'6. CONTRIBUTION LICENSE'} />
+        <TextComponent text={'7. ADVERTISERS'} />
+        <TextComponent text={'8. SERVICES MANAGEMENT'} />
+        <TextComponent text={'9. PRIVACY POLICY'} />
+        <TextComponent text={'10. TERM AND TERMINATION'} />
+        <TextComponent text={'11. MODIFICATIONS AND INTERRUPTIONS'} />
+        <TextComponent text={'12. GOVERNING LAW'} />
+        <TextComponent text={'13. DISPUTE RESOLUTION'} />
+        <TextComponent text={'14. CORRECTIONS'} />
+        <TextComponent text={'16. LIMITATIONS OF LIABILITY'} />
+        <TextComponent text={'17. INDEMNIFICATION'} />
+        <TextComponent text={'18. USER DATA'} />
+        <TextComponent text={'19. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES'} />
+        <TextComponent text={'20. CALIFORNIA USERS AND RESIDENTS'} />
+        <TextComponent text={'21. MISCELLANEOUS'} />
+        <TextComponent text={'22. CONTACT US'} />
+        <ParagraphComponent paragraphName={'1. OUR SERVICES'} />
+        <TextComponent
+          style={termsAndConditionsStyles.descriptionText}
+          text={
+            'The information provided when using the Services is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access the Services from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.'
+          }
+        />
+        <TextComponent
+          style={termsAndConditionsStyles.descriptionText}
+          text={
+            'The Services are not tailored to comply with industry-specific regulations (Health Insurance Portability and Accountability Act (HIPAA), Federal Information Security Management Act (FISMA), etc.), so if your interactions would be subjected to such laws, you may not use the Services. You may not use the Services in a way that would violate the Gramm-Leach-Bliley Act (GLBA).'
+          }
+        />
+        <ParagraphComponent
+          textStyles={termsAndConditionsStyles.paragraphText}
+          paragraphName={'2. INTELLECTUAL PROPERTY RIGHTS'}
+        />
+        <TextComponent text={'Our intellectual property'} />
+        <TextComponent
+          text={
+            'We are the owner or the licensee of all intellectual property rights in our Services, including all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics in the Services (collectively, the "Content"), as well as the trademarks, service marks, and logos contained therein (the "Marks").'
+          }
+        />
+        <TextComponent
+          text={
+            'Our Content and Marks are protected by copyright and trademark laws (and various other intellectual property rights and unfair competition laws) and treaties in the United States and around the world.'
+          }
+        />
+        <TextComponent
+          text={
+            'The Content and Marks are provided in or through the Services "AS IS" for your personal, non-commercial use or internal business purpose only.'
+          }
+        />
+        <TextComponent text={'Your use of our Services'} />
+        <TextComponent
+          text={
+            'Subject to your compliance with these Legal Terms, including the "PROHIBITED ACTIVITIES" section below, we grant you a non-exclusive, non-transferable, revocable license to: access the Services; and download or print a copy of any portion of the Content to which you have properly gained access. solely for your personal, non-commercial use or internal business purpose.'
+          }
+        />
+        <TextComponent
+          text={
+            'The Content and Marks are provided in or through the Services "AS IS" for your personal, non-commercial use or internal business purpose only.'
+          }
+        />
+        <TextComponent
+          text={
+            'The Content and Marks are provided in or through the Services "AS IS" for your personal, non-commercial use or internal business purpose only.'
+          }
+        />
+        <TextComponent
+          text={
+            'The Content and Marks are provided in or through the Services "AS IS" for your personal, non-commercial use or internal business purpose only.'
+          }
+        />
         <Text>
-          {'\n' +
-            '\n' +
-            'We operate the website https://fliptok.app (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").\n' +
-            '\n' +
-            'You can contact us by email at fliptokapp@gmail.com\n' +
-            '\n' +
-            'These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and FlipTok, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.\n' +
-            '\n' +
-            'Supplemental terms and conditions or documents that may be posted on the Services from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Legal Terms from time to time. We will alert you about any changes by updating the "Last updated" date of these Legal Terms, and you waive any right to receive specific notice of each such change. It is your responsibility to periodically review these Legal Terms to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Legal Terms by your continued use of the Services after the date such revised Legal Terms are posted.\n' +
-            '\n' +
-            'All users who are minors in the jurisdiction in which they reside (generally under the age of 18) must have the permission of, and be directly supervised by, their parent or guardian to use the Services. If you are a minor, you must have your parent or guardian read and agree to these Legal Terms prior to you using the Services.\n' +
-            '\n' +
-            'We recommend that you print a copy of these Legal Terms for your records.\n' +
-            '\n' +
-            '\n' +
-            'TABLE OF CONTENTS\n' +
-            '\n' +
-            '1. OUR SERVICES\n' +
-            '2. INTELLECTUAL PROPERTY RIGHTS\n' +
-            '3. USER REPRESENTATIONS\n' +
-            '4. PROHIBITED ACTIVITIES\n' +
-            '5. USER GENERATED CONTRIBUTIONS\n' +
-            '6. CONTRIBUTION LICENSE\n' +
-            '7. ADVERTISERS\n' +
-            '8. SERVICES MANAGEMENT\n' +
-            '9. PRIVACY POLICY\n' +
-            '10. TERM AND TERMINATION\n' +
-            '11. MODIFICATIONS AND INTERRUPTIONS\n' +
-            '12. GOVERNING LAW\n' +
-            '13. DISPUTE RESOLUTION\n' +
-            '14. CORRECTIONS\n' +
-            '15. DISCLAIMER\n' +
-            '16. LIMITATIONS OF LIABILITY\n' +
-            '17. INDEMNIFICATION\n' +
-            '18. USER DATA\n' +
-            '19. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES\n' +
-            '20. CALIFORNIA USERS AND RESIDENTS\n' +
-            '21. MISCELLANEOUS\n' +
-            '22. CONTACT US\n' +
-            '\n' +
-            '\n' +
-            '1. OUR SERVICES\n' +
+          {'1. OUR SERVICES\n' +
             '\n' +
             'The information provided when using the Services is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access the Services from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable.\n' +
             '\n' +
