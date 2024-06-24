@@ -1,0 +1,45 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Inter-Regular.ttf",
+      "sha1": "7237d9cf55f177702066a28a4dde1e4c7e8ab576"
+    },
+    {
+      "path": "assets/fonts/Roboto-Bold.ttf",
+      "sha1": "62442a18a9fe9457c1afeabf683d263a691b7798"
+    },
+    {
+      "path": "assets/fonts/Roboto-Medium.ttf",
+      "sha1": "3c6a09fcc6a454924c81af7dff94fc6d399ed79b"
+    },
+    {
+      "path": "assets/fonts/Roboto.ttf",
+      "sha1": "56c5c0d38bde4c1f1549dda43db37b09c608aad3"
+    },
+    {
+      "path": "assets/fonts/SFPro-Bold.ttf",
+      "sha1": "5bac207069d4fb49f1fced1b56182bce4a6fafaf"
+    },
+    {
+      "path": "assets/fonts/SFPro-Medium.ttf",
+      "sha1": "9984b1542bd1f676d5416b7ba6bf670c56620296"
+    },
+    {
+      "path": "assets/fonts/SFPro-Semibold.ttf",
+      "sha1": "f4199c4311205a9cb0cc46c194cec5d121e81939"
+    },
+    {
+      "path": "assets/fonts/SFPro.ttf",
+      "sha1": "e76ce993debe11fca9ad7a8f82022d40bab7074a"
+    },
+    {
+      "path": "assets/fonts/SFProText-Semibold.ttf",
+      "sha1": "9560ae412d73c7c9af72333db50464b4e597b0f9"
+    },
+    {
+      "path": "assets/fonts/SFProText.ttf",
+      "sha1": "b4893462f2289df6978f9462a63db9e64bcc9342"
+    }
+  ]
+}
