@@ -6,7 +6,6 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import { CloseWindowComponent } from '../../components/closeWindowComponent/closeWindowComponent';
 import { DotComponent } from '../../components/dotComponent/dotComponent';
-import { HeaderComponent } from '../../components/textComponent/headerComponent';
 import { ParagraphComponent } from '../../components/textComponent/paragraphComponent';
 import { TextComponent } from '../../components/textComponent/textComponent';
 
@@ -28,7 +27,10 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
             'If you need to download videos from TikTok and you do not know how to do it, we advise you to pay attention to the FlipTok project. FlipTok is a website that allows you to deal with the task in just a few seconds. The service is characterized by a simple and clear interface, which means that it allows you to find and download any videos from TikTok, and will be easy to understand for teenagers and older users. There will be no difficulties because we offer the best solution to save clips on any device.'
           }
         />
-        <HeaderComponent headerName={'How to use the service?'} />
+        <ParagraphComponent
+          textStyles={aboutScreenStyles.paragraphStyle}
+          paragraphName={'How to use the service?'}
+        />
         <TextComponent
           style={aboutScreenStyles.textStyle}
           text={
@@ -54,7 +56,10 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
             'On this website, you can download not only short video clips but also music from TikTok. The algorithm of actions does not change. It is just as easy and simple.\n'
           }
         />
-        <HeaderComponent headerName={'Benefits of FlipTok. What should a user know?'} />
+        <ParagraphComponent
+          textStyles={aboutScreenStyles.paragraphStyle}
+          paragraphName={'Benefits of FlipTok. What should a user know?'}
+        />
         <TextComponent
           style={aboutScreenStyles.textStyle}
           text={
