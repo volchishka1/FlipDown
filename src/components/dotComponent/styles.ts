@@ -2,6 +2,7 @@ import { StyleSheet, ViewStyle } from 'react-native';
 
 export type DotComponentStyles = {
   rootContainer: ViewStyle;
+  textContainer: ViewStyle;
   dot: ViewStyle;
 };
 
@@ -17,5 +18,8 @@ export const dotComponentStyles = StyleSheet.create<DotComponentStyles>({
     height: 6,
     borderRadius: 5,
     backgroundColor: '#ffffff',
+  },
+  textContainer: {
+    marginHorizontal: '3%',
   },
 });
