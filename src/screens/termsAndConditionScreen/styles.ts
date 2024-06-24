@@ -6,6 +6,8 @@ export type TermsAndConditionStyles = {
   descriptionUpdated: TextStyle;
   descriptionText: TextStyle;
   paragraphText: TextStyle;
+  paragraphDescriptionText: TextStyle;
+  footerTextStyle: TextStyle;
 };
 
 export const termsAndConditionsStyles = StyleSheet.create<TermsAndConditionStyles>({
@@ -23,7 +25,16 @@ export const termsAndConditionsStyles = StyleSheet.create<TermsAndConditionStyle
   descriptionText: {
     marginBottom: 10,
   },
+  paragraphDescriptionText: {
+    fontSize: 18,
+  },
   paragraphText: {
     fontSize: 18,
+  },
+  footerTextStyle: {
+    fontFamily: 'Roboto-Bold',
+  },
+  tableContainer: {
+    marginBottom: 10,
   },
 });
