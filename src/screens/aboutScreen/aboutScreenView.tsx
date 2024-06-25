@@ -19,9 +19,14 @@ export type AboutScreenProps = {
 export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) => {
   return (
     <SafeAreaView style={aboutScreenStyles.rootContainer}>
-      <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
+      <View style={globalStyles.topContainer}>
+        <ParagraphComponent
+          style={globalStyles.headerName}
+          paragraphName={'What is the FlipTok Project?'}
+        />
+        <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
+      </View>
       <ScrollView style={aboutScreenStyles.centerContainer}>
-        <ParagraphComponent paragraphName={'What is the FlipTok Project?'} />
         <TextComponent
           style={globalStyles.descriptionText}
           text={

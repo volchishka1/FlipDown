@@ -20,9 +20,14 @@ export const TermsAndConditionComponent: FC<TermsAndConditionsTypes> = ({
 }) => {
   return (
     <SafeAreaView style={termsAndConditionsStyles.rootContainer}>
-      <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
+      <View style={globalStyles.topContainer}>
+        <ParagraphComponent
+          style={globalStyles.headerName}
+          paragraphName={'TERMS AND CONDITIONS'}
+        />
+        <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
+      </View>
       <ScrollView style={termsAndConditionsStyles.centerContainer}>
-        <ParagraphComponent paragraphName={'TERMS AND CONDITIONS'} />
         <TextComponent
           text={'Last updated May 10, 2023'}
           style={globalStyles.descriptionUpdatedText}

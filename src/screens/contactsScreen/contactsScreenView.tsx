@@ -1,4 +1,4 @@
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -9,6 +9,7 @@ import { ParagraphComponent } from '../../components/textComponent/paragraphComp
 import { TextComponent } from '../../components/textComponent/textComponent';
 
 import { contactScreenStyles } from './styles';
+import { globalStyles } from '../../components/globalStyles/globalStyles';
 
 export type ContactsScreenProps = {
   goToCloseBottomSheet: () => void;
@@ -16,9 +17,11 @@ export type ContactsScreenProps = {
 export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomSheet }) => {
   return (
     <SafeAreaView style={contactScreenStyles.rootContainer}>
-      <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
+      <View style={globalStyles.topContainer}>
+        <ParagraphComponent style={globalStyles.headerName} paragraphName={'Contact us'} />
+        <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
+      </View>
       <ScrollView style={contactScreenStyles.centerContainer}>
-        <ParagraphComponent paragraphName={'Contact us'} />
         <TextComponent text={'You can contact us using the following contact data:'} />
         <TextComponent text={'Email: fliptokapp@gmail.com'} />
         <TextComponent
