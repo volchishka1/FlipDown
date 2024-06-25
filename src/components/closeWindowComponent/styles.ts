@@ -7,8 +7,6 @@ export type CloseWindowStyle = {
 
 export const closeWindowStyle = StyleSheet.create<CloseWindowStyle>({
   rootContainer: {
-    marginTop: '3%',
-    marginRight: '3%',
     alignItems: 'flex-end',
   },
   buttonStyle: {
