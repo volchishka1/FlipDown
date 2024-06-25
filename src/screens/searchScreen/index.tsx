@@ -95,6 +95,7 @@ export const SearchScreen = () => {
     }).fetch('GET', urlMusic);
     urlMusic = res.path();
     console.log('UrlFetchMusic', urlMusic);
+    Alert.alert('Music saved');
   };
 
   const saveMusicOnIos = async (): Promise<void> => {
@@ -106,6 +107,7 @@ export const SearchScreen = () => {
     }).fetch('GET', urlMusic);
     urlMusic = res.path();
     console.log('UrlFetchMusic', urlMusic);
+    Alert.alert('Music saved');
   };
 
   const saveVideoOnPhone = async (): Promise<void> => {
@@ -118,17 +120,32 @@ export const SearchScreen = () => {
     url = res.path();
     console.log('urlFetch', url);
     await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' });
-    Alert.alert('Video added');
+    Alert.alert('Video saved');
   };
 
   const saveMusic = () => {
-    Platform.OS === 'android'
-      ? saveMusicOnAndroid()
-          .then()
-          .catch(() => {})
-      : saveMusicOnIos()
-          .then()
-          .catch(() => {});
+    Alert.alert('Do you want to save this music', '', [
+      {
+        isPreferred: true,
+        text: 'Yes',
+        onPress: () => {
+          Platform.OS === 'android'
+            ? saveMusicOnAndroid()
+                .then()
+                .catch(() => {})
+            : saveMusicOnIos()
+                .then()
+                .catch(() => {});
+        },
+        style: 'default',
+      },
+      {
+        isPreferred: false,
+        text: 'No',
+        onPress: () => {},
+        style: 'destructive',
+      },
+    ]);
   };
   const saveVideo = () => {
     Alert.alert('Do you want to save this video', '', [
