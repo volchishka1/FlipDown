@@ -1,14 +1,20 @@
-import { ActivityIndicator, Text, TouchableOpacity } from 'react-native';
+import {
+  ActivityIndicator,
+  Text,
+  TextProps,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from 'react-native';
 
 import React, { FC } from 'react';
 
 import { customButtonStyles } from './styles';
 
 export type CustomButtonProps = {
-  onPress: () => void;
-  textButton: string;
-  style?: [string, any];
-  isLoad?: boolean;
+  onPress: TouchableOpacityProps['onPress'];
+  textButton: TextProps['children'];
+  style?: TouchableOpacityProps['style'];
+  isLoad?: TouchableOpacityProps['aria-selected'];
 };
 
 export const CustomButton: FC<CustomButtonProps> = (props) => {

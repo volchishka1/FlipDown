@@ -6,12 +6,13 @@ import { AboutScreenView } from '../../screens/aboutScreen/aboutScreenView';
 import { ContactsScreenView } from '../../screens/contactsScreen/contactsScreenView';
 import { PrivacyPolicyScreenView } from '../../screens/privacyPolicyScreen/privacyPolicyScreenView';
 import { TermsAndConditionComponent } from '../../screens/termsAndConditionScreen/termsAndConditionsScreenView';
+import { TextProps, TouchableOpacityProps } from 'react-native';
 
 export type BottomSheetsModalsProps = {
   bottomSheetModalRef;
   snapPoints;
-  goToCloseBottomSheet: () => void;
-  actionTriggered: string;
+  goToCloseBottomSheet: TouchableOpacityProps['onPress'];
+  actionTriggered: TextProps['children'];
 };
 
 export const BottomSheetsModals: FC<BottomSheetsModalsProps> = (props) => {
