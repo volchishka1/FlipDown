@@ -24,7 +24,7 @@ export const infoScreenStyles = StyleSheet.create<Styles>({
     alignItems: 'center',
   },
   textDescriptionContainer: {
-    marginTop: '5%',
+    marginVertical: '5%',
   },
   textStyle: {
     fontFamily: 'Roboto-Bold',
