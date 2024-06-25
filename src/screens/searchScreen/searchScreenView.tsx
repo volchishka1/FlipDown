@@ -22,7 +22,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
   } = props;
   return (
     <SafeAreaView style={searchScreenStyles.rootContainer}>
-      <KeyboardAwareScrollView scrollEnabled={false} style={{ marginTop: '30%' }}>
+      <KeyboardAwareScrollView scrollEnabled={false} style={searchScreenStyles.keyboardAwareStyle}>
         <View style={searchScreenStyles.topContainer}>
           <LogoComponent />
         </View>

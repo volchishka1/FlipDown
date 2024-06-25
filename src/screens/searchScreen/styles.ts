@@ -9,6 +9,7 @@ export type Styles = {
   dataContainer: ViewStyle;
   buttonStyle: ViewStyle;
   bottomContainer: ViewStyle;
+  keyboardAwareStyle: ViewStyle;
   imageStyle: ImageStyle;
 };
 
@@ -18,11 +19,14 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
     flex: 1,
     justifyContent: 'center',
   },
+  keyboardAwareStyle: {
+    marginTop: '25%',
+  },
   topContainer: {
     marginBottom: '20%',
   },
   inputContainer: {
-    marginBottom: '15%',
+    marginBottom: '10%',
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'center',
