@@ -391,6 +391,7 @@ export const TermsAndConditionComponent: FC<TermsAndConditionsTypes> = ({
           paragraphName={'Binding Arbitration'}
         />
         <TextComponent
+          style={globalStyles.descriptionText}
           text={
             'Any dispute arising out of or in connection with these Legal Terms, including any question regarding its existence, validity, or termination, shall be referred to and finally resolved by the International Commercial Arbitration Court under the European Arbitration Chamber (Belgium, Brussels, Avenue Louise, 146) according to the Rules of this ICAC, which, as a result of referring to it, is considered as the part of this clause.'
           }
