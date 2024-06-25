@@ -29,6 +29,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           text={'Last updated May 10, 2023'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'This privacy notice for FlipTok ("Company," "we," "us," or "our"), describes how and why we might collect, store, use, and/or share ("process") your information when you use our services ("Services"), such as when you: Visit our website at https://fliptok.app/, or any website of ours that links to this privacy notice Engage with us in other related ways, including any sales, marketing, or events Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at fliptokapp@gmail.com.'
           }
@@ -48,6 +49,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           text={'What personal information do we process?'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'When you visit, use, or navigate our Services, we may process personal information depending on how you interact with FlipTok and the Services, the choices you make, and the products and features you use. Learn more about personal information you disclose to us.'
           }
@@ -56,17 +58,24 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           textStyles={globalStyles.boldText}
           text={'Do we process any sensitive personal information?'}
         />
-        <TextComponent text={'We do not process sensitive personal information.'} />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={'We do not process sensitive personal information.'}
+        />
         <TextComponent
           textStyles={globalStyles.boldText}
           text={'Do we receive any information from third parties?'}
         />
-        <TextComponent text={'We do not receive any information from third parties.'} />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={'We do not receive any information from third parties.'}
+        />
         <TextComponent
           textStyles={globalStyles.boldText}
           text={'How do we process your information?'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. Learn more about how we process your information.'
           }
@@ -76,6 +85,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           text={'In what situations and with which parties do we share personal information?'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may share information in specific situations and with specific third parties. Learn more about when and with whom we share your personal information.'
           }
@@ -85,6 +95,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           text={'How do we keep your information safe?'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We have organizational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Learn more about how we keep your information safe.'
           }
@@ -96,6 +107,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Want to learn more about what FlipTok does with any information we collect? Review the privacy notice in full.'
           }
@@ -127,14 +139,21 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           paragraphName={'1. WHAT INFORMATION DO WE COLLECT?'}
         />
         <TextComponent
-          textStyles={globalStyles.boldText}
+          textStyles={globalStyles.paragraphDescriptionNameBold}
           text={'Personal information you disclose to us'}
         />
-        <TextComponent text={'In Short:'} />
-        <TextComponent text={'We collect personal information that you provide to us.'} />
-        <TextComponent text={'Sensitive Information.'} />
-        <TextComponent text={'We do not process sensitive information.'} />
+        <TextComponent textStyles={globalStyles.boldText} text={`In Short:`} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={'We collect personal information that you provide to us.'}
+        />
+        <TextComponent textStyles={globalStyles.boldText} text={'Sensitive Information.'} />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={'We do not process sensitive information.'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.'
           }
@@ -143,18 +162,21 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           textStyles={globalStyles.paragraphName}
           paragraphName={'2. HOW DO WE PROCESS YOUR INFORMATION?'}
         />
-        <TextComponent text={'In Short:'} />
+        <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We process your personal information for a variety of reasons, depending on how you interact with our Services, including:'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'To save or protect an individual`s vital interest. We may process your information when necessary to save or protect an individual’s vital interest, such as to prevent harm.'
           }
@@ -163,43 +185,56 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           textStyles={globalStyles.paragraphName}
           paragraphName={'3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?'}
         />
-        <TextComponent text={'In Short:'} />
+        <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We only process your personal information when we believe it is necessary and we have a valid legal reason (i.e., legal basis) to do so under applicable law, like with your consent, to comply with laws, to provide you with services to enter into or fulfill our contractual obligations, to protect your rights, or to fulfill our legitimate business interests.'
           }
         />
-        <TextComponent text={'If you are located in the EU or UK, this section applies to you.'} />
         <TextComponent
+          textStyles={globalStyles.boldUnderlineText}
+          text={'If you are located in the EU or UK, this section applies to you.'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'The General Data Protection Regulation (GDPR) and UK GDPR require us to explain the valid legal bases we rely on in order to process your personal information. As such, we may rely on the following legal bases to process your personal information:'
           }
         />
-        <TextComponent text={'Consent.'} />
+        <TextComponent textStyles={globalStyles.boldText} text={'Consent.'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
-            ' We may process your information if you have given us permission (i.e., consent) to use your personal information for a specific purpose. You can withdraw your consent at any time. Learn more about withdrawing your consent.'
+            'We may process your information if you have given us permission (i.e., consent) to use your personal information for a specific purpose. You can withdraw your consent at any time. Learn more about withdrawing your consent.'
           }
         />
-        <TextComponent text={'Legal Obligations.'} />
+        <TextComponent textStyles={globalStyles.boldText} text={'Legal Obligations.'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may process your information where we believe it is necessary for compliance with our legal obligations, such as to cooperate with a law enforcement body or regulatory agency, exercise or defend our legal rights, or disclose your information as evidence in litigation in which we are involved.'
           }
         />
-        <TextComponent text={'Vital Interests.'} />
+        <TextComponent textStyles={globalStyles.boldText} text={'Vital Interests.'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may process your information where we believe it is necessary to protect your vital interests or the vital interests of a third party, such as situations involving potential threats to the safety of any person.'
           }
         />
-        <TextComponent text={'If you are located in Canada, this section applies to you.'} />
         <TextComponent
+          textStyles={globalStyles.boldUnderlineText}
+          text={'If you are located in Canada, this section applies to you.'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may process your information if you have given us specific permission (i.e., express consent) to use your personal information for a specific purpose, or in situations where your permission can be inferred (i.e., implied consent). You can withdraw your consent at any time.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'In some exceptional cases, we may be legally permitted under applicable law to process your information without your consent, including, for example:\n' +
             'If collection is clearly in the interests of an individual and consent cannot be obtained in a timely way\n' +
@@ -221,15 +256,18 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may share information in specific situations described in this section and/or with the following third parties.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={'We may need to share your personal information in the following situations:'}
         />
         <TextComponent textStyles={globalStyles.boldText} text={'Business Transfers.'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.'
           }
@@ -240,11 +278,13 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may use cookies and other tracking technologies to collect and store your information.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information. Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice.'
           }
@@ -255,16 +295,19 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We keep your information for as long as necessary to fulfill the purposes outlined in this privacy notice unless otherwise required by law.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements).'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.'
           }
@@ -275,11 +318,13 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We aim to protect your personal information through a system of organizational and technical security measures.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.'
           }
@@ -290,11 +335,13 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We do not knowingly collect data from or market to children under 18 years of age.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We do not knowingly solicit data from or market to children under 18 years of age. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent’s use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at fliptokapp@gmail.com.'
           }
@@ -305,38 +352,48 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'In some regions, such as the European Economic Area (EEA), United Kingdom (UK), and Canada, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'In some regions (like the EEA, UK, and Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; and (iv) if applicable, to data portability. In certain circumstances, you may also have the right to object to the processing of your personal information. You can make such a request by contacting us by using the contact details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?" below.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We will consider and act upon any request in accordance with applicable data protection laws.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Withdrawing your consent: If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?" below.'
           }
         />
-        <TextComponent text={'Withdrawing your consent:'} />
+        <TextComponent textStyles={globalStyles.boldText} text={'Withdrawing your consent:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?" below.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'However, please note that this will not affect the lawfulness of the processing before its withdrawal nor, when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent.'
           }
         />
-        <TextComponent text={'Cookies and similar technologies:'} />
         <TextComponent
+          textStyles={globalStyles.boldText}
+          text={'Cookies and similar technologies:'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Services.'
           }
@@ -346,6 +403,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           paragraphName={'10. CONTROLS FOR DO-NOT-TRACK FEATURES'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.'
           }
@@ -356,21 +414,27 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Yes, if you are a resident of California, you are granted specific rights regarding access to your personal information.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request in writing to us using the contact information provided below.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'If you are under 18 years of age, reside in California, and have a registered account with Services, you have the right to request removal of unwanted data that you publicly post on the Services. To request removal of such data, please contact us using the contact information provided below and include the email address associated with your account and a statement that you reside in California. We will make sure the data is not publicly displayed on the Services, but please be aware that the data may not be completely or comprehensively removed from all our systems (e.g., backups, etc.).'
           }
         />
-        <TextComponent textStyles={globalStyles.boldText} text={'CCPA Privacy Notice'} />
+        <TextComponent
+          textStyles={globalStyles.paragraphDescriptionNameBold}
+          text={'CCPA Privacy Notice'}
+        />
         <TextComponent text={'The California Code of Regulations defines a "resident" as:'} />
         <DotComponent
           text={
@@ -382,8 +446,12 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
             'every individual who is domiciled in the State of California who is outside the State of California for a temporary or transitory purpose\n'
           }
         />
-        <TextComponent text={'All other individuals are defined as "non-residents."'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={'All other individuals are defined as "non-residents."'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'If this definition of "resident" applies to you, we must adhere to certain rights and obligations regarding your personal information.'
           }
@@ -393,12 +461,14 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           text={'What categories of personal information do we collect?'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We have not collected the following categories of personal information in the past twelve (12) months:'
           }
         />
         <TextComponent textStyles={globalStyles.boldText} text={'A. Identifiers:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Contact details, such as real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, Internet Protocol address, email address, and account name'
           }
@@ -410,6 +480,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Name, contact information, education, employment, employment history, and financial information'
           }
@@ -418,31 +489,40 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           textStyles={globalStyles.boldText}
           text={'C. Protected classification characteristics under California or federal law:'}
         />
-        <TextComponent text={'Gender and date of birth'} />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={'Gender and date of birth'}
+        />
         <TextComponent textStyles={globalStyles.boldText} text={'D. Commercial information:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Transaction information, purchase history, financial details, and payment information'
           }
         />
         <TextComponent textStyles={globalStyles.boldText} text={'E. Biometric information:'} />
-        <TextComponent text={'Fingerprints and voiceprints'} />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={'Fingerprints and voiceprints'}
+        />
         <TextComponent
           textStyles={globalStyles.boldText}
           text={'F. Internet or other similar network activity:'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Browsing history, search history, online behavior, interest data, and interactions with our and other websites, applications, systems, and advertisements'
           }
         />
         <TextComponent textStyles={globalStyles.boldText} text={'G. Geolocation data:'} />
-        <TextComponent text={'Device location'} />
+        <TextComponent textStyles={globalStyles.descriptionText} text={'Device location'} />
         <TextComponent
           textStyles={globalStyles.boldText}
           text={'H. Audio, electronic, visual, thermal, olfactory, or similar information:'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Images and audio, video or call recordings created in connection with our business activities'
           }
@@ -452,17 +532,22 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           text={'I. Professional or employment-related information:'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Business contact details in order to provide you our Services at a business level or job title, work history, and professional qualifications if you apply for a job with us'
           }
         />
         <TextComponent textStyles={globalStyles.boldText} text={'J. Education Information:'} />
-        <TextComponent text={'Student records and directory information'} />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={'Student records and directory information'}
+        />
         <TextComponent
           textStyles={globalStyles.boldText}
           text={'K. Inferences drawn from other personal information:'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual’s preferences and characteristics'
           }
@@ -472,6 +557,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           text={'K. Sensitive Personal Information:'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may also collect other personal information outside of these categories through instances where you interact with us in person, online, or by phone or mail in the context of:\n' +
             'Receiving help through our customer support channels;\n' +
@@ -484,16 +570,19 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           text={'How do we use and share your personal information?'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'More information about our data collection and sharing practices can be found in this privacy notice.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'You may contact us by visiting https://fliptok.app/contact-us, or by referring to the contact details at the bottom of this document.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'If you are using an authorized agent to exercise your right to opt out we may deny a request if the authorized agent does not submit proof that they have been validly authorized to act on your behalf.'
           }
@@ -503,16 +592,19 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           text={'Will your information be shared with anyone else?'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may disclose your personal information with our service providers pursuant to a written contract between us and each service provider. Each service provider is a for-profit entity that processes the information on our behalf, following the same strict privacy protection obligations mandated by the CCPA.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may use your personal information for our own business purposes, such as for undertaking internal research for technological development and demonstration. This is not considered to be "selling" of your personal information.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'FlipTok has not disclosed, sold, or shared any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. FlipTok will not sell or share personal information in the future belonging to website visitors, users, and other consumers.'
           }
@@ -521,14 +613,22 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           textStyles={globalStyles.boldText}
           text={'Your rights with respect to your personal data'}
         />
-        <TextComponent text={'Right to request deletion of the data — Request to delete'} />
         <TextComponent
+          textStyles={globalStyles.descriptionUnderlineText}
+          text={'Right to request deletion of the data — Request to delete'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'You can ask for the deletion of your personal information. If you ask us to delete your personal information, we will respect your request and delete your personal information, subject to certain exceptions provided by law, such as (but not limited to) the exercise by another consumer of his or her right to free speech, our compliance requirements resulting from a legal obligation, or any processing that may be required to protect against illegal activities.'
           }
         />
-        <TextComponent text={'Right to be informed — Request to know'} />
         <TextComponent
+          textStyles={globalStyles.descriptionUnderlineText}
+          text={'Right to be informed — Request to know'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Depending on the circumstances, you have a right to know:\n' +
             'whether we collect and use your personal information;\n' +
@@ -543,28 +643,43 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={'Right to Non-Discrimination for the Exercise of a Consumer’s Privacy Rights'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={'We will not discriminate against you if you exercise your privacy rights.'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionUnderlineText}
           text={'Right to Limit Use and Disclosure of Sensitive Personal Information'}
         />
-        <TextComponent text={'We do not process consumer`s sensitive personal information'} />
-        <TextComponent text={'Verification process'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={'We do not process consumer`s sensitive personal information'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionUnderlineText}
+          text={'Verification process'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We will only use personal information provided in your request to verify your identity or authority to make the request. To the extent possible, we will avoid requesting additional information from you for the purposes of verification. However, if we cannot verify your identity from the information already maintained by us, we may request that you provide additional information for the purposes of verifying your identity and for security or fraud-prevention purposes. We will delete such additionally provided information as soon as we finish verifying you.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Upon receiving your request, we will need to verify your identity to determine you are the same person about whom we have the information in our system. These verification efforts require us to ask you to provide information so that we can match it with information you have previously provided us. For instance, depending on the type of request you submit, we may ask you to provide certain information so that we can match the information you provide with the information we already have on file, or we may contact you through a communication method (e.g., phone or email) that you have previously provided to us. We may also use other verification methods as the circumstances dictate.'
           }
         />
-        <TextComponent text={'Other privacy rights'} />
         <TextComponent
+          textStyles={globalStyles.descriptionUnderlineText}
+          text={'Other privacy rights'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'You may object to the processing of your personal information.\n' +
             'You may request correction of your personal data if it is incorrect or no longer relevant, or ask to restrict the processing of the information.\n' +
@@ -579,39 +694,59 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Yes, if you are a resident of Virginia, you may be granted specific rights regarding access to and use of your personal information.'
           }
         />
-        <TextComponent textStyles={globalStyles.boldText} text={'Virginia CDPA Privacy Notice'} />
-        <TextComponent text={'Under the Virginia Consumer Data Protection Act (CDPA):'} />
         <TextComponent
+          textStyles={globalStyles.paragraphDescriptionNameBold}
+          text={'Virginia CDPA Privacy Notice'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={'Under the Virginia Consumer Data Protection Act (CDPA):'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             '"Consumer" means a natural person who is a resident of the Commonwealth acting only in an individual or household context. It does not include a natural person acting in a commercial or employment context.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             '"Personal data" means any information that is linked or reasonably linkable to an identified or identifiable natural person. "Personal data" does not include de-identified data or publicly available information.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             '"Sale of personal data" means the exchange of personal data for monetary consideration.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'If this definition "consumer" applies to you, we must adhere to certain rights and obligations regarding your personal data.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'The information we collect, use, and disclose about you will vary depending on how you interact with FlipTok and our Services. To find out more, please visit the following links:\n' +
             'Personal data we collect\n' +
             'How we use your personal data\n' +
-            'When and with whom we share your personal data\n' +
-            'Your rights with respect to your personal data\n' +
+            'When and with whom we share your personal data'
+          }
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionUnderlineText}
+          text={'Your rights with respect to your personal data'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={
             'Right to be informed whether or not we are processing your personal data\n' +
             'Right to access your personal data\n' +
             'Right to correct inaccuracies in your personal data\n' +
@@ -621,35 +756,50 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
             'FlipTok has not sold any personal data to third parties for business or commercial purposes. FlipTok will not sell personal data in the future belonging to website visitors, users, and other consumers.'
           }
         />
-        <TextComponent text={'Exercise your rights provided under the Virginia CDPA'} />
         <TextComponent
+          textStyles={globalStyles.descriptionUnderlineText}
+          text={'Exercise your rights provided under the Virginia CDPA'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'More information about our data collection and sharing practices can be found in this privacy notice.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'You may contact us by email at fliptokapp@gmail.com,, or by referring to the contact details at the bottom of this document.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'If you are using an authorized agent to exercise your rights, we may deny a request if the authorized agent does not submit proof that they have been validly authorized to act on your behalf.'
           }
         />
-        <TextComponent text={'Verification process'} />
         <TextComponent
+          textStyles={globalStyles.descriptionUnderlineText}
+          text={'Verification process'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may request that you provide additional information reasonably necessary to verify you and your consumer`s request. If you submit the request through an authorized agent, we may need to collect additional information to verify your identity before processing your request.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Upon receiving your request, we will respond without undue delay, but in all cases, within forty-five (45) days of receipt. The response period may be extended once by forty-five (45) additional days when reasonably necessary. We will inform you of any such extension within the initial 45-day response period, together with the reason for the extension.'
           }
         />
-        <TextComponent text={'Right to appeal'} />
         <TextComponent
+          textStyles={globalStyles.descriptionUnderlineText}
+          text={'Right to appeal'}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'If we decline to take action regarding your request, we will inform you of our decision and reasoning behind it. If you wish to appeal our decision, please email us at fliptokapp@gmail.com. Within sixty (60) days of receipt of an appeal, we will inform you in writing of any action taken or not taken in response to the appeal, including a written explanation of the reasons for the decisions..'
           }
@@ -660,11 +810,13 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <TextComponent textStyles={globalStyles.boldText} text={'In Short:'} />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Yes, we will update this notice as necessary to stay compliant with relevant laws.'
           }
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'We may update this privacy notice from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.'
           }
@@ -674,6 +826,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           paragraphName={'14. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'If you have questions or comments about this notice, you may email us at fliptokapp@gmail.com'
           }
@@ -683,6 +836,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           paragraphName={'15. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?'}
         />
         <TextComponent
+          textStyles={globalStyles.descriptionText}
           text={
             'Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it.'
           }
