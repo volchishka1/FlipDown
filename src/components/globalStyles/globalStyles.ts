@@ -2,15 +2,26 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
 
 export type GlobalStyles = {
   tableContainer: ViewStyle;
+  topContainer: ViewStyle;
   dotComponent: ViewStyle;
   descriptionUpdatedText: ViewStyle;
   descriptionText: ViewStyle;
   boldText: TextStyle;
   paragraphName: TextStyle;
+  headerName: TextStyle;
   paragraphDescriptionName: TextStyle;
 };
 
 export const globalStyles = StyleSheet.create<GlobalStyles>({
+  topContainer: {
+    marginHorizontal: '3%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  headerName: {
+    marginTop: 10,
+  },
   boldText: {
     fontFamily: 'Roboto-Bold',
   },
