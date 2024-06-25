@@ -10,6 +10,7 @@ import { ParagraphComponent } from '../../components/textComponent/paragraphComp
 import { TextComponent } from '../../components/textComponent/textComponent';
 
 import { aboutScreenStyles } from './styles';
+import { globalStyles } from '../../components/globalStyles/globalStyles';
 
 export type AboutScreenProps = {
   goToCloseBottomSheet: () => void;
@@ -22,32 +23,32 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
       <ScrollView style={aboutScreenStyles.centerContainer}>
         <ParagraphComponent paragraphName={'What is the FlipTok Project?'} />
         <TextComponent
-          style={aboutScreenStyles.textStyle}
+          style={globalStyles.descriptionText}
           text={
             'If you need to download videos from TikTok and you do not know how to do it, we advise you to pay attention to the FlipTok project. FlipTok is a website that allows you to deal with the task in just a few seconds. The service is characterized by a simple and clear interface, which means that it allows you to find and download any videos from TikTok, and will be easy to understand for teenagers and older users. There will be no difficulties because we offer the best solution to save clips on any device.'
           }
         />
         <ParagraphComponent
-          textStyles={aboutScreenStyles.paragraphStyle}
+          textStyles={globalStyles.paragraphName}
           paragraphName={'How to use the service?'}
         />
         <TextComponent
-          style={aboutScreenStyles.textStyle}
+          style={globalStyles.descriptionText}
           text={
             'Working with the application involves very simple steps. To download videos and music from TikTok, you only need a few steps. All you need is this:'
           }
         />
         <DotComponent
           text={'go to the app and find a clip you like;'}
-          style={aboutScreenStyles.dotComponent}
+          style={globalStyles.dotComponent}
         />
         <DotComponent
           text={'copy the link using the "Share" button;'}
-          style={aboutScreenStyles.dotComponent}
+          style={globalStyles.dotComponent}
         />
         <DotComponent
           text={'open the FlipTok application and paste the copied link into the input field.'}
-          style={aboutScreenStyles.dotComponent}
+          style={globalStyles.dotComponent}
         />
         <TextComponent
           text={
@@ -57,41 +58,41 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           }
         />
         <ParagraphComponent
-          textStyles={aboutScreenStyles.paragraphStyle}
+          textStyles={globalStyles.paragraphName}
           paragraphName={'Benefits of FlipTok. What should a user know?'}
         />
         <TextComponent
-          style={aboutScreenStyles.textStyle}
+          style={globalStyles.descriptionText}
           text={
             'If you have chosen FlipTok for downloading files, you definitely have not made a mistake, because the service has a lot of advantages. The main pros are:'
           }
         />
         <DotComponent
-          style={aboutScreenStyles.dotComponent}
+          style={globalStyles.dotComponent}
           text={
             'no user fees. You really do not have to pay when downloading clips from TikTok without a watermark, even if there is a lot of content and its size is quite large;'
           }
         />
         <DotComponent
-          style={aboutScreenStyles.dotComponent}
+          style={globalStyles.dotComponent}
           text={
             'high-quality videos. FlipTok allows you to download clips without loss of quality, which means you can watch them on your device in the best possible way;'
           }
         />
         <DotComponent
-          style={aboutScreenStyles.dotComponent}
+          style={globalStyles.dotComponent}
           text={
             'any video format. We can download videos in MP4, AVI, 3GP and other formats without any problems. In any case, the download will be as fast as possible and the clip will be of high quality;'
           }
         />
         <DotComponent
-          style={aboutScreenStyles.dotComponent}
+          style={globalStyles.dotComponent}
           text={
             'confidentiality. FlipTok will not save user data even if you open the site daily and download a lot of content.'
           }
         />
         <TextComponent
-          style={aboutScreenStyles.textStyle}
+          style={globalStyles.descriptionText}
           text={
             'Using the FlipTok website is not difficult at all, and there is no need to register and authorize. There is no need to download additional extensions, plugins, add-ons, because the website works in any browser.\n' +
             '\n' +
