@@ -9,13 +9,13 @@ export type TermsAndConditionStyles = {
 export const termsAndConditionsStyles = StyleSheet.create<TermsAndConditionStyles>({
   rootContainer: {
     backgroundColor: '#8c54ea',
-    marginBottom: 20,
   },
   centerContainer: {
     marginHorizontal: '3%',
     marginBottom: '10%',
   },
   footerTextStyle: {
+    marginBottom: 20,
     fontFamily: 'Roboto-Bold',
   },
 });
