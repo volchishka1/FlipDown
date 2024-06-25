@@ -3,9 +3,6 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
 export type AboutScreenStyles = {
   rootContainer: ViewStyle;
   centerContainer: ViewStyle;
-  dotComponent: ViewStyle;
-  textStyle: TextStyle;
-  paragraphStyle: TextStyle;
 };
 
 export const aboutScreenStyles = StyleSheet.create<AboutScreenStyles>({
@@ -16,14 +13,5 @@ export const aboutScreenStyles = StyleSheet.create<AboutScreenStyles>({
   centerContainer: {
     marginHorizontal: '3%',
     marginBottom: '10%',
-  },
-  dotComponent: {
-    marginBottom: 10,
-  },
-  textStyle: {
-    marginBottom: 10,
-  },
-  paragraphStyle: {
-    fontSize: 18,
   },
 });
