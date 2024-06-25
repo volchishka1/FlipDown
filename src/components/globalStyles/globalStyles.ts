@@ -6,10 +6,13 @@ export type GlobalStyles = {
   dotComponent: ViewStyle;
   descriptionUpdatedText: ViewStyle;
   descriptionText: ViewStyle;
+  descriptionUnderlineText: TextStyle;
   boldText: TextStyle;
   paragraphName: TextStyle;
   headerName: TextStyle;
   paragraphDescriptionName: TextStyle;
+  paragraphDescriptionNameBold: TextStyle;
+  boldUnderlineText: TextStyle;
 };
 
 export const globalStyles = StyleSheet.create<GlobalStyles>({
@@ -25,7 +28,12 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
   boldText: {
     fontFamily: 'Roboto-Bold',
   },
+  boldUnderlineText: {
+    fontFamily: 'Roboto-Bold',
+    textDecorationLine: 'underline',
+  },
   paragraphName: {
+    fontFamily: 'Roboto-Bold',
     fontSize: 18,
   },
   tableContainer: {
@@ -34,8 +42,17 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
   descriptionText: {
     marginBottom: 10,
   },
+  descriptionUnderlineText: {
+    marginBottom: 10,
+    textDecorationLine: 'underline',
+  },
   paragraphDescriptionName: {
     fontSize: 16,
+  },
+  paragraphDescriptionNameBold: {
+    marginBottom: 10,
+    fontSize: 16,
+    fontFamily: 'Roboto-Bold',
   },
   descriptionUpdatedText: {
     marginBottom: 40,
