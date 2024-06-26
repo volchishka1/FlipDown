@@ -4,13 +4,13 @@ import React, { useEffect, useState } from 'react';
 
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
 import axios from 'axios';
-import RNFetchBlob from 'rn-fetch-blob';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { saveData } from '../../store/actions';
 import { getLoadData, getStatus } from '../../store/homeScreen/selectors';
 
 import { SearchScreenView } from './searchScreenView';
+import ReactNativeBlobUtil from 'react-native-blob-util';
 
 export interface ResponseData {
   music: {
@@ -74,51 +74,54 @@ export const SearchScreen = () => {
   const musicUrl = data?.download_music_url;
   let urlMusic = `https://tttcdn.online/?url=${musicUrl}&type=mp3`;
   const musicTitle = data?.music?.title;
-  console.log('musicUrl', urlMusic);
+  const videoId = data?.video?.id;
 
   const saveMusicOnAndroid = async (): Promise<void> => {
     await checkAndroidPermission();
-    const path = RNFetchBlob.fs.dirs.DownloadDir + '/' + `${musicTitle}.mp3`;
-
-    const res = await RNFetchBlob.config({
+    const res = await ReactNativeBlobUtil.config({
       fileCache: true,
       appendExt: 'mp3',
-      path: path,
-      addAndroidDownloads: {
-        // useDownloadManager: true,
-        mediaScannable: true,
-        notification: true,
-        title: path,
-        description: `Downloading${path}`,
-        mime: 'audio/mpeg',
+    }).fetch('GET', url);
+    await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
+      {
+        name: `${musicTitle}`, // name of the file
+        parentFolder: 'FlipTokSongs', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
+        mimeType: 'audio/mpeg', // MIME type of the file
       },
-    }).fetch('GET', urlMusic);
-    urlMusic = res.path();
-    console.log('UrlFetchMusic', urlMusic);
+      'Audio', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
+      res.path(), // Path to the file being copied in the apps own storage
+    );
     Alert.alert('Music saved');
   };
 
   const saveMusicOnIos = async (): Promise<void> => {
-    const path = RNFetchBlob.fs.dirs.DownloadDir + '/' + `${musicTitle}` + '/sound.mp3';
-    const res = await RNFetchBlob.config({
+    const path = ReactNativeBlobUtil.fs.dirs.DownloadDir + '/' + `${musicTitle}.mp3`;
+    const res = await ReactNativeBlobUtil.config({
       fileCache: true,
       appendExt: 'mp3',
       path: path,
     }).fetch('GET', urlMusic);
-    urlMusic = res.path();
-    console.log('UrlFetchMusic', urlMusic);
-    Alert.alert('Music saved');
+    ReactNativeBlobUtil.ios.previewDocument(res.path());
   };
 
   const saveVideoOnPhone = async (): Promise<void> => {
     Platform.OS === 'android' && (await checkAndroidPermission());
-    const res = await RNFetchBlob.config({
+    const res = await ReactNativeBlobUtil.config({
       fileCache: true,
       appendExt: 'mp4',
       indicator: true,
     }).fetch('GET', url);
-    url = res.path();
-    console.log('urlFetch', url);
+    Platform.OS === 'android'
+      ? await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
+          {
+            name: 'FlipTokVideo' + `${videoId}`, // name of the file
+            parentFolder: 'FlipTok', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
+            mimeType: 'video/mp4', // MIME type of the file
+          },
+          'Video', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
+          res.path(), // Path to the file being copied in the apps own storage
+        )
+      : (url = res.path());
     await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' });
     Alert.alert('Video saved');
   };
