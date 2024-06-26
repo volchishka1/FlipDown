@@ -12,6 +12,8 @@ import { getLoadData, getStatus } from '../../store/homeScreen/selectors';
 import { SearchScreenView } from './searchScreenView';
 import ReactNativeBlobUtil from 'react-native-blob-util';
 
+import { useNetInfo, NetInfoState } from '@react-native-community/netinfo';
+
 export interface ResponseData {
   music: {
     id: string;
@@ -35,6 +37,18 @@ export const SearchScreen = () => {
   const [data, setData] = useState<ResponseData | undefined>();
   const [isLoad, setIsLoad] = useState(false);
   const [showLoad, setShowLoad] = useState(false);
+
+  const internetState: NetInfoState = useNetInfo();
+
+  useEffect(() => {
+    if (internetState.isConnected === false) {
+      Alert.alert(
+        'No Internet! ❌',
+        'Sorry, we need an Internet connection for FlipTok to run correctly.',
+        [{ text: 'Okay' }],
+      );
+    }
+  }, [internetState.isConnected]);
 
   const getData = async (): Promise<void> => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
@@ -186,7 +200,11 @@ export const SearchScreen = () => {
   };
 
   const setInputValue = () => {
-    setTextValue();
+    if (internetState.isConnected === false) {
+      Alert.alert('No Internet! ❌', 'Sorry, check your internet connection', [{ text: 'Okay' }]);
+    } else {
+      setTextValue();
+    }
   };
 
   return (
