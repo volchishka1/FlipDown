@@ -54,17 +54,12 @@ export const SearchScreen = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
     const response = await axios.get(apiUrl);
     const res = response.data;
-    const resStatus = response.status;
-    if (resStatus === 200) {
-      dispatch(saveData(res));
-      setIsLoad(true);
-      setTimeout(() => {
-        setShowLoad(true);
-        setIsLoad(false);
-      }, 3000);
-    } else {
-      Alert.alert('Oopsik');
-    }
+    dispatch(saveData(res));
+    setIsLoad(true);
+    setTimeout(() => {
+      setShowLoad(true);
+      setIsLoad(false);
+    }, 3000);
   };
 
   useEffect(() => {
