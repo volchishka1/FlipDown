@@ -31,7 +31,6 @@ export interface ResponseData {
 export const SearchScreen = () => {
   const [link, setLink] = useState('');
   const dispatch = useAppDispatch();
-  const responseStatus = useAppSelector(getStatus);
   const getDataRedux: ResponseData[] = useAppSelector(getLoadData);
   const [data, setData] = useState<ResponseData | undefined>();
   const [isLoad, setIsLoad] = useState(false);
@@ -42,7 +41,7 @@ export const SearchScreen = () => {
     const response = await axios.get(apiUrl);
     const res = response.data;
     const resStatus = response.status;
-    if (resStatus) {
+    if (resStatus === 200) {
       dispatch(saveData(res));
       setIsLoad(true);
       setTimeout(() => {
@@ -50,7 +49,7 @@ export const SearchScreen = () => {
         setIsLoad(false);
       }, 3000);
     } else {
-      Alert.alert('Oops');
+      Alert.alert('Oopsik');
     }
   };
 
