@@ -7,6 +7,7 @@ import { SettingSvg } from '../../assets/setting';
 import { ROUTES } from '../constants/routes';
 import { InfoScreen } from '../screens/personalInfoScreen';
 import { SearchScreen } from '../screens/searchScreen';
+import {strings} from '../constants/textConst';
 
 export const MainScreen = () => {
   const Tab = createBottomTabNavigator();
@@ -22,7 +23,7 @@ export const MainScreen = () => {
         name={ROUTES.SEARCH_SCREEN}
         component={SearchScreen}
         options={{
-          tabBarLabel: 'Search',
+          tabBarLabel: `${strings.getString('search')}`,
           tabBarIcon: ({ focused }) => {
             return <SearchSvg />;
           },
@@ -42,7 +43,7 @@ export const MainScreen = () => {
         name={ROUTES.PERSONAL_INFO}
         component={InfoScreen}
         options={{
-          tabBarLabel: 'Information',
+          tabBarLabel: `${strings.getString('information')}`,
           tabBarIcon: (focused) => {
             return <SettingSvg />;
           },
