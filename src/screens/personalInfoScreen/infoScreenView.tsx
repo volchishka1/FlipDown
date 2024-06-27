@@ -8,6 +8,7 @@ import { TextComponent } from '../../components/textComponent/textComponent';
 
 import { infoScreenStyles } from './styles';
 import { InfoScreenViewProps } from './types';
+import { strings } from "../../constants/textConst";
 
 export const InfoScreenView: FC<InfoScreenViewProps> = (props) => {
   const {
@@ -31,16 +32,16 @@ export const InfoScreenView: FC<InfoScreenViewProps> = (props) => {
       />
       <View style={infoScreenStyles.centerContainer}>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToTermsAndConditionalsModal}>
-          <Text style={infoScreenStyles.textStyle}>{'Terms and conditions'}</Text>
+          <Text style={infoScreenStyles.textStyle}>{strings.getString('terms_and_conditions')}</Text>
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToPrivacyPolicyModal}>
-          <Text style={infoScreenStyles.textStyle}>{'Privacy policy'}</Text>
+          <Text style={infoScreenStyles.textStyle}>{strings.getString('privacy_policy')}</Text>
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToContactsModal}>
-          <Text style={infoScreenStyles.textStyle}>{'Contacts'}</Text>
+          <Text style={infoScreenStyles.textStyle}>{strings.getString('contacts')}</Text>
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToAboutSheet}>
-          <Text style={infoScreenStyles.textStyle}>{'About'}</Text>
+          <Text style={infoScreenStyles.textStyle}>{strings.getString('about')}</Text>
         </TouchableOpacity>
       </View>
       <View style={infoScreenStyles.bottomContainer}>
