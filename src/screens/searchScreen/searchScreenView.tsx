@@ -8,6 +8,7 @@ import { LogoComponent } from '../../components/logoComponent/logoComponent';
 import { searchScreenStyles } from './styles';
 import { SearchScreenProps } from './types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { strings } from "../../constants/textConst";
 
 export const SearchScreenView: FC<SearchScreenProps> = (props) => {
   const {
@@ -33,7 +34,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
             accessibilityLabel={'Text input field'}
             style={searchScreenStyles.input}
           />
-          <CustomButton onPress={setInputValue} textButton={'Download'} isLoad={isLoad} />
+          <CustomButton onPress={setInputValue} textButton={strings.getString('download')} isLoad={isLoad} />
         </View>
         <View style={searchScreenStyles.bottomContainer}>
           {showLoad && (
@@ -42,13 +43,13 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
               <View style={searchScreenStyles.buttonDataContainer}>
                 <CustomButton
                   onPress={saveVideo}
-                  textButton={'Download video'}
+                  textButton={strings.getString('download_video')}
                   style={searchScreenStyles.buttonStyle}
                   isLoad={false}
                 />
                 <CustomButton
                   onPress={saveMusic}
-                  textButton={'Download mp3'}
+                  textButton={strings.getString('download_mp3')}
                   style={searchScreenStyles.buttonStyle}
                   isLoad={false}
                 />
