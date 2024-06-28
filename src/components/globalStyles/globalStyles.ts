@@ -8,6 +8,7 @@ export type GlobalStyles = {
   descriptionText: ViewStyle;
   descriptionUnderlineText: TextStyle;
   boldText: TextStyle;
+  boldTextWithMargin: TextStyle;
   paragraphName: TextStyle;
   headerName: TextStyle;
   paragraphDescriptionName: TextStyle;
@@ -27,6 +28,10 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
   },
   boldText: {
     fontFamily: 'Roboto-Bold',
+  },
+  boldTextWithMargin: {
+    fontFamily: 'Roboto-Bold',
+    marginBottom: 10,
   },
   boldUnderlineText: {
     fontFamily: 'Roboto-Bold',
