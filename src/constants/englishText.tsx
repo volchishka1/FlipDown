@@ -7,6 +7,15 @@ export const PRIVACY_POLICY = 'Privacy policy';
 export const TERMS_AND_CONDITIONS = 'Terms and conditions';
 export const DOWNLOAD_VIDEO = 'Download video';
 export const DOWNLOAD_MP3 = 'Download mp3';
+export const NO_INTERNET = 'No Internet! ❌';
+export const SORRY = 'Sorry, check your internet connection.';
+export const OKAY = 'Okay';
+export const OOPS = 'Oops';
+export const MUSIC_SAVED = 'Music saved';
+export const VIDEO_SAVED = 'Video saved';
+export const DO_YOU_WANT_TO_SAVE_MUSIC = 'Do you want to save this music';
+export const DO_YOU_WANT_TO_SAVE_VIDEO = 'Do you want to save this video';
+export const ENTER_YOUR_LINK = 'Enter your link';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT = 'What is the FlipTok Project?';

@@ -7,6 +7,15 @@ export const PRIVACY_POLICY_RU = 'Политика конфиденциальн�
 export const TERMS_AND_CONDITIONS_RU = 'Условия и положения';
 export const DOWNLOAD_VIDEO_RU = 'Скачать видео';
 export const DOWNLOAD_MP3_RU = 'Скачать mp3';
+export const NO_INTERNET_RU = 'Нет подключения к интернету! ❌';
+export const SORRY_RU = 'Извините, проверьте свое интернет соединение.';
+export const OKAY_RU = 'Ок';
+export const OOPS_RU = 'Упс';
+export const MUSIC_SAVED_RU = 'Музыка сохранена';
+export const VIDEO_SAVED_RU = 'Видео сохранено';
+export const DO_YOU_WANT_TO_SAVE_MUSIC_RU = 'Вы хотите скачать музыку';
+export const DO_YOU_WANT_TO_SAVE_VIDEO_RU = 'Вы хотите скачать видео';
+export const ENTER_YOUR_LINK_RU = 'Вставьте вашу ссылку';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT_RU = 'Проект FlipTok - что это?';
