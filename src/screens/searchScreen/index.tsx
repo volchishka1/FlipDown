@@ -13,6 +13,7 @@ import { SearchScreenView } from './searchScreenView';
 import ReactNativeBlobUtil from 'react-native-blob-util';
 
 import { useNetInfo, NetInfoState } from '@react-native-community/netinfo';
+import { strings } from '@constants';
 
 export interface ResponseData {
   music: {
@@ -42,26 +43,11 @@ export const SearchScreen = () => {
 
   useEffect(() => {
     if (internetState.isConnected === false) {
-      Alert.alert(
-        'No Internet! ❌',
-        'Sorry, we need an Internet connection for FlipTok to run correctly.',
-        [{ text: 'Okay' }],
-      );
+      Alert.alert(`${strings.getString('no_internet')}`, `${strings.getString('sorry')}`, [
+        { text: `${strings.getString('okay')}` },
+      ]);
     }
   }, [internetState.isConnected]);
-
-  // const getData = async (): Promise<void> => {
-  //   const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
-  //   const response = await axios.get(apiUrl);
-  //   const res = response.data;
-  //   dispatch(saveData(res));
-  //   setIsLoad(true);
-  //   setTimeout(() => {
-  //     setShowLoad(true);
-  //     setIsLoad(false);
-  //   }, 3000);
-  // };
-
   const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
     setIsLoad(true);
@@ -77,7 +63,7 @@ export const SearchScreen = () => {
         }, 3000);
       })
       .catch(() => {
-        Alert.alert('Oops');
+        Alert.alert(`${strings.getString('oops')}`);
         setIsLoad(false);
       });
   };
@@ -119,7 +105,7 @@ export const SearchScreen = () => {
       'Audio', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
       res.path(), // Path to the file being copied in the apps own storage
     );
-    Alert.alert('Music saved');
+    Alert.alert(`${strings.getString('music_saved')}`);
   };
 
   const saveMusicOnIos = async (): Promise<void> => {
@@ -148,14 +134,14 @@ export const SearchScreen = () => {
           },
           'Video', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
           res.path(), // Path to the file being copied in the apps own storage
-        )) && Alert.alert('Video saved')
+        )) && Alert.alert(`${strings.getString('video_saved')}`)
       : (url = res.path());
     await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' });
-    Alert.alert('Video saved');
+    Alert.alert(`${strings.getString('video_saved')}`);
   };
 
   const saveMusic = () => {
-    Alert.alert('Do you want to save this music', '', [
+    Alert.alert(`${strings.getString('do_you_want_to_save_music')}`, '', [
       {
         isPreferred: true,
         text: 'Yes',
@@ -179,7 +165,7 @@ export const SearchScreen = () => {
     ]);
   };
   const saveVideo = () => {
-    Alert.alert('Do you want to save this video', '', [
+    Alert.alert(`${strings.getString('do_you_want_to_save_video')}`, '', [
       {
         isPreferred: true,
         text: 'Yes',
@@ -204,13 +190,15 @@ export const SearchScreen = () => {
       setLink(link);
       getData();
     } else if (link === '') {
-      Alert.alert('Enter your link. Example: https://vm.tiktok.com/ZMr8THxT2/');
+      Alert.alert(`${strings.getString('enter_your_link')}`);
     }
   };
 
   const setInputValue = () => {
     if (internetState.isConnected === false) {
-      Alert.alert('No Internet! ❌', 'Sorry, check your internet connection', [{ text: 'Okay' }]);
+      Alert.alert(`${strings.getString('no_internet')}`, `${strings.getString('sorry')}`, [
+        { text: `${strings.getString('okay')}` },
+      ]);
     } else {
       setTextValue();
     }
