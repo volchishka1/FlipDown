@@ -50,16 +50,36 @@ export const SearchScreen = () => {
     }
   }, [internetState.isConnected]);
 
-  const getData = async (): Promise<void> => {
+  // const getData = async (): Promise<void> => {
+  //   const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
+  //   const response = await axios.get(apiUrl);
+  //   const res = response.data;
+  //   dispatch(saveData(res));
+  //   setIsLoad(true);
+  //   setTimeout(() => {
+  //     setShowLoad(true);
+  //     setIsLoad(false);
+  //   }, 3000);
+  // };
+
+  const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
-    const response = await axios.get(apiUrl);
-    const res = response.data;
-    dispatch(saveData(res));
     setIsLoad(true);
-    setTimeout(() => {
-      setShowLoad(true);
-      setIsLoad(false);
-    }, 3000);
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        const res = response.data;
+        dispatch(saveData(res));
+        setIsLoad(true);
+        setTimeout(() => {
+          setShowLoad(true);
+          setIsLoad(false);
+        }, 3000);
+      })
+      .catch(() => {
+        Alert.alert('Oops');
+        setIsLoad(false);
+      });
   };
 
   useEffect(() => {
@@ -120,7 +140,7 @@ export const SearchScreen = () => {
       indicator: true,
     }).fetch('GET', url);
     Platform.OS === 'android'
-      ? await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
+      ? (await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
           {
             name: 'FlipTokVideo' + `${videoId}`, // name of the file
             parentFolder: 'FlipTok', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
@@ -128,7 +148,7 @@ export const SearchScreen = () => {
           },
           'Video', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
           res.path(), // Path to the file being copied in the apps own storage
-        )
+        )) && Alert.alert('Video saved')
       : (url = res.path());
     await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' });
     Alert.alert('Video saved');
@@ -180,17 +200,11 @@ export const SearchScreen = () => {
   };
 
   const setTextValue = () => {
-    if (link.length === 32) {
+    if (link !== '') {
       setLink(link);
-      getData()
-        .then()
-        .catch((err: string) => {
-          Alert.alert(err);
-        });
+      getData();
     } else if (link === '') {
       Alert.alert('Enter your link. Example: https://vm.tiktok.com/ZMr8THxT2/');
-    } else {
-      Alert.alert('Enter your link correctly. Example: https://vm.tiktok.com/ZMr8THxT2/');
     }
   };
 
