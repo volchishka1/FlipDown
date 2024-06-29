@@ -36,7 +36,7 @@ export const MainScreen = () => {
         name={ROUTES.DOWNLOAD_SCREEN}
         component={DownloadScreen}
         options={{
-          tabBarLabel: 'Downloads',
+          tabBarLabel: `${strings.getString('downloads')}`,
           tabBarIcon: (focused) => {
             return <FolderSvg />;
           },
