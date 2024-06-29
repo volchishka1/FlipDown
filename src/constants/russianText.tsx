@@ -365,6 +365,7 @@ export const BASED_ON_THE_APP_LAW_RU =
 // TERMS AND CONDITIONS STRING
 
 export const AGREEMENT_TO_OUR_LEGAL_TERMS_RU = 'СОГЛАСИЕ С НАШИМИ ЮРИДИЧЕСКИМ УСЛОВИЯМИ';
+export const WE_ARE_FLIPTOK_RU = 'Мы — FlipTok («Компания», «мы», «нас», «наш»).';
 export const WE_OPERATE_RU =
   'Мы управляем сервисом https://fliptok.app («Сайт»), а также любыми другими сопутствующими продуктами и услугами, которые ссылаются на настоящие юридические условия или ссылаются на них («Юридические условия») (совместно именуемые «Услуги»). .';
 export const YOU_CAN_CONTACT_RU =
