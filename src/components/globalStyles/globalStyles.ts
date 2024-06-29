@@ -11,6 +11,7 @@ export type GlobalStyles = {
   boldTextWithMargin: TextStyle;
   paragraphName: TextStyle;
   headerName: TextStyle;
+  headerNameTerms: TextStyle;
   paragraphDescriptionName: TextStyle;
   paragraphDescriptionNameBold: TextStyle;
   boldUnderlineText: TextStyle;
@@ -25,6 +26,9 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
   },
   headerName: {
     marginTop: 10,
+  },
+  headerNameTerms: {
+    fontSize: 20,
   },
   boldText: {
     fontFamily: 'Roboto-Bold',
