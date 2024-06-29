@@ -489,6 +489,7 @@ import {
   WANT_TO_LEARN_MORE_RU,
   WE_AIM_TO_PROTECT_RU,
   WE_ALLOW_ADVERTISERS_RU,
+  WE_ARE_FLIPTOK_RU,
   WE_ARE_THE_OWNER_RU,
   WE_CANNOT_GUARANTEE_RU,
   WE_CARE_ABOUT_RU,
@@ -1060,6 +1061,7 @@ export const strings = new LocalizedStrings({
     // TERMS AND CONDITIONS STRING
 
     agreement_to_our_legal_terms: AGREEMENT_TO_OUR_LEGAL_TERMS_RU,
+    we_are_fliptok: WE_ARE_FLIPTOK_RU,
     we_operate: WE_OPERATE_RU,
     you_can_contact: YOU_CAN_CONTACT_RU,
     these_legal_terms: THESE_LEGAL_TERMS_RU,
