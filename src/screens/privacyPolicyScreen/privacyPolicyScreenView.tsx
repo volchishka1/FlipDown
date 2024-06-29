@@ -22,6 +22,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
     <SafeAreaView style={privacyPolicyScreenStyles.rootContainer}>
       <View style={globalStyles.topContainer}>
         <ParagraphComponent
+          textStyles={globalStyles.headerNameTerms}
           style={globalStyles.headerName}
           paragraphName={strings.getString('privacy_policy')}
         />
