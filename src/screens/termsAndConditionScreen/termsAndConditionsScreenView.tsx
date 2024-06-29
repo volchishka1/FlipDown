@@ -172,7 +172,7 @@ export const TermsAndConditionComponent: FC<TermsAndConditionsTypes> = ({
         />
         <ParagraphComponent
           textStyles={globalStyles.paragraphName}
-          paragraphName={strings.getString('third_part_of_terms')}
+          paragraphName={strings.getString('third_part_terms')}
         />
         <TextComponent
           style={globalStyles.descriptionText}
