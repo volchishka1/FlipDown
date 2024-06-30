@@ -9,9 +9,15 @@ export type DownloadScreenStyles = {
   buttonContainer: ViewStyle;
   button: ViewStyle;
   images: ImageStyle;
+  videoStyle: ViewStyle;
 };
 
 export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
+  videoContainer: {},
+  videoStyle: {
+    height: '100%',
+    alignSelf: 'stretch',
+  },
   saveAriaView: {
     backgroundColor: '#1d014b',
     flex: 1,
@@ -24,7 +30,6 @@ export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
   centerContainer: {
     flexWrap: 'wrap',
     flexDirection: 'row',
-    justifyContent: 'space-between',
   },
   images: {
     height: 160,
