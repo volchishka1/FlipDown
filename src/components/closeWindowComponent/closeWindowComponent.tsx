@@ -7,21 +7,22 @@ import { CloseWindowSvg } from '../../../assets/closeModalWindow';
 import { closeWindowStyle } from './styles';
 
 export type CloseWindowComponentProps = {
-  goToCloseBottomSheet: TouchableOpacityProps['onPress'];
-  style: TouchableOpacityProps['style'];
-  buttonStyle: TouchableOpacityProps['style'];
+  goToCloseButton?: TouchableOpacityProps['onPress'];
+  style?: TouchableOpacityProps['style'];
+  buttonStyle?: TouchableOpacityProps['style'];
+  iconSvg?: any;
 };
 
 export const CloseWindowComponent: FC<CloseWindowComponentProps> = (props) => {
-  const { goToCloseBottomSheet, style, buttonStyle } = props;
+  const { goToCloseButton, style, buttonStyle, iconSvg } = props;
   return (
     <View style={[closeWindowStyle.rootContainer, style]}>
       <TouchableOpacity
         style={[closeWindowStyle.buttonStyle, buttonStyle]}
         accessibilityRole={'button'}
-        onPress={goToCloseBottomSheet}
+        onPress={goToCloseButton}
       >
-        <CloseWindowSvg />
+        {iconSvg}
       </TouchableOpacity>
     </View>
   );
