@@ -6,11 +6,9 @@ export type DownloadScreenStyles = {
   centerContainer: ViewStyle;
   imageContainer: ViewStyle;
   itemContainer: ViewStyle;
-  titleContainer: ViewStyle;
   buttonContainer: ViewStyle;
   button: ViewStyle;
   images: ImageStyle;
-  title: TextStyle;
 };
 
 export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
@@ -24,40 +22,29 @@ export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
     marginHorizontal: '5%',
   },
   centerContainer: {
-    width: '100%',
-    flexDirection: 'column',
-  },
-  images: {
-    height: 80,
-    width: 80,
-  },
-  imageContainer: {
-    marginLeft: '4%',
-    alignItems: 'center',
-    flexDirection: 'row',
-    height: 100,
-    width: '50%',
-  },
-  itemContainer: {
+    flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  images: {
+    height: 160,
+    width: 90,
+    borderRadius: 10,
+  },
+  imageContainer: {},
+  itemContainer: {
+    flexDirection: 'column',
     alignItems: 'center',
+    justifyContent: 'center',
     marginVertical: '2%',
     backgroundColor: 'grey',
     borderRadius: 10,
+    width: 100,
+    height: 170,
   },
-  titleContainer: {
-    width: 80,
-    justifyContent: 'center',
-  },
-  title: {
-    color: 'white',
-    textAlign: 'center',
-  },
-  buttonContainer: {
-    marginRight: '4%',
-  },
+  buttonContainer: {},
   button: {
     borderRadius: 7,
+    height: 20,
   },
 });

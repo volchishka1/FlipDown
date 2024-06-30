@@ -10,6 +10,8 @@ export const DownloadScreen = () => {
     const res = await CameraRoll.getPhotos({
       first: 100,
       assetType: 'Videos',
+      groupTypes: 'Album',
+      groupName: 'FlipTok',
     });
     setPhotos(res?.edges);
   }, []);
