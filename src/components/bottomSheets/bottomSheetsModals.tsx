@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 
 import { BottomSheetModal } from '@gorhom/bottom-sheet/src';
 
-import { AboutScreenView } from '../../screens/aboutScreen/aboutScreenView';
-import { ContactsScreenView } from '../../screens/contactsScreen/contactsScreenView';
-import { PrivacyPolicyScreenView } from '../../screens/privacyPolicyScreen/privacyPolicyScreenView';
-import { TermsAndConditionComponent } from '../../screens/termsAndConditionScreen/termsAndConditionsScreenView';
+import { AboutScreenView } from '@screens/aboutScreen/aboutScreenView';
+import { ContactsScreenView } from '@screens/contactsScreen/contactsScreenView';
+import { PrivacyPolicyScreenView } from '@screens/privacyPolicyScreen/privacyPolicyScreenView';
+import { TermsAndConditionComponent } from '@screens/termsAndConditionScreen/termsAndConditionsScreenView';
 import { TextProps, TouchableOpacityProps } from 'react-native';
 
 export type BottomSheetsModalsProps = {
