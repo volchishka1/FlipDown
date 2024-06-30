@@ -130,6 +130,7 @@ import {
   NINETEENTH_PART_OF_TERMS,
   NINTH_PART,
   NINTH_PART_OF_TERMS,
+  NO,
   NO_INTERNET,
   NO_USER_FEES,
   OKAY,
@@ -264,6 +265,7 @@ import {
   WITHDRAWING_YOUR_CONSENT,
   WITHDRAWING_YOUR_CONSENT_IF_WE,
   WORKING_WITH,
+  YES,
   YOU_AGREE_TO_DEFEND,
   YOU_AND_SERVICES,
   YOU_ARE_RESPONSIBLE,
@@ -408,6 +410,7 @@ import {
   NINTH_PART_OF_TERMS_RU,
   NINTH_PART_RU,
   NO_INTERNET_RU,
+  NO_RU,
   NO_USER_FEES_RU,
   OKAY_RU,
   OOPS_RU,
@@ -541,6 +544,7 @@ import {
   WITHDRAWING_YOUR_CONSENT_IF_WE_RU,
   WITHDRAWING_YOUR_CONSENT_RU,
   WORKING_WITH_RU,
+  YES_RU,
   YOU_AGREE_TO_DEFEND_RU,
   YOU_AND_SERVICES_RU,
   YOU_ARE_RESPONSIBLE_RU,
@@ -577,6 +581,8 @@ export const strings = new LocalizedStrings({
     do_you_want_to_save_music: DO_YOU_WANT_TO_SAVE_MUSIC,
     do_you_want_to_save_video: DO_YOU_WANT_TO_SAVE_VIDEO,
     enter_your_link: ENTER_YOUR_LINK,
+    yes: YES,
+    no: NO,
 
     // ABOUT STRINGS
 
@@ -868,6 +874,8 @@ export const strings = new LocalizedStrings({
     do_you_want_to_save_music: DO_YOU_WANT_TO_SAVE_MUSIC_RU,
     do_you_want_to_save_video: DO_YOU_WANT_TO_SAVE_VIDEO_RU,
     enter_your_link: ENTER_YOUR_LINK_RU,
+    yes: YES_RU,
+    no: NO_RU,
 
     // ABOUT STRINGS
 

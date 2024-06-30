@@ -17,6 +17,8 @@ export const VIDEO_SAVED = 'Video saved';
 export const DO_YOU_WANT_TO_SAVE_MUSIC = 'Do you want to save this music';
 export const DO_YOU_WANT_TO_SAVE_VIDEO = 'Do you want to save this video';
 export const ENTER_YOUR_LINK = 'Enter your link';
+export const YES = 'Yes';
+export const NO = 'No';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT = 'What is the FlipTok Project?';

@@ -17,6 +17,8 @@ export const VIDEO_SAVED_RU = 'Видео сохранено';
 export const DO_YOU_WANT_TO_SAVE_MUSIC_RU = 'Вы хотите скачать музыку';
 export const DO_YOU_WANT_TO_SAVE_VIDEO_RU = 'Вы хотите скачать видео';
 export const ENTER_YOUR_LINK_RU = 'Вставьте вашу ссылку';
+export const YES_RU = 'Да';
+export const NO_RU = 'Нет';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT_RU = 'Проект FlipTok - что это?';
