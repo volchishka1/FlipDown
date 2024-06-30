@@ -2,13 +2,13 @@ import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 
 import React, { FC } from 'react';
 
-import { BottomSheetsModals } from '../../components/bottomSheets/bottomSheetsModals';
-import { LogoComponent } from '../../components/logoComponent/logoComponent';
-import { TextComponent } from '../../components/textComponent/textComponent';
+import { BottomSheetsModals } from '@components/bottomSheets/bottomSheetsModals';
+import { LogoComponent } from '@components/logoComponent/logoComponent';
+import { TextComponent } from '@components/textComponent/textComponent';
 
 import { infoScreenStyles } from './styles';
 import { InfoScreenViewProps } from './types';
-import { strings } from "../../constants/textConst";
+import { strings } from '@constants/textConst';
 
 export const InfoScreenView: FC<InfoScreenViewProps> = (props) => {
   const {
@@ -32,7 +32,9 @@ export const InfoScreenView: FC<InfoScreenViewProps> = (props) => {
       />
       <View style={infoScreenStyles.centerContainer}>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToTermsAndConditionalsModal}>
-          <Text style={infoScreenStyles.textStyle}>{strings.getString('terms_and_conditions')}</Text>
+          <Text style={infoScreenStyles.textStyle}>
+            {strings.getString('terms_and_conditions')}
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity accessibilityRole={'button'} onPress={goToPrivacyPolicyModal}>
           <Text style={infoScreenStyles.textStyle}>{strings.getString('privacy_policy')}</Text>
