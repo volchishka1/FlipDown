@@ -144,7 +144,7 @@ export const SearchScreen = () => {
     Alert.alert(`${strings.getString('do_you_want_to_save_music')}`, '', [
       {
         isPreferred: true,
-        text: 'Yes',
+        text: `${strings.getString('yes')}`,
         onPress: () => {
           Platform.OS === 'android'
             ? saveMusicOnAndroid()
@@ -158,7 +158,7 @@ export const SearchScreen = () => {
       },
       {
         isPreferred: false,
-        text: 'No',
+        text: `${strings.getString('no')}`,
         onPress: () => {},
         style: 'destructive',
       },
@@ -168,7 +168,7 @@ export const SearchScreen = () => {
     Alert.alert(`${strings.getString('do_you_want_to_save_video')}`, '', [
       {
         isPreferred: true,
-        text: 'Yes',
+        text: `${strings.getString('yes')}`,
         onPress: () => {
           saveVideoOnPhone()
             .then()
@@ -178,7 +178,7 @@ export const SearchScreen = () => {
       },
       {
         isPreferred: false,
-        text: 'No',
+        text: `${strings.getString('no')}`,
         onPress: () => {},
         style: 'destructive',
       },
