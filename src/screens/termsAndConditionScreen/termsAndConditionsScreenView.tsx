@@ -11,6 +11,7 @@ import { TextComponent } from '@components/textComponent/textComponent';
 import { termsAndConditionsStyles } from './styles';
 import { globalStyles } from '@components/globalStyles/globalStyles';
 import { strings } from '@constants';
+import { CloseWindowSvg } from '@assets/closeModalWindow';
 
 export type TermsAndConditionsTypes = {
   goToCloseBottomSheet: () => void;
@@ -26,7 +27,7 @@ export const TermsAndConditionComponent: FC<TermsAndConditionsTypes> = ({
           style={globalStyles.headerName}
           paragraphName={strings.getString('terms_and_conditions')}
         />
-        <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
+        <CloseWindowComponent iconSvg={<CloseWindowSvg />} goToCloseButton={goToCloseBottomSheet} />
       </View>
       <ScrollView style={termsAndConditionsStyles.centerContainer}>
         <TextComponent

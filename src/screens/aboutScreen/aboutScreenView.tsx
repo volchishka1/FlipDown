@@ -11,7 +11,8 @@ import { TextComponent } from '@components/textComponent/textComponent';
 
 import { aboutScreenStyles } from './styles';
 import { globalStyles } from '@components/globalStyles/globalStyles';
-import { strings } from "@constants/textConst";
+import { strings } from '@constants/textConst';
+import { CloseWindowSvg } from '@assets/closeModalWindow';
 
 export type AboutScreenProps = {
   goToCloseBottomSheet: () => void;
@@ -25,7 +26,10 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           style={globalStyles.headerName}
           paragraphName={strings.getString('about_project')}
         />
-        <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
+        <CloseWindowComponent
+          iconSvg={<CloseWindowSvg />}
+          goToCloseBottomSheet={goToCloseBottomSheet}
+        />
       </View>
       <ScrollView style={aboutScreenStyles.centerContainer}>
         <TextComponent
@@ -40,18 +44,9 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           style={globalStyles.descriptionText}
           text={strings.getString('working_with')}
         />
-        <DotComponent
-          text={strings.getString('go_to_the_app')}
-          style={globalStyles.dotComponent}
-        />
-        <DotComponent
-          text={strings.getString('copy_link')}
-          style={globalStyles.dotComponent}
-        />
-        <DotComponent
-          text={strings.getString('open_the_app')}
-          style={globalStyles.dotComponent}
-        />
+        <DotComponent text={strings.getString('go_to_the_app')} style={globalStyles.dotComponent} />
+        <DotComponent text={strings.getString('copy_link')} style={globalStyles.dotComponent} />
+        <DotComponent text={strings.getString('open_the_app')} style={globalStyles.dotComponent} />
         <TextComponent
           style={globalStyles.dotComponent}
           text={strings.getString('the_final_step')}
@@ -64,18 +59,9 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           style={globalStyles.descriptionText}
           text={strings.getString('if_you_chosen')}
         />
-        <DotComponent
-          style={globalStyles.dotComponent}
-          text={strings.getString('no_user_fees')}
-        />
-        <DotComponent
-          style={globalStyles.dotComponent}
-          text={strings.getString('high_quality')}
-        />
-        <DotComponent
-          style={globalStyles.dotComponent}
-          text={strings.getString('any_format')}
-        />
+        <DotComponent style={globalStyles.dotComponent} text={strings.getString('no_user_fees')} />
+        <DotComponent style={globalStyles.dotComponent} text={strings.getString('high_quality')} />
+        <DotComponent style={globalStyles.dotComponent} text={strings.getString('any_format')} />
         <DotComponent
           style={globalStyles.dotComponent}
           text={strings.getString('confidentiality')}

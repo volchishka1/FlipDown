@@ -10,7 +10,8 @@ import { TextComponent } from '@components/textComponent/textComponent';
 
 import { contactScreenStyles } from './styles';
 import { globalStyles } from '@components/globalStyles/globalStyles';
-import { strings } from "@constants";
+import { strings } from '@constants';
+import { CloseWindowSvg } from '@assets/closeModalWindow';
 
 export type ContactsScreenProps = {
   goToCloseBottomSheet: () => void;
@@ -19,22 +20,20 @@ export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomShe
   return (
     <SafeAreaView style={contactScreenStyles.rootContainer}>
       <View style={globalStyles.topContainer}>
-        <ParagraphComponent style={globalStyles.headerName} paragraphName={strings.getString('contact_us')} />
-        <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
+        <ParagraphComponent
+          style={globalStyles.headerName}
+          paragraphName={strings.getString('contact_us')}
+        />
+        <CloseWindowComponent
+          iconSvg={<CloseWindowSvg />}
+          goToCloseBottomSheet={goToCloseBottomSheet}
+        />
       </View>
       <ScrollView style={contactScreenStyles.centerContainer}>
         <TextComponent text={strings.getString('you_can_contact_us')} />
         <TextComponent text={strings.getString('email')} />
-        <TextComponent
-          text={
-            strings.getString('if_you_have_questions')
-          }
-        />
-        <TextComponent
-          text={
-            strings.getString('we_value_your_attention')
-          }
-        />
+        <TextComponent text={strings.getString('if_you_have_questions')} />
+        <TextComponent text={strings.getString('we_value_your_attention')} />
       </ScrollView>
     </SafeAreaView>
   );

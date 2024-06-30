@@ -12,6 +12,7 @@ import { TextComponent } from '@components/textComponent/textComponent';
 import { globalStyles } from '@components/globalStyles/globalStyles';
 import { DotComponent } from '@components/dotComponent/dotComponent';
 import { strings } from '@constants';
+import { CloseWindowSvg } from '@assets/closeModalWindow';
 
 export type PrivacyPolicyScreenTypes = {
   goToCloseBottomSheet: () => void;
@@ -26,7 +27,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           style={globalStyles.headerName}
           paragraphName={strings.getString('privacy_policy')}
         />
-        <CloseWindowComponent goToCloseBottomSheet={goToCloseBottomSheet} />
+        <CloseWindowComponent iconSvg={<CloseWindowSvg />} goToCloseButton={goToCloseBottomSheet} />
       </View>
       <ScrollView style={privacyPolicyScreenStyles.centerContainer}>
         <TextComponent
