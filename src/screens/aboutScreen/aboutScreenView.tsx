@@ -26,10 +26,7 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           style={globalStyles.headerName}
           paragraphName={strings.getString('about_project')}
         />
-        <CloseWindowComponent
-          iconSvg={<CloseWindowSvg />}
-          goToCloseBottomSheet={goToCloseBottomSheet}
-        />
+        <CloseWindowComponent iconSvg={<CloseWindowSvg />} goToCloseButton={goToCloseBottomSheet} />
       </View>
       <ScrollView style={aboutScreenStyles.centerContainer}>
         <TextComponent

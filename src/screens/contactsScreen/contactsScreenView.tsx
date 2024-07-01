@@ -24,10 +24,7 @@ export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomShe
           style={globalStyles.headerName}
           paragraphName={strings.getString('contact_us')}
         />
-        <CloseWindowComponent
-          iconSvg={<CloseWindowSvg />}
-          goToCloseBottomSheet={goToCloseBottomSheet}
-        />
+        <CloseWindowComponent iconSvg={<CloseWindowSvg />} goToCloseButton={goToCloseBottomSheet} />
       </View>
       <ScrollView style={contactScreenStyles.centerContainer}>
         <TextComponent text={strings.getString('you_can_contact_us')} />
