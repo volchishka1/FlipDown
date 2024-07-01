@@ -2,12 +2,12 @@ import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { SearchSvg } from '../../assets/search';
-import { SettingSvg } from '../../assets/setting';
-import { ROUTES } from '../constants/routes';
-import { InfoScreen } from '../screens/personalInfoScreen';
-import { SearchScreen } from '../screens/searchScreen';
-import { strings } from '../constants/textConst';
+import { SearchSvg } from '@assets/search';
+import { SettingSvg } from '@assets/setting';
+import { ROUTES } from '@constants/routes';
+import { InfoScreen } from '@screens/personalInfoScreen';
+import { SearchScreen } from '@screens/searchScreen';
+import { strings } from '@constants/textConst';
 import { DownloadScreen } from '@screens/downloadScreen';
 import { FolderSvg } from '@assets/folder';
 
