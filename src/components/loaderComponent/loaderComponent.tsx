@@ -11,7 +11,7 @@ export const LoaderComponent = () => {
       style={{
         flex: 1,
       }}
-      duration={3000}
+      duration={3200}
     />
   );
 };
