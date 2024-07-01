@@ -19,6 +19,8 @@ export const DO_YOU_WANT_TO_SAVE_VIDEO_RU = 'Вы хотите скачать в
 export const ENTER_YOUR_LINK_RU = 'Вставьте вашу ссылку';
 export const YES_RU = 'Да';
 export const NO_RU = 'Нет';
+export const DO_YOU_WANT_TO_DELETE_FILE_RU = 'Вы уверены, что хотите удалить файл?';
+export const INSERT_YOUR_LINK_RU = 'Вставьте ссылку TikTok';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT_RU = 'Проект FlipTok - что это?';

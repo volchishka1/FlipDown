@@ -41,6 +41,7 @@ import {
   DO_WE_PROCESS,
   DO_WE_PROCESS_SENSITIVE_INFO,
   DO_WE_RECEIVE,
+  DO_YOU_WANT_TO_DELETE_FILE,
   DO_YOU_WANT_TO_SAVE_MUSIC,
   DO_YOU_WANT_TO_SAVE_VIDEO,
   DOWNLOAD,
@@ -115,6 +116,7 @@ import {
   IN_WHAT_SITUATIONS,
   INFORMAL_NEGOTIATIONS,
   INFORMATION,
+  INSERT_YOUR_LINK,
   J_DESCRIBE,
   J_TYPE,
   K_DESCRIBE,
@@ -322,6 +324,7 @@ import {
   DO_WE_PROCESS_RU,
   DO_WE_PROCESS_SENSITIVE_INFO_RU,
   DO_WE_RECEIVE_RU,
+  DO_YOU_WANT_TO_DELETE_FILE_RU,
   DO_YOU_WANT_TO_SAVE_MUSIC_RU,
   DO_YOU_WANT_TO_SAVE_VIDEO_RU,
   DOWNLOAD_MP3_RU,
@@ -394,6 +397,7 @@ import {
   IN_WHAT_SITUATIONS_RU,
   INFORMAL_NEGOTIATIONS_RU,
   INFORMATION_RU,
+  INSERT_YOUR_LINK_RU,
   J_DESCRIBE_RU,
   J_TYPE_RU,
   K_DESCRIBE_RU,
@@ -583,6 +587,8 @@ export const strings = new LocalizedStrings({
     enter_your_link: ENTER_YOUR_LINK,
     yes: YES,
     no: NO,
+    do_you_want_to_delete_file: DO_YOU_WANT_TO_DELETE_FILE,
+    insert_your_link: INSERT_YOUR_LINK,
 
     // ABOUT STRINGS
 
@@ -876,6 +882,8 @@ export const strings = new LocalizedStrings({
     enter_your_link: ENTER_YOUR_LINK_RU,
     yes: YES_RU,
     no: NO_RU,
+    do_you_want_to_delete_file: DO_YOU_WANT_TO_DELETE_FILE_RU,
+    insert_your_link: INSERT_YOUR_LINK_RU,
 
     // ABOUT STRINGS
 

@@ -19,6 +19,8 @@ export const DO_YOU_WANT_TO_SAVE_VIDEO = 'Do you want to save this video';
 export const ENTER_YOUR_LINK = 'Enter your link';
 export const YES = 'Yes';
 export const NO = 'No';
+export const DO_YOU_WANT_TO_DELETE_FILE = 'Do you want to delete file';
+export const INSERT_YOUR_LINK = 'Insert TikTok link';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT = 'What is the FlipTok Project?';
