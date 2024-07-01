@@ -3,37 +3,15 @@ import { Image, SafeAreaView, TouchableOpacity, View } from 'react-native';
 import React, { FC } from 'react';
 
 import { ScrollView } from 'react-native-gesture-handler';
-
-import { CustomButton } from '@components/buttonComponent/customButtonComponent';
-
 import { downloadScreenStyles } from './styles';
 import { DownloadScreenProps } from './types';
-import Video from 'react-native-video';
-import { CloseWindowComponent } from '@components/closeWindowComponent/closeWindowComponent';
-import { BasketSvg } from '@assets/basket';
-import { CloseWindowSvg } from '@assets/closeModalWindow';
+import { FullScreenVideo } from '@components/fullScreenVideo/fullScreenVideoComponent';
 
 export const DownloadScreenView: FC<DownloadScreenProps> = (props) => {
   const { photos, url, setUrl, deleteFile } = props;
   return (
     <>
-      {url !== '' ? (
-        <View>
-          <Video source={{ uri: url }} style={downloadScreenStyles.videoStyle} />
-          <CloseWindowComponent
-            iconSvg={<CloseWindowSvg />}
-            goToCloseButton={() => setUrl('')}
-            style={{ position: 'absolute', top: 40, right: 20, zIndex: 100 }}
-            buttonStyle={{ width: 50, height: 50, borderRadius: 25 }}
-          />
-          <CloseWindowComponent
-            iconSvg={<BasketSvg />}
-            goToCloseButton={() => deleteFile()}
-            style={{ position: 'absolute', top: 100, right: 20, zIndex: 100 }}
-            buttonStyle={{ width: 50, height: 50, borderRadius: 25 }}
-          />
-        </View>
-      ) : null}
+      {url && <FullScreenVideo url={url} setUrl={setUrl} deleteFile={deleteFile} />}
       <SafeAreaView style={downloadScreenStyles.saveAriaView}>
         <ScrollView style={downloadScreenStyles.rootContainer}>
           <View style={downloadScreenStyles.centerContainer}>
