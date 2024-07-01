@@ -3,8 +3,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { CameraRoll, PhotoIdentifier } from '@react-native-camera-roll/camera-roll';
 
 import { DownloadScreenView } from './downloadScreenView';
-import { Platform } from 'react-native';
+import { Alert, Platform } from 'react-native';
 import ReactNativeBlobUtil from 'react-native-blob-util';
+import { strings } from '@constants';
 
 export const DownloadScreen = () => {
   const [url, setUrl] = useState('');
@@ -22,7 +23,7 @@ export const DownloadScreen = () => {
     setPhotos(res?.edges);
   }, []);
 
-  const deleteFile = async () => {
+  const deleteFiles = async () => {
     Platform.OS === 'android'
       ? ReactNativeBlobUtil.fs
           .unlink(url)
@@ -32,6 +33,27 @@ export const DownloadScreen = () => {
           })
       : await CameraRoll.deletePhotos([url]);
     setUrl('');
+  };
+
+  const deleteFile = () => {
+    Alert.alert(`${strings.getString('do_you_want_to_delete_file')}`, '', [
+      {
+        isPreferred: true,
+        text: `${strings.getString('yes')}`,
+        onPress: () => {
+          deleteFiles()
+            .then()
+            .catch(() => {});
+        },
+        style: 'default',
+      },
+      {
+        isPreferred: false,
+        text: `${strings.getString('no')}`,
+        onPress: () => {},
+        style: 'destructive',
+      },
+    ]);
   };
 
   useEffect(() => {
