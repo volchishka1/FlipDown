@@ -11,7 +11,7 @@ import { strings } from '@constants/textConst';
 import { DownloadScreen } from '@screens/downloadScreen';
 import { FolderSvg } from '@assets/folder';
 
-export const MainScreen = () => {
+export const MainScreenTabNavigator = () => {
   const Tab = createBottomTabNavigator();
 
   return (
