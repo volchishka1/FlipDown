@@ -2,8 +2,6 @@ import { TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
 
 import React, { FC } from 'react';
 
-import { CloseWindowSvg } from '../../../assets/closeModalWindow';
-
 import { closeWindowStyle } from './styles';
 
 export type CloseWindowComponentProps = {
