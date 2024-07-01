@@ -2,13 +2,13 @@ import { Image, SafeAreaView, TextInput, View } from 'react-native';
 
 import React, { FC } from 'react';
 
-import { CustomButton } from '../../components/buttonComponent/customButtonComponent';
-import { LogoComponent } from '../../components/logoComponent/logoComponent';
+import { CustomButton } from '@components/buttonComponent/customButtonComponent';
+import { LogoComponent } from '@components/logoComponent/logoComponent';
 
 import { searchScreenStyles } from './styles';
 import { SearchScreenProps } from './types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { strings } from "../../constants/textConst";
+import { strings } from '@constants/textConst';
 
 export const SearchScreenView: FC<SearchScreenProps> = (props) => {
   const {
@@ -32,9 +32,14 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
             value={link}
             onChangeText={setLink}
             accessibilityLabel={'Text input field'}
+            placeholder={strings.getString('insert_your_link')}
             style={searchScreenStyles.input}
           />
-          <CustomButton onPress={setInputValue} textButton={strings.getString('download')} isLoad={isLoad} />
+          <CustomButton
+            onPress={setInputValue}
+            textButton={strings.getString('download')}
+            isLoad={isLoad}
+          />
         </View>
         <View style={searchScreenStyles.bottomContainer}>
           {showLoad && (
