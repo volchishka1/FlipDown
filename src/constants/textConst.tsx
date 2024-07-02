@@ -44,7 +44,6 @@ import {
   DO_YOU_WANT_TO_DELETE_FILE,
   DO_YOU_WANT_TO_SAVE_MUSIC,
   DO_YOU_WANT_TO_SAVE_VIDEO,
-  DOWNLOAD,
   DOWNLOAD_MP3,
   DOWNLOAD_VIDEO,
   DOWNLOADS,
@@ -68,6 +67,7 @@ import {
   FIFTEENTH_PART_OF_TERMS,
   FIFTH_PART,
   FIFTH_PART_OF_TERMS,
+  FIND,
   FIRST_PART,
   FIRST_PART_OF_TERMS,
   FLIPTOK_BOTTOM_TEXT,
@@ -328,7 +328,6 @@ import {
   DO_YOU_WANT_TO_SAVE_MUSIC_RU,
   DO_YOU_WANT_TO_SAVE_VIDEO_RU,
   DOWNLOAD_MP3_RU,
-  DOWNLOAD_RU,
   DOWNLOAD_VIDEO_RU,
   DOWNLOADS_RU,
   E_DESCRIBE_RU,
@@ -350,6 +349,7 @@ import {
   FIFTEENTH_PART_RU,
   FIFTH_PART_OF_TERMS_RU,
   FIFTH_PART_RU,
+  FIND_RU,
   FIRST_PART_OF_TERMS_RU,
   FIRST_PART_RU,
   FLIPTOK_HAS_NOT_DISCLOSED_RU,
@@ -566,7 +566,7 @@ import {
 
 export const strings = new LocalizedStrings({
   en: {
-    download: DOWNLOAD,
+    find: FIND,
     downloads: DOWNLOADS,
     search: SEARCH,
     information: INFORMATION,
@@ -861,7 +861,7 @@ export const strings = new LocalizedStrings({
     fliptok_bottom_text: FLIPTOK_BOTTOM_TEXT,
   },
   ru: {
-    download: DOWNLOAD_RU,
+    find: FIND_RU,
     downloads: DOWNLOADS_RU,
     search: SEARCH_RU,
     information: INFORMATION_RU,

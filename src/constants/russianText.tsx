@@ -1,4 +1,4 @@
-export const DOWNLOAD_RU = 'Скачать';
+export const FIND_RU = 'Поиск';
 export const DOWNLOADS_RU = 'Загрузки';
 export const SEARCH_RU = 'Поиск';
 export const INFORMATION_RU = 'Информация';

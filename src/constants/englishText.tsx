@@ -1,4 +1,4 @@
-export const DOWNLOAD = 'Download';
+export const FIND = 'Search';
 export const DOWNLOADS = 'Downloads';
 export const SEARCH = 'Search';
 export const INFORMATION = 'Information';
