@@ -3,8 +3,8 @@ import React, { FC, useEffect } from 'react';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { ROUTES } from '../../constants/routes';
-import { MainStackScreenNavigatorParamList } from '../../navigation/types';
+import { ROUTES } from '@constants/routes';
+import { MainStackScreenNavigatorParamList } from '@navigation/types';
 
 import { StartScreenView } from './startScreenView';
 
