@@ -17,17 +17,13 @@ export const DownloadScreenView: FC<DownloadScreenProps> = (props) => {
           <View style={downloadScreenStyles.centerContainer}>
             {photos.map((img) => (
               <TouchableOpacity
+                style={downloadScreenStyles.imageContainer}
                 key={img?.node?.image?.uri}
                 onPress={() => {
                   setUrl(img.node.image.uri);
                 }}
               >
-                <View style={downloadScreenStyles.itemContainer}>
-                  <View style={downloadScreenStyles.imageContainer}>
-                    <Image style={downloadScreenStyles.images} source={img.node.image} />
-                  </View>
-                  <View style={downloadScreenStyles.buttonContainer}></View>
-                </View>
+                <Image style={downloadScreenStyles.images} source={img.node.image} />
               </TouchableOpacity>
             ))}
           </View>
