@@ -37,7 +37,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
           />
           <CustomButton
             onPress={setInputValue}
-            textButton={strings.getString('download')}
+            textButton={strings.getString('find')}
             isLoad={isLoad}
           />
         </View>
