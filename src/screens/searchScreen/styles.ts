@@ -50,9 +50,10 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
   },
   buttonStyle: {
     borderRadius: 7,
+    width: 120,
   },
   imageStyle: {
-    width: 100,
+    width: 120,
     height: 180,
   },
   bottomContainer: {
