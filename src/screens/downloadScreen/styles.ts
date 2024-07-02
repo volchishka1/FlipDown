@@ -5,8 +5,6 @@ export type DownloadScreenStyles = {
   rootContainer: ViewStyle;
   centerContainer: ViewStyle;
   imageContainer: ViewStyle;
-  itemContainer: ViewStyle;
-  buttonContainer: ViewStyle;
   button: ViewStyle;
   images: ImageStyle;
   videoStyle: ViewStyle;
@@ -25,29 +23,25 @@ export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
   },
   rootContainer: {
     marginTop: '10%',
-    marginHorizontal: '5%',
+    marginHorizontal: 1,
   },
   centerContainer: {
     flexWrap: 'wrap',
     flexDirection: 'row',
   },
   images: {
-    height: 160,
-    width: 90,
-    borderRadius: 10,
+    height: 180,
+    width: '100%',
   },
-  imageContainer: {},
-  itemContainer: {
+  imageContainer: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: '2%',
-    backgroundColor: 'grey',
+    margin: 2,
     borderRadius: 10,
-    width: 100,
-    height: 170,
+    width: '32%',
+    height: 180,
   },
-  buttonContainer: {},
   button: {
     borderRadius: 7,
     height: 20,
