@@ -14,7 +14,7 @@ export const DownloadScreen = () => {
   const [photos, setPhotos] = useState<PhotoIdentifier[] | undefined>([]);
   const fetchPhotos = useCallback(async () => {
     const res = await CameraRoll.getPhotos({
-      first: 100,
+      first: 1000,
       assetType: 'Videos',
       groupTypes: 'Album',
       groupName: 'FlipTok',
