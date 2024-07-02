@@ -2,8 +2,8 @@ import { StatusBar, View } from 'react-native';
 
 import React, { FC } from 'react';
 
-import { LogoSvg } from '../../../assets/logo';
-import { LoaderComponent } from '../../components/loaderComponent/loaderComponent';
+import { LogoSvg } from '@assets/logo';
+import { LoaderComponent } from '@components/loaderComponent/loaderComponent';
 
 import { startScreenStyles } from './style';
 import { StartScreenViewProps } from './types';
