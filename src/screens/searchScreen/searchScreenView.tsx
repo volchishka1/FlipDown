@@ -19,6 +19,8 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     saveVideo = () => {},
     setLink = () => {},
     isLoad = false,
+    isLoadMusic = false,
+    isLoadVideo = false,
     showLoad = false,
   } = props;
   return (
@@ -50,13 +52,13 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
                   onPress={saveVideo}
                   textButton={strings.getString('download_video')}
                   style={searchScreenStyles.buttonStyle}
-                  isLoad={false}
+                  isLoad={isLoadVideo}
                 />
                 <CustomButton
                   onPress={saveMusic}
                   textButton={strings.getString('download_mp3')}
                   style={searchScreenStyles.buttonStyle}
-                  isLoad={false}
+                  isLoad={isLoadMusic}
                 />
               </View>
             </View>
