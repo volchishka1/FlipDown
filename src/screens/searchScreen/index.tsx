@@ -37,6 +37,8 @@ export const SearchScreen = () => {
   const getDataRedux: ResponseData[] = useAppSelector(getLoadData);
   const [data, setData] = useState<ResponseData | undefined>();
   const [isLoad, setIsLoad] = useState(false);
+  const [isLoadVideo, setIsLoadVideo] = useState(false);
+  const [isLoadMusic, setIsLoadMusic] = useState(false);
   const [showLoad, setShowLoad] = useState(false);
 
   const internetState: NetInfoState = useNetInfo();
@@ -51,6 +53,7 @@ export const SearchScreen = () => {
   const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
     setIsLoad(true);
+    showLoad && setShowLoad(false);
     axios
       .get(apiUrl)
       .then((response) => {
@@ -105,7 +108,6 @@ export const SearchScreen = () => {
       'Audio', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
       res.path(), // Path to the file being copied in the apps own storage
     );
-    Alert.alert(`${strings.getString('music_saved')}`);
   };
 
   const saveMusicOnIos = async (): Promise<void> => {
@@ -138,7 +140,6 @@ export const SearchScreen = () => {
     //   : (url = res.path());
     url = res.path();
     await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' });
-    Alert.alert(`${strings.getString('video_saved')}`);
   };
 
   const saveMusic = () => {
@@ -147,13 +148,21 @@ export const SearchScreen = () => {
         isPreferred: true,
         text: `${strings.getString('yes')}`,
         onPress: () => {
-          Platform.OS === 'android'
-            ? saveMusicOnAndroid()
-                .then()
-                .catch(() => {})
-            : saveMusicOnIos()
-                .then()
-                .catch(() => {});
+          setIsLoadMusic(true);
+          setTimeout(() => {
+            Platform.OS === 'android'
+              ? saveMusicOnAndroid()
+                  .then(() => {
+                    setIsLoadMusic(false);
+                    Alert.alert(`${strings.getString('music_saved')}`);
+                  })
+                  .catch(() => {})
+              : saveMusicOnIos()
+                  .then(() => {
+                    setIsLoadMusic(false);
+                  })
+                  .catch(() => {});
+          }, 3000);
         },
         style: 'default',
       },
@@ -171,9 +180,14 @@ export const SearchScreen = () => {
         isPreferred: true,
         text: `${strings.getString('yes')}`,
         onPress: () => {
-          saveVideoOnPhone()
-            .then()
-            .catch(() => {});
+          setIsLoadVideo(true);
+          setTimeout(() => {
+            saveVideoOnPhone()
+              .then()
+              .catch(() => {});
+            setIsLoadVideo(false);
+            Alert.alert(`${strings.getString('video_saved')}`);
+          }, 3000);
         },
         style: 'default',
       },
@@ -214,6 +228,8 @@ export const SearchScreen = () => {
       setLink={setLink}
       setInputValue={setInputValue}
       isLoad={isLoad}
+      isLoadMusic={isLoadMusic}
+      isLoadVideo={isLoadVideo}
       showLoad={showLoad}
     />
   );
