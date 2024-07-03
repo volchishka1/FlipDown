@@ -21,6 +21,8 @@ export const YES = 'Yes';
 export const NO = 'No';
 export const DO_YOU_WANT_TO_DELETE_FILE = 'Do you want to delete file';
 export const INSERT_YOUR_LINK = 'Insert TikTok link';
+export const DO_YOU_WANT_TO_EXIT = 'Do you want to exit';
+export const EXIT_APP = 'Exit app';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT = 'What is the FlipTok Project?';

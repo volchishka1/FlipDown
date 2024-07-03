@@ -1,22 +1,23 @@
 import { MainScreenView } from './mainScreenView';
 import { Alert, BackHandler } from 'react-native';
 import { useEffect } from 'react';
+import { strings } from '@constants';
 
 export const MainScreen = () => {
   useEffect(() => {
     const onBackPress = () => {
       Alert.alert(
-        'Exit App',
-        'Do you want to exit?',
+        `${strings.getString('exit_app')}`,
+        `${strings.getString('do_you_want_to_exit')}`,
         [
           {
-            text: 'Cancel',
+            text: `${strings.getString('no')}`,
             onPress: () => {
               // Do nothing
             },
             style: 'cancel',
           },
-          { text: 'YES', onPress: () => BackHandler.exitApp() },
+          { text: `${strings.getString('yes')}`, onPress: () => BackHandler.exitApp() },
         ],
         { cancelable: false },
       );

@@ -42,6 +42,7 @@ import {
   DO_WE_PROCESS_SENSITIVE_INFO,
   DO_WE_RECEIVE,
   DO_YOU_WANT_TO_DELETE_FILE,
+  DO_YOU_WANT_TO_EXIT,
   DO_YOU_WANT_TO_SAVE_MUSIC,
   DO_YOU_WANT_TO_SAVE_VIDEO,
   DOWNLOAD_MP3,
@@ -61,6 +62,7 @@ import {
   EVERY_INDIVIDUAL_STATE,
   EXCEPT_AND_SET_OUT,
   EXERCISE_YOUR_RIGHTS,
+  EXIT_APP,
   F_DESCRIBE,
   F_TYPE,
   FIFTEENTH_PART,
@@ -325,6 +327,7 @@ import {
   DO_WE_PROCESS_SENSITIVE_INFO_RU,
   DO_WE_RECEIVE_RU,
   DO_YOU_WANT_TO_DELETE_FILE_RU,
+  DO_YOU_WANT_TO_EXIT_RU,
   DO_YOU_WANT_TO_SAVE_MUSIC_RU,
   DO_YOU_WANT_TO_SAVE_VIDEO_RU,
   DOWNLOAD_MP3_RU,
@@ -343,6 +346,7 @@ import {
   EVERY_INDIVIDUAL_STATE_RU,
   EXCEPT_AND_SET_OUT_RU,
   EXERCISE_YOUR_RIGHTS_RU,
+  EXIT_APP_RU,
   F_DESCRIBE_RU,
   F_TYPE_RU,
   FIFTEENTH_PART_OF_TERMS_RU,
@@ -589,6 +593,8 @@ export const strings = new LocalizedStrings({
     no: NO,
     do_you_want_to_delete_file: DO_YOU_WANT_TO_DELETE_FILE,
     insert_your_link: INSERT_YOUR_LINK,
+    exit_app: EXIT_APP,
+    do_you_want_to_exit: DO_YOU_WANT_TO_EXIT,
 
     // ABOUT STRINGS
 
@@ -884,6 +890,8 @@ export const strings = new LocalizedStrings({
     no: NO_RU,
     do_you_want_to_delete_file: DO_YOU_WANT_TO_DELETE_FILE_RU,
     insert_your_link: INSERT_YOUR_LINK_RU,
+    exit_app: EXIT_APP_RU,
+    do_you_want_to_exit: DO_YOU_WANT_TO_EXIT_RU,
 
     // ABOUT STRINGS
 

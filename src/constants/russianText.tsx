@@ -21,6 +21,8 @@ export const YES_RU = 'Да';
 export const NO_RU = 'Нет';
 export const DO_YOU_WANT_TO_DELETE_FILE_RU = 'Вы уверены, что хотите удалить файл?';
 export const INSERT_YOUR_LINK_RU = 'Вставьте ссылку TikTok';
+export const DO_YOU_WANT_TO_EXIT_RU = 'Вы хотите выйти';
+export const EXIT_APP_RU = 'Выход из приложения';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT_RU = 'Проект FlipTok - что это?';
