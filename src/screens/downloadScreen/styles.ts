@@ -22,7 +22,6 @@ export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
     justifyContent: 'center',
   },
   rootContainer: {
-    marginTop: '10%',
     marginHorizontal: 1,
   },
   centerContainer: {
