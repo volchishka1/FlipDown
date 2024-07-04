@@ -181,13 +181,12 @@ export const SearchScreen = () => {
         text: `${strings.getString('yes')}`,
         onPress: () => {
           setIsLoadVideo(true);
-          setTimeout(() => {
-            saveVideoOnPhone()
-              .then()
-              .catch(() => {});
-            setIsLoadVideo(false);
-            Alert.alert(`${strings.getString('video_saved')}`);
-          }, 3000);
+          saveVideoOnPhone()
+            .then(() => {
+              setIsLoadVideo(false);
+              Alert.alert(`${strings.getString('video_saved')}`);
+            })
+            .catch(() => {});
         },
         style: 'default',
       },
