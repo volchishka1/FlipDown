@@ -7,7 +7,7 @@ import axios from 'axios';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { saveData } from '../../store/actions';
-import { getLoadData, getStatus } from '../../store/homeScreen/selectors';
+import { getLoadData } from '../../store/homeScreen/selectors';
 
 import { SearchScreenView } from './searchScreenView';
 import ReactNativeBlobUtil from 'react-native-blob-util';
@@ -43,13 +43,6 @@ export const SearchScreen = () => {
 
   const internetState: NetInfoState = useNetInfo();
 
-  useEffect(() => {
-    if (internetState.isConnected === false) {
-      Alert.alert(`${strings.getString('no_internet')}`, `${strings.getString('sorry')}`, [
-        { text: `${strings.getString('okay')}` },
-      ]);
-    }
-  }, [internetState.isConnected]);
   const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
     setIsLoad(true);
@@ -91,7 +84,6 @@ export const SearchScreen = () => {
   const musicUrl = data?.download_music_url;
   let urlMusic = `https://tttcdn.online/?url=${musicUrl}&type=mp3`;
   const musicTitle = data?.music?.title;
-  const videoId = data?.video?.id;
 
   const saveMusicOnAndroid = async (): Promise<void> => {
     await checkAndroidPermission();
@@ -102,7 +94,7 @@ export const SearchScreen = () => {
     await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
       {
         name: `${musicTitle}`, // name of the file
-        parentFolder: 'FlipTokSongs', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
+        parentFolder: 'FlipTok', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
         mimeType: 'audio/mpeg', // MIME type of the file
       },
       'Audio', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
