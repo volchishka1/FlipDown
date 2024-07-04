@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "458298693137",
+    "project_id": "fliptok-9cb3f",
+    "storage_bucket": "fliptok-9cb3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458298693137:android:fb82b527023700135fc3b0",
+        "android_client_info": {
+          "package_name": "com.fliptok"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDEUIaWEKrM6E9BPC7bowAGco7rTlGOdQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
