@@ -1,4 +1,11 @@
-import { Image, SafeAreaView, TextInput, View } from 'react-native';
+import {
+  Image,
+  Keyboard,
+  SafeAreaView,
+  TextInput,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -18,14 +25,16 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     saveMusic = () => {},
     saveVideo = () => {},
     setLink = () => {},
+    keyboardDismiss = () => {},
     isLoad = false,
     isLoadMusic = false,
     isLoadVideo = false,
     showLoad = false,
   } = props;
+  Keyboard.dismiss();
   return (
-    <SafeAreaView style={searchScreenStyles.rootContainer}>
-      <KeyboardAwareScrollView scrollEnabled={false} style={searchScreenStyles.keyboardAwareStyle}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <SafeAreaView style={searchScreenStyles.rootContainer}>
         <View style={searchScreenStyles.topContainer}>
           <LogoComponent />
         </View>
@@ -64,7 +73,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
             </View>
           )}
         </View>
-      </KeyboardAwareScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </TouchableWithoutFeedback>
   );
 };

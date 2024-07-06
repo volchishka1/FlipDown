@@ -3,14 +3,12 @@ import { StyleSheet, ViewStyle, ImageStyle } from 'react-native';
 export type Styles = {
   rootContainer: ViewStyle;
   topContainer: ViewStyle;
-  centerContainer: ViewStyle;
   inputContainer: ViewStyle;
   input: ViewStyle;
   buttonDataContainer: ViewStyle;
   dataContainer: ViewStyle;
   buttonStyle: ViewStyle;
   bottomContainer: ViewStyle;
-  keyboardAwareStyle: ViewStyle;
   imageStyle: ImageStyle;
 };
 
@@ -18,11 +16,7 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
   rootContainer: {
     backgroundColor: '#1d014b',
     flex: 1,
-  },
-  keyboardAwareStyle: {},
-  centerContainer: {
-    marginTop: '25%',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   topContainer: {
     marginBottom: '20%',
