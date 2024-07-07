@@ -17,7 +17,7 @@ export const infoScreenStyles = StyleSheet.create<Styles>({
   centerContainer: {
     justifyContent: 'space-between',
     marginTop: '15%',
-    height: '25%',
+    height: '30%',
     marginHorizontal: '3%',
   },
   bottomContainer: {
@@ -29,6 +29,7 @@ export const infoScreenStyles = StyleSheet.create<Styles>({
   textStyle: {
     fontFamily: 'Roboto-Bold',
     color: '#ffffff',
-    fontSize: 20,
+    fontSize: 22,
+    lineHeight: 40,
   },
 });
