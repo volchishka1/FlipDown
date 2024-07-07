@@ -14,7 +14,6 @@ import { LogoComponent } from '@components/logoComponent/logoComponent';
 
 import { searchScreenStyles } from './styles';
 import { SearchScreenProps } from './types';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { strings } from '@constants/textConst';
 
 export const SearchScreenView: FC<SearchScreenProps> = (props) => {
@@ -25,7 +24,6 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     saveMusic = () => {},
     saveVideo = () => {},
     setLink = () => {},
-    keyboardDismiss = () => {},
     isLoad = false,
     isLoadMusic = false,
     isLoadVideo = false,
