@@ -33,12 +33,9 @@ export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
     width: '100%',
   },
   imageContainer: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 2,
+    margin: 1,
     borderRadius: 10,
-    width: '32%',
+    width: '32.6%',
     height: 180,
   },
   button: {
