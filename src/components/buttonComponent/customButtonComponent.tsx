@@ -21,11 +21,7 @@ export const CustomButton: FC<CustomButtonProps> = (props) => {
   const { onPress, textButton, style, isLoad } = props;
 
   return (
-    <TouchableOpacity
-      style={[customButtonStyles.buttonStyle, style]}
-      accessibilityLabel={'button'}
-      onPress={onPress}
-    >
+    <TouchableOpacity style={[customButtonStyles.buttonStyle, style]} onPress={onPress}>
       {isLoad === false ? (
         <Text style={customButtonStyles.textButton}>{textButton}</Text>
       ) : (
