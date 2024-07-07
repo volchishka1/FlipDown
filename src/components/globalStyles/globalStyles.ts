@@ -23,6 +23,7 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    height: '10%',
   },
   headerName: {
     marginTop: 10,
