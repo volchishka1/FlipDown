@@ -17,7 +17,8 @@ export const FullScreenVideo: FC<FullScreenVideoProps> = (props) => {
     <Modal>
       <StatusBar backgroundColor={'#000000'} />
       <Video
-        resizeMode='stretch'
+        fullscreen={true}
+        resizeMode='cover'
         source={{ uri: url }}
         controls={true}
         style={fullScreenVideoStyles.videoStyles}
