@@ -20,7 +20,7 @@ export const textStyle = StyleSheet.create<TextStyleProps>({
   },
   paragraphStyle: {
     fontSize: 22,
-    fontFamily: 'Roboto-Medium',
-    color: '#c9c9c9',
+    fontFamily: 'Roboto-Bold',
+    color: '#ffffff',
   },
 });
