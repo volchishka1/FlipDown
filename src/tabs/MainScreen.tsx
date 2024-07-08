@@ -8,11 +8,15 @@ import { ROUTES } from '@constants/routes';
 import { InfoScreen } from '@screens/personalInfoScreen';
 import { SearchScreen } from '@screens/searchScreen';
 import { strings } from '@constants/textConst';
-import { DownloadScreen } from '@screens/downloadScreen';
 import { FolderSvg } from '@assets/folder';
+import { DownloadStackNavigator } from '@root/stack/DownloadStack';
+import { useAppSelector } from '@root/hooks/hooks';
+import { getUrl } from '@root/store/homeScreen/selectors';
+import { MainStackScreenNavigatorParamList } from '@navigation/types';
 
 export const MainScreenTabNavigator = () => {
-  const Tab = createBottomTabNavigator();
+  const Tab = createBottomTabNavigator<MainStackScreenNavigatorParamList>();
+  const url = useAppSelector(getUrl);
 
   return (
     <Tab.Navigator
@@ -33,9 +37,10 @@ export const MainScreenTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name={ROUTES.DOWNLOAD_SCREEN}
-        component={DownloadScreen}
+        name={ROUTES.DOWNLOAD_STACK_SCREEN}
+        component={DownloadStackNavigator}
         options={{
+          tabBarStyle: { display: url ? 'none' : 'flex' },
           tabBarLabel: `${strings.getString('downloads')}`,
           tabBarIcon: (focused) => {
             return <FolderSvg />;
