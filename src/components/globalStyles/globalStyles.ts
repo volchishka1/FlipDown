@@ -71,3 +71,10 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
     marginBottom: 10,
   },
 });
+
+export const textColorWhiteStyles = {
+  color: '#ffffff',
+};
+export const textColorBlackStyles = {
+  color: '#000000',
+};

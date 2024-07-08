@@ -209,6 +209,7 @@ import {
   UPON_RECEIVING_YOUR_REQUEST,
   USING_THE_FLIPTOK,
   VERIFICATION_PROCESS,
+  VIDEO_DELETED,
   VIDEO_SAVED,
   VIRGINIA_CDPA,
   VISIT_OUR_WEBSITE,
@@ -492,6 +493,7 @@ import {
   UPON_RECEIVING_YOUR_REQUEST_RU,
   USING_THE_FLIPTOK_RU,
   VERIFICATION_PROCESS_RU,
+  VIDEO_DELETED_RU,
   VIDEO_SAVED_RU,
   VIRGINIA_CDPA_RU,
   VISIT_OUR_WEBSITE_RU,
@@ -595,6 +597,7 @@ export const strings = new LocalizedStrings({
     insert_your_link: INSERT_YOUR_LINK,
     exit_app: EXIT_APP,
     do_you_want_to_exit: DO_YOU_WANT_TO_EXIT,
+    deleted_video: VIDEO_DELETED,
 
     // ABOUT STRINGS
 
@@ -892,6 +895,7 @@ export const strings = new LocalizedStrings({
     insert_your_link: INSERT_YOUR_LINK_RU,
     exit_app: EXIT_APP_RU,
     do_you_want_to_exit: DO_YOU_WANT_TO_EXIT_RU,
+    deleted_video: VIDEO_DELETED_RU,
 
     // ABOUT STRINGS
 
