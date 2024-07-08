@@ -5,9 +5,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ROUTES } from '@constants/routes';
 import { MainScreen } from '@screens/mainScreen';
 import { StartScreen } from '@screens/startScreen';
+import { MainStackScreenNavigatorParamList } from '@navigation/types';
 
 export const MainStackNavigator = () => {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<MainStackScreenNavigatorParamList>();
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false, gestureEnabled: false }}>
