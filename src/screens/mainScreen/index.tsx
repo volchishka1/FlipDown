@@ -1,9 +1,17 @@
 import { MainScreenView } from './mainScreenView';
 import { Alert, BackHandler } from 'react-native';
-import { useEffect } from 'react';
-import { strings } from '@constants';
+import { FC, useEffect } from 'react';
+import { ROUTES, strings } from '@constants';
+import { CompositeScreenProps } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { MainStackScreenNavigatorParamList } from '@navigation/types';
 
-export const MainScreen = () => {
+export type MainScreenProps = CompositeScreenProps<
+  NativeStackScreenProps<MainStackScreenNavigatorParamList, ROUTES.MAIN_SCREEN>,
+  any
+>;
+
+export const MainScreen: FC<MainScreenProps> = () => {
   useEffect(() => {
     const onBackPress = () => {
       Alert.alert(
