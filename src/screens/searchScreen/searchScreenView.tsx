@@ -28,6 +28,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     isLoadMusic = false,
     isLoadVideo = false,
     showLoad = false,
+    textInputColorText,
   } = props;
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -41,7 +42,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
             onChangeText={setLink}
             accessibilityLabel={'Text input field'}
             placeholder={strings.getString('insert_your_link')}
-            style={searchScreenStyles.input}
+            style={[searchScreenStyles.input, textInputColorText]}
           />
           <CustomButton
             onPress={setInputValue}
