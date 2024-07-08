@@ -29,9 +29,8 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     isLoadVideo = false,
     showLoad = false,
   } = props;
-  Keyboard.dismiss();
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <SafeAreaView style={searchScreenStyles.rootContainer}>
         <View style={searchScreenStyles.topContainer}>
           <LogoComponent />
