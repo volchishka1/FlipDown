@@ -72,9 +72,6 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
   },
 });
 
-export const textColorWhiteStyles = {
-  color: '#ffffff',
-};
 export const textColorBlackStyles = {
   color: '#000000',
 };
