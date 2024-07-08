@@ -1,16 +1,20 @@
-import { useCallback, useEffect, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 
 import { CameraRoll, PhotoIdentifier } from '@react-native-camera-roll/camera-roll';
 
 import { DownloadScreenView } from './downloadScreenView';
-import { Alert, Platform } from 'react-native';
-import ReactNativeBlobUtil from 'react-native-blob-util';
-import { strings } from '@constants';
+import { ROUTES } from '@constants';
+import { CompositeScreenProps } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { MainStackScreenNavigatorParamList } from '@navigation/types';
 
-export const DownloadScreen = () => {
-  const [url, setUrl] = useState('');
+export type DownloadScreenComponentProps = CompositeScreenProps<
+  NativeStackScreenProps<MainStackScreenNavigatorParamList, ROUTES.DOWNLOAD_SCREEN>,
+  any
+>;
+
+export const DownloadScreen: FC<DownloadScreenComponentProps> = ({ navigation }) => {
   const [title, setTitle] = useState('');
-  const [duration, setDuration] = useState('');
   const [photos, setPhotos] = useState<PhotoIdentifier[] | undefined>([]);
   const fetchPhotos = useCallback(async () => {
     const res = await CameraRoll.getPhotos({
@@ -23,39 +27,8 @@ export const DownloadScreen = () => {
     setPhotos(res?.edges);
   }, []);
 
-  const deleteFiles = async () => {
-    Platform.OS === 'android'
-      ? ReactNativeBlobUtil.fs
-          .unlink(url)
-          .then()
-          .catch((err) => {
-            console.log(err);
-          })
-      : await CameraRoll.deletePhotos([url]);
-  };
-
-  const deleteFile = () => {
-    Alert.alert(`${strings.getString('do_you_want_to_delete_file')}`, '', [
-      {
-        isPreferred: true,
-        text: `${strings.getString('yes')}`,
-        onPress: () => {
-          deleteFiles()
-            .then(() => {
-              Alert.alert(strings.getString('deleted_video'));
-              setUrl('');
-            })
-            .catch(() => {});
-        },
-        style: 'default',
-      },
-      {
-        isPreferred: false,
-        text: `${strings.getString('no')}`,
-        onPress: () => {},
-        style: 'destructive',
-      },
-    ]);
+  const navigateToFullVideoScreen = () => {
+    navigation.navigate(ROUTES.FULL_VIDEO_SCREEN);
   };
 
   useEffect(() => {
@@ -67,13 +40,9 @@ export const DownloadScreen = () => {
   return (
     <DownloadScreenView
       photos={photos}
-      url={url}
-      setUrl={setUrl}
       title={title}
       setTitle={setTitle}
-      duration={duration}
-      setDuration={setDuration}
-      deleteFile={deleteFile}
+      navigateToFullVideoScreen={navigateToFullVideoScreen}
     />
   );
 };
