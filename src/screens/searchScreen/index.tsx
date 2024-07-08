@@ -1,4 +1,4 @@
-import { Alert, Keyboard, PermissionsAndroid, Platform } from 'react-native';
+import { Alert, Appearance, Keyboard, PermissionsAndroid, Platform } from 'react-native';
 
 import React, { useEffect, useState } from 'react';
 
@@ -14,6 +14,7 @@ import ReactNativeBlobUtil from 'react-native-blob-util';
 
 import { useNetInfo, NetInfoState } from '@react-native-community/netinfo';
 import { strings } from '@constants';
+import { textColorBlackStyles } from '@components/globalStyles/globalStyles';
 
 export interface ResponseData {
   music: {
@@ -42,6 +43,8 @@ export const SearchScreen = () => {
   const [showLoad, setShowLoad] = useState(false);
 
   const internetState: NetInfoState = useNetInfo();
+  const colorScheme = Appearance.getColorScheme();
+  const textInputColorText = colorScheme === 'dark' && textColorBlackStyles;
 
   const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
@@ -115,26 +118,24 @@ export const SearchScreen = () => {
 
   const saveVideoOnPhone = async (): Promise<void> => {
     Platform.OS === 'android' && (await checkAndroidPermission());
-    let path = ReactNativeBlobUtil.fs.dirs.PictureDir + videoId;
+    let path = ReactNativeBlobUtil.fs.dirs.MovieDir + videoId;
     const res = await ReactNativeBlobUtil.config({
       fileCache: true,
       appendExt: 'mp4',
       indicator: true,
-      path: path,
     }).fetch('GET', url);
-    Platform.OS === 'android'
-      ? (await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
+    Platform.OS === 'ios'
+      ? (url = res.path()) && (await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' }))
+      : (await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
           {
             name: 'FlipTokVideo' + `${videoId}`, // name of the file
             parentFolder: 'FlipTok', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
             mimeType: 'video/mp4', // MIME type of the file
+            path: path,
           },
           'Video', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
           res.path(), // Path to the file being copied in the apps own storage
-        )) && Alert.alert(`${strings.getString('video_saved')}`)
-      : (url = res.path());
-    url = res.path();
-    await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' });
+        )) && Alert.alert(`${strings.getString('video_saved')}`);
   };
 
   const saveMusic = () => {
@@ -178,10 +179,10 @@ export const SearchScreen = () => {
           setIsLoadVideo(true);
           saveVideoOnPhone()
             .then(() => {
-              setIsLoadVideo(false);
               Alert.alert(`${strings.getString('video_saved')}`);
             })
             .catch(() => {});
+          setIsLoadVideo(false);
         },
         style: 'default',
       },
@@ -226,6 +227,7 @@ export const SearchScreen = () => {
       isLoadMusic={isLoadMusic}
       isLoadVideo={isLoadVideo}
       showLoad={showLoad}
+      textInputColorText={textInputColorText}
     />
   );
 };
