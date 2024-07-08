@@ -32,7 +32,6 @@ export const DownloadScreen = () => {
             console.log(err);
           })
       : await CameraRoll.deletePhotos([url]);
-    setUrl('');
   };
 
   const deleteFile = () => {
@@ -42,7 +41,10 @@ export const DownloadScreen = () => {
         text: `${strings.getString('yes')}`,
         onPress: () => {
           deleteFiles()
-            .then()
+            .then(() => {
+              Alert.alert(strings.getString('deleted_video'));
+              setUrl('');
+            })
             .catch(() => {});
         },
         style: 'default',
