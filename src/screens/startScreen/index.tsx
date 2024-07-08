@@ -9,11 +9,13 @@ import { MainStackScreenNavigatorParamList } from '@navigation/types';
 import { StartScreenView } from './startScreenView';
 
 export type StartScreenComponentProps = CompositeScreenProps<
-  NativeStackScreenProps<MainStackScreenNavigatorParamList, ROUTES.MAIN_SCREEN>,
+  NativeStackScreenProps<MainStackScreenNavigatorParamList, ROUTES.START_SCREEN>,
   any
 >;
 
-export const StartScreen: FC<StartScreenComponentProps> = ({ navigation }) => {
+export const StartScreen: FC<StartScreenComponentProps> = (props) => {
+  const { navigation } = props;
+
   const navigateToMainScreen = () => {
     navigation.navigate(ROUTES.MAIN_SCREEN);
   };
