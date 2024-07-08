@@ -1,11 +1,11 @@
 import { createReducer } from '@reduxjs/toolkit';
 
 import { HomeScreen } from '../../types/state';
-import { addIsActive, saveData, setStatus } from '../actions';
+import { addIsActive, saveData, setUrl } from '../actions';
 
 const initialState: HomeScreen = {
   isActive: false,
-  status: 0,
+  url: '',
   itemData: [],
 };
 
@@ -17,7 +17,7 @@ export const homeScreen = createReducer(initialState, (builder) => {
     .addCase(saveData, (state, action) => {
       state.itemData = action.payload;
     })
-    .addCase(setStatus, (state, action) => {
-      state.status = action.payload;
+    .addCase(setUrl, (state, action) => {
+      state.url = action.payload;
     });
 });
