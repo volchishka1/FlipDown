@@ -82,6 +82,15 @@ export const SearchScreen = () => {
     }
   };
 
+  useEffect(() => {
+    Platform.OS === 'android' &&
+      checkAndroidPermission()
+        .then()
+        .catch((err) => {
+          console.log(err);
+        });
+  });
+
   const videoUrl = data?.download_video_url;
   let url = `https://tttcdn.online/?url=${videoUrl}&type=mp4`;
   const musicUrl = data?.download_music_url;
@@ -90,7 +99,7 @@ export const SearchScreen = () => {
   const videoId = data?.video?.id;
 
   const saveMusicOnAndroid = async (): Promise<void> => {
-    await checkAndroidPermission();
+    // await checkAndroidPermission();
     const res = await ReactNativeBlobUtil.config({
       fileCache: true,
       appendExt: 'mp3',
@@ -117,7 +126,6 @@ export const SearchScreen = () => {
   };
 
   const saveVideoOnPhone = async (): Promise<void> => {
-    Platform.OS === 'android' && (await checkAndroidPermission());
     let path = ReactNativeBlobUtil.fs.dirs.MovieDir + videoId;
     const res = await ReactNativeBlobUtil.config({
       fileCache: true,
@@ -180,9 +188,9 @@ export const SearchScreen = () => {
           saveVideoOnPhone()
             .then(() => {
               Alert.alert(`${strings.getString('video_saved')}`);
+              setIsLoadVideo(false);
             })
             .catch(() => {});
-          setIsLoadVideo(false);
         },
         style: 'default',
       },
