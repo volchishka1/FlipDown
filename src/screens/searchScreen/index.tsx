@@ -134,7 +134,7 @@ export const SearchScreen = () => {
     }).fetch('GET', url);
     Platform.OS === 'ios'
       ? (url = res.path()) && (await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' }))
-      : (await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
+      : await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
           {
             name: 'FlipTokVideo' + `${videoId}`, // name of the file
             parentFolder: 'FlipTok', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
@@ -143,7 +143,7 @@ export const SearchScreen = () => {
           },
           'Video', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
           res.path(), // Path to the file being copied in the apps own storage
-        )) && Alert.alert(`${strings.getString('video_saved')}`);
+        );
   };
 
   const saveMusic = () => {
