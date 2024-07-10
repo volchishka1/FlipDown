@@ -99,7 +99,6 @@ export const SearchScreen = () => {
   const videoId = data?.video?.id;
 
   const saveMusicOnAndroid = async (): Promise<void> => {
-    // await checkAndroidPermission();
     const res = await ReactNativeBlobUtil.config({
       fileCache: true,
       appendExt: 'mp3',
