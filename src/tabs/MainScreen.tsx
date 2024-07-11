@@ -13,6 +13,7 @@ import { DownloadStackNavigator } from '@root/stack/DownloadStack';
 import { useAppSelector } from '@root/hooks/hooks';
 import { getUrl } from '@root/store/homeScreen/selectors';
 import { MainStackScreenNavigatorParamList } from '@navigation/types';
+import { Dimensions } from "react-native";
 
 export const MainScreenTabNavigator = () => {
   const Tab = createBottomTabNavigator<MainStackScreenNavigatorParamList>();
@@ -21,9 +22,10 @@ export const MainScreenTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        tabBarStyle: {height: Dimensions.get('window').width > 600 ? 60 : 45, display: url ? 'none' : 'flex'},
         headerShown: false,
         tabBarShowLabel: true,
-        tabBarLabelStyle: { color: '#6563ff', fontSize: 12, fontFamily: 'Roboto-Medium' },
+        tabBarLabelStyle: { color: '#6563ff', fontSize: Dimensions.get('window').width > 600 ? 18 : 12, fontFamily: 'Roboto-Medium' },
       }}
     >
       <Tab.Screen
@@ -40,7 +42,6 @@ export const MainScreenTabNavigator = () => {
         name={ROUTES.DOWNLOAD_STACK_SCREEN}
         component={DownloadStackNavigator}
         options={{
-          tabBarStyle: { display: url ? 'none' : 'flex' },
           tabBarLabel: `${strings.getString('downloads')}`,
           tabBarIcon: (focused) => {
             return <FolderSvg />;
