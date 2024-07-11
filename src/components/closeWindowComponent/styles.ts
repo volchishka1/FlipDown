@@ -1,4 +1,4 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import { Dimensions, StyleSheet, ViewStyle } from "react-native";
 
 export type CloseWindowStyle = {
   rootContainer: ViewStyle;
@@ -10,11 +10,11 @@ export const closeWindowStyle = StyleSheet.create<CloseWindowStyle>({
     alignItems: 'flex-end',
   },
   buttonStyle: {
-    width: 40,
-    height: 40,
+    width: Dimensions.get('window').width > 600 ? 50 : 35,
+    height: Dimensions.get('window').width > 600 ? 50 : 35,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 20,
+    borderRadius: Dimensions.get('window').width > 600 ? 25 : 20,
     backgroundColor: '#1d014b',
     opacity: 0.6,
   },
