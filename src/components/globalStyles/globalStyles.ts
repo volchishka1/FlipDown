@@ -1,11 +1,12 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { Dimensions, StyleSheet, TextStyle, ViewStyle } from "react-native";
 
 export type GlobalStyles = {
   tableContainer: ViewStyle;
   topContainer: ViewStyle;
   dotComponent: ViewStyle;
   descriptionUpdatedText: ViewStyle;
-  descriptionText: ViewStyle;
+  descriptionText: TextStyle;
+  footerDescriptionText: TextStyle;
   descriptionUnderlineText: TextStyle;
   boldText: TextStyle;
   boldTextWithMargin: TextStyle;
@@ -23,33 +24,40 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: '10%',
+    height: Dimensions.get('window').width > 600 ? 80 : 70,
   },
   headerName: {
+    fontFamily: 'Roboto-Bold',
+    fontSize: Dimensions.get('window').width > 600 ? 30 : 22,
     marginTop: 10,
   },
   headerNameTerms: {
-    fontSize: 20,
+    fontSize: Dimensions.get('window').width > 600 ? 30 : 20,
   },
   boldText: {
+    fontSize: Dimensions.get('window').width > 600 ? 18 : 14,
     fontFamily: 'Roboto-Bold',
   },
   boldTextWithMargin: {
     fontFamily: 'Roboto-Bold',
-    marginBottom: 10,
+    fontSize: Dimensions.get('window').width > 600 ? 18 : 14,
+    marginBottom: Dimensions.get('window').width > 600 ? 14 : 10,
   },
   boldUnderlineText: {
+    fontSize: Dimensions.get('window').width > 600 ? 18 : 14,
     fontFamily: 'Roboto-Bold',
     textDecorationLine: 'underline',
   },
   paragraphName: {
     fontFamily: 'Roboto-Bold',
-    fontSize: 18,
+    fontSize: Dimensions.get('window').width > 600 ? 24 : 22,
   },
   tableContainer: {
     marginBottom: 10,
   },
   descriptionText: {
+    lineHeight: Dimensions.get('window').width > 600 ? 22 : 18,
+    fontSize: Dimensions.get('window').width > 600 ? 18 : 14,
     marginBottom: 10,
   },
   descriptionUnderlineText: {
@@ -57,11 +65,12 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
     textDecorationLine: 'underline',
   },
   paragraphDescriptionName: {
-    fontSize: 16,
+    fontFamily: 'Roboto-Bold',
+    fontSize: Dimensions.get('window').width > 600 ? 22 : 16,
   },
   paragraphDescriptionNameBold: {
     marginBottom: 10,
-    fontSize: 16,
+    fontSize: Dimensions.get('window').width > 600 ? 18 : 16,
     fontFamily: 'Roboto-Bold',
   },
   descriptionUpdatedText: {
@@ -70,6 +79,11 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
   dotComponent: {
     marginBottom: 10,
   },
+  footerDescriptionText: {
+    lineHeight: Dimensions.get('window').width > 600 ? 22 : 18,
+    fontSize: Dimensions.get('window').width > 600 ? 18 : 14,
+    marginBottom: '20%',
+  }
 });
 
 export const textColorBlackStyles = {
