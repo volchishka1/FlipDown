@@ -1,4 +1,4 @@
-import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { Dimensions, ImageStyle, StyleSheet, TextStyle, ViewStyle } from "react-native";
 
 export type DownloadScreenStyles = {
   saveAriaView: ViewStyle;
@@ -29,14 +29,14 @@ export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
     flexDirection: 'row',
   },
   images: {
-    height: 180,
+    height: Dimensions.get('window').width > 600 ? 320 : 180,
     width: '100%',
   },
   imageContainer: {
-    margin: 1,
+    margin: Dimensions.get('window').width > 600 ? 2 : 1,
     borderRadius: 10,
     width: '32.6%',
-    height: 180,
+    height: Dimensions.get('window').width > 600 ? 320 : 180,
   },
   button: {
     borderRadius: 7,
