@@ -23,14 +23,14 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
     <SafeAreaView style={aboutScreenStyles.rootContainer}>
       <View style={globalStyles.topContainer}>
         <ParagraphComponent
-          style={globalStyles.headerName}
+          textStyles={globalStyles.headerName}
           paragraphName={strings.getString('about_project')}
         />
         <CloseWindowComponent iconSvg={<CloseWindowSvg />} goToCloseButton={goToCloseBottomSheet} />
       </View>
       <ScrollView style={aboutScreenStyles.centerContainer}>
         <TextComponent
-          style={globalStyles.descriptionText}
+          textStyles={globalStyles.descriptionText}
           text={strings.getString('if_you_need')}
         />
         <ParagraphComponent
@@ -38,14 +38,14 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           paragraphName={strings.getString('how_to_use')}
         />
         <TextComponent
-          style={globalStyles.descriptionText}
+          textStyles={globalStyles.descriptionText}
           text={strings.getString('working_with')}
         />
-        <DotComponent text={strings.getString('go_to_the_app')} style={globalStyles.dotComponent} />
-        <DotComponent text={strings.getString('copy_link')} style={globalStyles.dotComponent} />
-        <DotComponent text={strings.getString('open_the_app')} style={globalStyles.dotComponent} />
+        <DotComponent textStyles={globalStyles.descriptionText} text={strings.getString('go_to_the_app')} style={globalStyles.dotComponent} />
+        <DotComponent textStyles={globalStyles.descriptionText} text={strings.getString('copy_link')} style={globalStyles.dotComponent} />
+        <DotComponent textStyles={globalStyles.descriptionText} text={strings.getString('open_the_app')} style={globalStyles.dotComponent} />
         <TextComponent
-          style={globalStyles.dotComponent}
+          textStyles={globalStyles.descriptionText}
           text={strings.getString('the_final_step')}
         />
         <ParagraphComponent
@@ -53,18 +53,19 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           paragraphName={strings.getString('benefits')}
         />
         <TextComponent
-          style={globalStyles.descriptionText}
+          textStyles={globalStyles.descriptionText}
           text={strings.getString('if_you_chosen')}
         />
-        <DotComponent style={globalStyles.dotComponent} text={strings.getString('no_user_fees')} />
-        <DotComponent style={globalStyles.dotComponent} text={strings.getString('high_quality')} />
-        <DotComponent style={globalStyles.dotComponent} text={strings.getString('any_format')} />
+        <DotComponent textStyles={globalStyles.descriptionText} style={globalStyles.dotComponent} text={strings.getString('no_user_fees')} />
+        <DotComponent textStyles={globalStyles.descriptionText} style={globalStyles.dotComponent} text={strings.getString('high_quality')} />
+        <DotComponent textStyles={globalStyles.descriptionText} style={globalStyles.dotComponent} text={strings.getString('any_format')} />
         <DotComponent
+          textStyles={globalStyles.descriptionText}
           style={globalStyles.dotComponent}
           text={strings.getString('confidentiality')}
         />
         <TextComponent
-          style={globalStyles.descriptionText}
+          textStyles={globalStyles.footerDescriptionText}
           text={strings.getString('using_the_fliptok')}
         />
       </ScrollView>
