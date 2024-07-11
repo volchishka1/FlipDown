@@ -1,4 +1,4 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { Dimensions, StyleSheet, TextStyle, ViewStyle } from "react-native";
 
 export type Styles = {
   rootContainer: ViewStyle;
@@ -6,6 +6,7 @@ export type Styles = {
   bottomContainer: ViewStyle;
   textStyle: TextStyle;
   textDescriptionContainer: ViewStyle;
+  textDescriptionStyle: TextStyle;
 };
 
 export const infoScreenStyles = StyleSheet.create<Styles>({
@@ -17,7 +18,7 @@ export const infoScreenStyles = StyleSheet.create<Styles>({
   centerContainer: {
     justifyContent: 'space-between',
     marginTop: '15%',
-    height: '30%',
+    height: Dimensions.get('window').width > 600 ? 240 : 180,
     marginHorizontal: '3%',
   },
   bottomContainer: {
@@ -26,10 +27,14 @@ export const infoScreenStyles = StyleSheet.create<Styles>({
   textDescriptionContainer: {
     marginVertical: '5%',
   },
+  textDescriptionStyle: {
+    fontSize: Dimensions.get('window').width > 600 ? 20 : 16,
+    lineHeight: Dimensions.get('window').width > 600 ? 24 : 18
+  },
   textStyle: {
     fontFamily: 'Roboto-Bold',
     color: '#ffffff',
-    fontSize: 22,
+    fontSize: Dimensions.get('window').width > 600 ? 30 : 22,
     lineHeight: 40,
   },
 });
