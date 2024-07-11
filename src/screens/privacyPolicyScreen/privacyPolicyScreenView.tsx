@@ -120,21 +120,21 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <ParagraphComponent paragraphName={strings.getString('table_of_contents')} />
         <View style={globalStyles.tableContainer}>
-          <TextComponent text={strings.getString('first_part')} />
-          <TextComponent text={strings.getString('second_part')} />
-          <TextComponent text={strings.getString('third_part')} />
-          <TextComponent text={strings.getString('fourth_part')} />
-          <TextComponent text={strings.getString('fifth_part')} />
-          <TextComponent text={strings.getString('sixth_part')} />
-          <TextComponent text={strings.getString('seventh_part')} />
-          <TextComponent text={strings.getString('eighth_part')} />
-          <TextComponent text={strings.getString('ninth_part')} />
-          <TextComponent text={strings.getString('tenth_part')} />
-          <TextComponent text={strings.getString('eleventh_part')} />
-          <TextComponent text={strings.getString('twelfth_part')} />
-          <TextComponent text={strings.getString('thirteenth_part')} />
-          <TextComponent text={strings.getString('fourteenth_part')} />
-          <TextComponent text={strings.getString('fifteenth_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('first_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('second_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('third_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('fourth_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('fifth_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('sixth_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('seventh_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('eighth_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('ninth_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('tenth_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('eleventh_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('twelfth_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('thirteenth_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('fourteenth_part')} />
+          <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('fifteenth_part')} />
         </View>
         <ParagraphComponent
           textStyles={globalStyles.paragraphName}
@@ -142,7 +142,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
         />
         <TextComponent
           textStyles={globalStyles.paragraphDescriptionNameBold}
-          text={'Personal information you disclose to us'}
+          text={strings.getString('personal_info_you_disclose')}
         />
         <TextComponent textStyles={globalStyles.boldText} text={strings.getString('in_short')} />
         <TextComponent
@@ -367,9 +367,9 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           textStyles={globalStyles.paragraphDescriptionNameBold}
           text={strings.getString('ccpa')}
         />
-        <TextComponent text={strings.getString('california_resident')} />
-        <DotComponent text={strings.getString('every_individual')} />
-        <DotComponent text={strings.getString('every_individual_state')} />
+        <TextComponent textStyles={globalStyles.descriptionText} text={strings.getString('california_resident')} />
+        <DotComponent textStyles={globalStyles.descriptionText} text={strings.getString('every_individual')} />
+        <DotComponent textStyles={globalStyles.descriptionText} text={strings.getString('every_individual_state')} />
         <TextComponent
           textStyles={globalStyles.descriptionText}
           text={strings.getString('all_other')}
@@ -644,7 +644,7 @@ export const PrivacyPolicyScreenView: FC<PrivacyPolicyScreenTypes> = ({ goToClos
           paragraphName={strings.getString('fifteenth_part')}
         />
         <TextComponent
-          textStyles={globalStyles.descriptionText}
+          textStyles={globalStyles.footerDescriptionText}
           text={strings.getString('based_on_the_app_law')}
         />
       </ScrollView>
