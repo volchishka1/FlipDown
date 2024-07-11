@@ -1,4 +1,4 @@
-import { TextInputProps, TextProps } from 'react-native';
+import { TextInputProps, TextProps, ViewProps } from "react-native";
 
 export type SearchScreenProps = {
   link: TextProps['children'];
@@ -7,4 +7,5 @@ export type SearchScreenProps = {
   saveMusic: TextInputProps['onChangeText'];
   setLink: TextInputProps['onChangeText'];
   preview: TextProps['children'];
+  textInputColorText: TextInputProps['children']
 };
