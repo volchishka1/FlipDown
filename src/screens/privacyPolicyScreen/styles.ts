@@ -8,10 +8,10 @@ export type PrivacyPolicyScreenStyles = {
 export const privacyPolicyScreenStyles = StyleSheet.create<PrivacyPolicyScreenStyles>({
   rootContainer: {
     backgroundColor: '#8c54ea',
-    marginBottom: 10,
+    paddingBottom: 20,
   },
   centerContainer: {
     marginHorizontal: '3%',
-    marginBottom: '10%',
+    paddingBottom: '10%',
   },
 });
