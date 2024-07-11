@@ -49,7 +49,7 @@ export const InfoScreenView: FC<InfoScreenViewProps> = (props) => {
       <View style={infoScreenStyles.bottomContainer}>
         <LogoComponent />
         <View style={infoScreenStyles.textDescriptionContainer}>
-          <TextComponent text={'© 2024 FlipTok. All rights reserved.'} />
+          <TextComponent textStyles={infoScreenStyles.textDescriptionStyle} text={'© 2024 FlipTok. All rights reserved.'} />
         </View>
       </View>
     </SafeAreaView>
