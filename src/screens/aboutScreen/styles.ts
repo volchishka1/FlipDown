@@ -8,10 +8,10 @@ export type AboutScreenStyles = {
 export const aboutScreenStyles = StyleSheet.create<AboutScreenStyles>({
   rootContainer: {
     backgroundColor: '#8c54ea',
-    marginBottom: 10,
+    paddingBottom: '15%',
   },
   centerContainer: {
     marginHorizontal: '3%',
-    marginBottom: '10%',
+    paddingBottom: '10%',
   },
 });
