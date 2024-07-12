@@ -15,7 +15,7 @@ export const termsAndConditionsStyles = StyleSheet.create<TermsAndConditionStyle
     marginBottom: '10%',
   },
   footerTextStyle: {
-    marginBottom: '15%',
+    marginBottom: '40%',
     fontFamily: 'Roboto-Bold',
   },
 });
