@@ -82,7 +82,7 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
   footerDescriptionText: {
     lineHeight: Dimensions.get('window').width > 600 ? 22 : 18,
     fontSize: Dimensions.get('window').width > 600 ? 18 : 14,
-    marginBottom: '20%',
+    marginBottom: '40%',
   }
 });
 
