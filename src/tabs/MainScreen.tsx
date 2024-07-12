@@ -22,7 +22,7 @@ export const MainScreenTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: {height: Dimensions.get('window').width > 600 ? 60 : 45, display: url ? 'none' : 'flex'},
+        tabBarStyle: {display: url ? 'none' : 'flex'},
         headerShown: false,
         tabBarShowLabel: true,
         tabBarLabelStyle: { color: '#6563ff', fontSize: Dimensions.get('window').width > 600 ? 18 : 12, fontFamily: 'Roboto-Medium' },
