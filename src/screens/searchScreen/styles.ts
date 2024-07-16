@@ -51,7 +51,7 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
     width: 120,
   },
   textButtonStyle: {
-    fontSize: Dimensions.get('window').width > 600 ? 18 : 12,
+    fontSize: Dimensions.get('window').width > 600 ? 18 : 14,
   },
   searchButtonStyle: {
     width: Dimensions.get('window').width > 600 ? 120 : 80,
