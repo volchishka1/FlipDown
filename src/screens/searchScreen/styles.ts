@@ -1,4 +1,4 @@
-import { StyleSheet, ViewStyle, ImageStyle, Dimensions, TextStyle } from "react-native";
+import { StyleSheet, ViewStyle, ImageStyle, Dimensions, TextStyle } from 'react-native';
 
 export type Styles = {
   rootContainer: ViewStyle;
@@ -10,6 +10,7 @@ export type Styles = {
   buttonStyle: ViewStyle;
   searchButtonStyle: ViewStyle;
   bottomContainer: ViewStyle;
+  bannerAdvertising: ViewStyle;
   imageStyle: ImageStyle;
   textButtonStyle: TextStyle;
 };
@@ -18,10 +19,10 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
   rootContainer: {
     backgroundColor: '#1d014b',
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
   topContainer: {
-    marginBottom: '20%',
+    marginVertical: '15%',
   },
   inputContainer: {
     marginBottom: '10%',
@@ -64,7 +65,11 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
     width: '100%',
     height: 200,
     alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  bannerAdvertising: {
+    alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginBottom: 40,
   },
 });
