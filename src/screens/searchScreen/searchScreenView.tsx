@@ -15,8 +15,12 @@ import { LogoComponent } from '@components/logoComponent/logoComponent';
 import { searchScreenStyles } from './styles';
 import { SearchScreenProps } from './types';
 import { strings } from '@constants/textConst';
+import { BannerAdSize, GAMBannerAd, TestIds } from 'react-native-google-mobile-ads';
+import { BannerView, MobileAds } from 'react-native-yandex-mobile-ads';
 
 export const SearchScreenView: FC<SearchScreenProps> = (props) => {
+  MobileAds.initialize({ userConsent: true, locationConsent: true });
+
   const {
     link = '',
     preview = '',
@@ -72,6 +76,30 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
               </View>
             </View>
           )}
+        </View>
+        <View style={searchScreenStyles.bannerAdvertising}>
+          {/*<BannerView*/}
+          {/*  adUnitId={'R-M-10381946-1'}*/}
+          {/*  size='BANNER_320x50'*/}
+          {/*  onLoad={() => console.log('onLoad')}*/}
+          {/*  onLeftApplication={() => console.log('onLeftApplication')}*/}
+          {/*  onReturnedToApplication={() => console.log('onReturnedToApplication')}*/}
+          {/*  onError={(err: any) => console.log('error', err)}*/}
+          {/*/>*/}
+          <GAMBannerAd
+            unitId={TestIds.BANNER}
+            // unitId='ca-app-pub-6980974319222646/7662378614'
+            sizes={[BannerAdSize.BANNER]}
+            requestOptions={{
+              requestNonPersonalizedAdsOnly: true,
+            }}
+            onAdLoaded={() => {
+              console.log('Advert loaded');
+            }}
+            onAdFailedToLoad={(error) => {
+              console.error('Advert failed to load: ', error);
+            }}
+          />
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
