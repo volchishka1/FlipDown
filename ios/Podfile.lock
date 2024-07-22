@@ -1,5 +1,40 @@
 PODS:
   - boost (1.83.0)
+  - DivKit (13.0.0):
+    - DivKit_Base (= 13.0.0)
+    - DivKit_BaseTiny (= 13.0.0)
+    - DivKit_BaseUI (= 13.0.0)
+    - DivKit_CommonCore (= 13.0.0)
+    - DivKit_LayoutKit (= 13.0.0)
+    - DivKit_LayoutKitInterface (= 13.0.0)
+    - DivKit_Networking (= 13.0.0)
+    - DivKit_Serialization (= 13.0.0)
+    - DivKit_TemplatesSupport (= 13.0.0)
+  - DivKit_Base (13.0.0):
+    - DivKit_BaseTiny (= 13.0.0)
+    - DivKit_BaseUI (= 13.0.0)
+  - DivKit_BaseTiny (13.0.0)
+  - DivKit_BaseUI (13.0.0):
+    - DivKit_BaseTiny (= 13.0.0)
+  - DivKit_CommonCore (13.0.0):
+    - DivKit_Base (= 13.0.0)
+    - DivKit_BaseTiny (= 13.0.0)
+  - DivKit_LayoutKit (13.0.0):
+    - DivKit_BaseTiny (= 13.0.0)
+    - DivKit_BaseUI (= 13.0.0)
+    - DivKit_CommonCore (= 13.0.0)
+    - DivKit_LayoutKitInterface (= 13.0.0)
+  - DivKit_LayoutKitInterface (13.0.0):
+    - DivKit_Base (= 13.0.0)
+    - DivKit_BaseTiny (= 13.0.0)
+    - DivKit_BaseUI (= 13.0.0)
+  - DivKit_Networking (13.0.0):
+    - DivKit_Base (= 13.0.0)
+  - DivKit_Serialization (13.0.0):
+    - DivKit_CommonCore (= 13.0.0)
+  - DivKit_TemplatesSupport (13.0.0):
+    - DivKit_CommonCore (= 13.0.0)
+    - DivKit_Serialization (= 13.0.0)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.74.1)
   - Firebase/Analytics (10.27.0):
@@ -54,6 +89,8 @@ PODS:
     - nanopb (< 2.30911.0, >= 2.30908.0)
   - fmt (9.1.0)
   - glog (0.3.5)
+  - Google-Mobile-Ads-SDK (11.7.0):
+    - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleAppMeasurement (10.27.0):
     - GoogleAppMeasurement/AdIdSupport (= 10.27.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
@@ -78,6 +115,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30911.0, >= 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUserMessagingPlatform (2.5.0)
   - GoogleUtilities/AppDelegateSwizzler (7.13.3):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -1136,6 +1174,10 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-yandex-mobile-ads (0.9.1):
+    - React-Core
+    - YandexMobileAds (= 5.5.0)
+    - YandexMobileAdsInstream (= 0.15.0)
   - React-nativeconfig (0.74.1)
   - React-NativeModulesApple (0.74.1):
     - glog
@@ -1400,6 +1442,29 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - RNGoogleMobileAds (14.1.0):
+    - DoubleConversion
+    - glog
+    - Google-Mobile-Ads-SDK (= 11.7.0)
+    - GoogleUserMessagingPlatform (= 2.5.0)
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - RNPermissions (4.1.5):
     - React-Core
   - RNReanimated (3.13.0):
@@ -1448,6 +1513,22 @@ PODS:
   - RNSVG (14.2.0):
     - React-Core
   - SocketRocket (0.7.0)
+  - YandexMobileAds (5.5.0):
+    - DivKit (~> 13.0)
+    - YandexMobileAds/Static (= 5.5.0)
+  - YandexMobileAds/Static (5.5.0):
+    - DivKit (~> 13.0)
+    - YandexMobileMetrica (< 5.0.0, >= 4.0.0)
+  - YandexMobileAdsInstream (0.15.0):
+    - YandexMobileAds (~> 5.5.0)
+  - YandexMobileMetrica (4.5.2):
+    - YandexMobileMetrica/Static (= 4.5.2)
+  - YandexMobileMetrica/Static (4.5.2):
+    - YandexMobileMetrica/Static/Core (= 4.5.2)
+    - YandexMobileMetrica/Static/Crashes (= 4.5.2)
+  - YandexMobileMetrica/Static/Core (4.5.2)
+  - YandexMobileMetrica/Static/Crashes (4.5.2):
+    - YandexMobileMetrica/Static/Core
   - Yoga (0.0.0)
 
 DEPENDENCIES:
@@ -1489,6 +1570,7 @@ DEPENDENCIES:
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-video (from `../node_modules/react-native-video`)
+  - react-native-yandex-mobile-ads (from `../node_modules/react-native-yandex-mobile-ads`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -1517,6 +1599,7 @@ DEPENDENCIES:
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNGoogleMobileAds (from `../node_modules/react-native-google-mobile-ads`)
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -1525,6 +1608,16 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - DivKit
+    - DivKit_Base
+    - DivKit_BaseTiny
+    - DivKit_BaseUI
+    - DivKit_CommonCore
+    - DivKit_LayoutKit
+    - DivKit_LayoutKitInterface
+    - DivKit_Networking
+    - DivKit_Serialization
+    - DivKit_TemplatesSupport
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -1532,13 +1625,18 @@ SPEC REPOS:
     - FirebaseCoreInternal
     - FirebaseInstallations
     - FirebaseMessaging
+    - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleUserMessagingPlatform
     - GoogleUtilities
     - lottie-ios
     - nanopb
     - PromisesObjC
     - SocketRocket
+    - YandexMobileAds
+    - YandexMobileAdsInstream
+    - YandexMobileMetrica
 
 EXTERNAL SOURCES:
   boost:
@@ -1614,6 +1712,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-video:
     :path: "../node_modules/react-native-video"
+  react-native-yandex-mobile-ads:
+    :path: "../node_modules/react-native-yandex-mobile-ads"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -1670,6 +1770,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/messaging"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNGoogleMobileAds:
+    :path: "../node_modules/react-native-google-mobile-ads"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNReanimated:
@@ -1683,6 +1785,16 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: d3f49c53809116a5d38da093a8aa78bf551aed09
+  DivKit: cbc853a0e94022835e9307e604135aa25424e284
+  DivKit_Base: 538c8daf847099e700646beb2b447aee1a4818fe
+  DivKit_BaseTiny: 1fa9cd01974dc65430bf409fef57e9a9b4c0679f
+  DivKit_BaseUI: b0478ce03702bbda3aa76f4388c05249ef578878
+  DivKit_CommonCore: 4db51be9c1263c0f7b62e9fb864785f47ab57875
+  DivKit_LayoutKit: c7974256f128cb2bbd7d5d6711c95c63727c53b3
+  DivKit_LayoutKitInterface: 02b3436a7191ab1b517da54a5fe076f9f6977c31
+  DivKit_Networking: 400504b0212282bd047c6720f70abaf74f6e4dd8
+  DivKit_Serialization: 4a55e41a1f06ec211e696963403db53469a19337
+  DivKit_TemplatesSupport: 6cb0a79e7673caeb05686403bd2b9a34c3624571
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
   FBLazyVector: 898d14d17bf19e2435cafd9ea2a1033efe445709
   Firebase: 26b040b20866a55f55eb3611b9fcf3ae64816b86
@@ -1694,8 +1806,10 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 585984d0a1df120617eb10b44cad8968b859815e
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
   glog: c5d68082e772fa1c511173d6b30a9de2c05a69a2
+  Google-Mobile-Ads-SDK: 204b517c9765169144cf39763c7f5d23c57a9db0
   GoogleAppMeasurement: f65fc137531af9ad647f1c0a42f3b6a4d3a98049
   GoogleDataTransport: 6c09b596d841063d76d4288cc2d2f42cc36e1e2a
+  GoogleUserMessagingPlatform: 6b4f48a370e77ce121d034c908cc6ee4fdafaf13
   GoogleUtilities: ea963c370a38a8069cc5f7ba4ca849a60b6d7d15
   hermes-engine: 16b8530de1b383cdada1476cf52d1b52f0692cbc
   lottie-ios: e047b1d2e6239b787cc5e9755b988869cf190494
@@ -1731,6 +1845,7 @@ SPEC CHECKSUMS:
   react-native-netinfo: 076df4f9b07f6670acf4ce9a75aac8d34c2e2ccc
   react-native-safe-area-context: b7daa1a8df36095a032dff095a1ea8963cb48371
   react-native-video: 7c84d5a1cf8489303514249a7e3bafab7bcb22ac
+  react-native-yandex-mobile-ads: f39fb9948d44d4577129cfdf0aefddeee17ee64b
   React-nativeconfig: 21d89c65ca39875fad2c5c465e0e013e514eba21
   React-NativeModulesApple: e2e180dae4486b2978fcf3564cc4c8de4b453a68
   React-perflogger: 3d31e0d1e8ad891e43a09ac70b7b17a79773003a
@@ -1759,13 +1874,17 @@ SPEC CHECKSUMS:
   RNFBApp: 9acbe359ef3559d6f8ca5c350db471f2b352f98a
   RNFBMessaging: b82ef70d252500d3ad104284c0c7f8e1cd22b51e
   RNGestureHandler: 5538c370587d7e757667b9283ca867dd7635f154
+  RNGoogleMobileAds: 5e81ded2017251e9b2b3a19b34c5ab4dc648d68c
   RNPermissions: 294531ede5a64d1528463e88fffef05675842042
   RNReanimated: 308bcd09703f16e26367dfd0c2bba43fc296aa47
   RNScreens: fd2722bcc59f36a629205af8cc7b48e4bc0d09f5
   RNSVG: 963a95f1f5d512a13d11ffd50d351c87fb5c6890
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
+  YandexMobileAds: 1affe9f27183a569960e108a4b4cb6cbcfc8eaea
+  YandexMobileAdsInstream: 65f00989f45cf61cb359eeef42e0f1001f2501d1
+  YandexMobileMetrica: f5368ee93f286c793d73b58da00929babfc897c1
   Yoga: dafebc41bc66910af33077aaa41078e89fd635bf
 
-PODFILE CHECKSUM: 52d063a2038559c65b3a86fb95b2a73b74587881
+PODFILE CHECKSUM: dc4a42022958eb4dd9fc287dedbb12aa1a6c71c6
 
 COCOAPODS: 1.15.2
