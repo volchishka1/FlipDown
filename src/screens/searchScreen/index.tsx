@@ -16,6 +16,7 @@ import { useNetInfo, NetInfoState } from '@react-native-community/netinfo';
 import { strings } from '@constants';
 import { textColorBlackStyles } from '@components/globalStyles/globalStyles';
 import { getCountry } from 'react-native-localize';
+import { MobileAds } from 'react-native-yandex-mobile-ads';
 
 export interface ResponseData {
   music: {
@@ -33,6 +34,13 @@ export interface ResponseData {
   download_video_url: string;
 }
 
+const bannerIds = {
+  bannerYandexIosId: 'R-M-10495436-1',
+  bannerYandexAndroidId: 'R-M-10381946-1',
+  bannerGoogleIosId: 'ca-app-pub-6980974319222646/8728048279',
+  bannerGoogleAndroidId: 'ca-app-pub-6980974319222646/7662378614',
+};
+
 export const SearchScreen = () => {
   const [link, setLink] = useState('');
   const dispatch = useAppDispatch();
@@ -47,6 +55,19 @@ export const SearchScreen = () => {
   const internetState: NetInfoState = useNetInfo();
   const colorScheme = Appearance.getColorScheme();
   const textInputColorText = colorScheme === 'dark' && textColorBlackStyles;
+
+  MobileAds.initialize({ userConsent: true, locationConsent: true });
+
+  let bannerGoogleAdvId;
+  let bannerYandexAdvId;
+
+  Platform.OS === 'ios'
+    ? (bannerYandexAdvId = bannerIds.bannerYandexIosId)
+    : (bannerYandexAdvId = bannerIds.bannerYandexAndroidId);
+
+  Platform.OS === 'ios'
+    ? (bannerGoogleAdvId = bannerIds.bannerGoogleIosId)
+    : (bannerGoogleAdvId = bannerIds.bannerGoogleAndroidId);
 
   useEffect(() => {
     const getLocation = getCountry();
@@ -244,6 +265,8 @@ export const SearchScreen = () => {
       showLoad={showLoad}
       textInputColorText={textInputColorText}
       country={country}
+      bannerGoogleAdvId={bannerGoogleAdvId}
+      bannerYandexAdvId={bannerYandexAdvId}
     />
   );
 };

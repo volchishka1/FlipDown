@@ -16,11 +16,9 @@ import { searchScreenStyles } from './styles';
 import { SearchScreenProps } from './types';
 import { strings } from '@constants/textConst';
 import { BannerAdSize, GAMBannerAd, TestIds } from 'react-native-google-mobile-ads';
-import { BannerView, MobileAds } from 'react-native-yandex-mobile-ads';
+import { BannerView } from 'react-native-yandex-mobile-ads';
 
 export const SearchScreenView: FC<SearchScreenProps> = (props) => {
-  MobileAds.initialize({ userConsent: true, locationConsent: true });
-
   const {
     link = '',
     preview = '',
@@ -34,6 +32,8 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     showLoad = false,
     textInputColorText,
     country = '',
+    bannerYandexAdvId = '',
+    bannerGoogleAdvId = '',
   } = props;
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -81,7 +81,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
         <View style={searchScreenStyles.bannerAdvertising}>
           {country === 'RU' ? (
             <BannerView
-              adUnitId={'R-M-10381946-1'}
+              adUnitId={bannerYandexAdvId}
               size='BANNER_320x50'
               onLoad={() => console.log('onLoad')}
               onLeftApplication={() => console.log('onLeftApplication')}
@@ -90,8 +90,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
             />
           ) : (
             <GAMBannerAd
-              unitId={TestIds.BANNER}
-              // unitId='ca-app-pub-6980974319222646/7662378614'
+              unitId={bannerGoogleAdvId}
               sizes={[BannerAdSize.BANNER]}
               requestOptions={{
                 requestNonPersonalizedAdsOnly: true,
