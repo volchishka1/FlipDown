@@ -15,6 +15,7 @@ import ReactNativeBlobUtil from 'react-native-blob-util';
 import { useNetInfo, NetInfoState } from '@react-native-community/netinfo';
 import { strings } from '@constants';
 import { textColorBlackStyles } from '@components/globalStyles/globalStyles';
+import { getCountry } from 'react-native-localize';
 
 export interface ResponseData {
   music: {
@@ -41,10 +42,17 @@ export const SearchScreen = () => {
   const [isLoadVideo, setIsLoadVideo] = useState(false);
   const [isLoadMusic, setIsLoadMusic] = useState(false);
   const [showLoad, setShowLoad] = useState(false);
+  const [country, setCountry] = useState('');
 
   const internetState: NetInfoState = useNetInfo();
   const colorScheme = Appearance.getColorScheme();
   const textInputColorText = colorScheme === 'dark' && textColorBlackStyles;
+
+  useEffect(() => {
+    const getLocation = getCountry();
+    setCountry(getLocation);
+    console.log(getLocation);
+  }, [country]);
 
   const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
@@ -235,6 +243,7 @@ export const SearchScreen = () => {
       isLoadVideo={isLoadVideo}
       showLoad={showLoad}
       textInputColorText={textInputColorText}
+      country={country}
     />
   );
 };
