@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build-aab": "npx react-native build-android --mode=release ",
+    "build-aab": "npx react-native build-android --mode=release",
     "build-apk": "cd android && ./gradlew assembleRelease",
     "check-useless-dependencies": "npx depcheck",
     "clean": "find . -name '*.log' -type f -delete && rm -rf node_modules",
