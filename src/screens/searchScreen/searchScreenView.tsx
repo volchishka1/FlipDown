@@ -33,6 +33,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     isLoadVideo = false,
     showLoad = false,
     textInputColorText,
+    country = '',
   } = props;
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -78,28 +79,31 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
           )}
         </View>
         <View style={searchScreenStyles.bannerAdvertising}>
-          {/*<BannerView*/}
-          {/*  adUnitId={'R-M-10381946-1'}*/}
-          {/*  size='BANNER_320x50'*/}
-          {/*  onLoad={() => console.log('onLoad')}*/}
-          {/*  onLeftApplication={() => console.log('onLeftApplication')}*/}
-          {/*  onReturnedToApplication={() => console.log('onReturnedToApplication')}*/}
-          {/*  onError={(err: any) => console.log('error', err)}*/}
-          {/*/>*/}
-          <GAMBannerAd
-            unitId={TestIds.BANNER}
-            // unitId='ca-app-pub-6980974319222646/7662378614'
-            sizes={[BannerAdSize.BANNER]}
-            requestOptions={{
-              requestNonPersonalizedAdsOnly: true,
-            }}
-            onAdLoaded={() => {
-              console.log('Advert loaded');
-            }}
-            onAdFailedToLoad={(error) => {
-              console.error('Advert failed to load: ', error);
-            }}
-          />
+          {country === 'RU' ? (
+            <BannerView
+              adUnitId={'R-M-10381946-1'}
+              size='BANNER_320x50'
+              onLoad={() => console.log('onLoad')}
+              onLeftApplication={() => console.log('onLeftApplication')}
+              onReturnedToApplication={() => console.log('onReturnedToApplication')}
+              onError={(err: any) => console.log('error', err)}
+            />
+          ) : (
+            <GAMBannerAd
+              unitId={TestIds.BANNER}
+              // unitId='ca-app-pub-6980974319222646/7662378614'
+              sizes={[BannerAdSize.BANNER]}
+              requestOptions={{
+                requestNonPersonalizedAdsOnly: true,
+              }}
+              onAdLoaded={() => {
+                console.log('Advert loaded');
+              }}
+              onAdFailedToLoad={(error) => {
+                console.error('Advert failed to load: ', error);
+              }}
+            />
+          )}
         </View>
       </SafeAreaView>
     </TouchableWithoutFeedback>
