@@ -14,7 +14,6 @@ export type DownloadScreenComponentProps = CompositeScreenProps<
 >;
 
 export const DownloadScreen: FC<DownloadScreenComponentProps> = ({ navigation }) => {
-  const [title, setTitle] = useState('');
   const [photos, setPhotos] = useState<PhotoIdentifier[] | undefined>([]);
   const fetchPhotos = useCallback(async () => {
     const res = await CameraRoll.getPhotos({
@@ -38,11 +37,6 @@ export const DownloadScreen: FC<DownloadScreenComponentProps> = ({ navigation })
   }, [fetchPhotos, photos]);
 
   return (
-    <DownloadScreenView
-      photos={photos}
-      title={title}
-      setTitle={setTitle}
-      navigateToFullVideoScreen={navigateToFullVideoScreen}
-    />
+    <DownloadScreenView photos={photos} navigateToFullVideoScreen={navigateToFullVideoScreen} />
   );
 };
