@@ -15,12 +15,13 @@ import { LogoComponent } from '@components/logoComponent/logoComponent';
 import { searchScreenStyles } from './styles';
 import { SearchScreenProps } from './types';
 import { strings } from '@constants/textConst';
-import { BannerAdSize, GAMBannerAd, TestIds } from 'react-native-google-mobile-ads';
+import { BannerAdSize, GAMBannerAd } from 'react-native-google-mobile-ads';
 import { BannerView } from 'react-native-yandex-mobile-ads';
 
 export const SearchScreenView: FC<SearchScreenProps> = (props) => {
   const {
     link = '',
+    provider = '',
     preview = '',
     setInputValue = () => {},
     saveMusic = () => {},
@@ -31,7 +32,6 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     isLoadVideo = false,
     showLoad = false,
     textInputColorText,
-    country = '',
     bannerYandexAdvId = '',
     bannerGoogleAdvId = '',
   } = props;
@@ -79,7 +79,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
           )}
         </View>
         <View style={searchScreenStyles.bannerAdvertising}>
-          {country === 'RU' ? (
+          {provider === 'yandex' ? (
             <BannerView
               adUnitId={bannerYandexAdvId}
               size='BANNER_320x50'
