@@ -7,7 +7,7 @@ import axios from 'axios';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { saveData } from '../../store/actions';
-import { getLoadData } from '../../store/homeScreen/selectors';
+import { getLoadData, getProvider } from '../../store/homeScreen/selectors';
 
 import { SearchScreenView } from './searchScreenView';
 import ReactNativeBlobUtil from 'react-native-blob-util';
@@ -15,7 +15,6 @@ import ReactNativeBlobUtil from 'react-native-blob-util';
 import { useNetInfo, NetInfoState } from '@react-native-community/netinfo';
 import { strings } from '@constants';
 import { textColorBlackStyles } from '@components/globalStyles/globalStyles';
-import { getCountry } from 'react-native-localize';
 import { MobileAds } from 'react-native-yandex-mobile-ads';
 
 export interface ResponseData {
@@ -35,22 +34,23 @@ export interface ResponseData {
 }
 
 const bannerIds = {
-  bannerYandexIosId: 'R-M-10495436-1',
-  bannerYandexAndroidId: 'R-M-10381946-1',
-  bannerGoogleIosId: 'ca-app-pub-6980974319222646/8728048279',
-  bannerGoogleAndroidId: 'ca-app-pub-6980974319222646/7662378614',
+  bannerYandexIosId: `${process.env.BANNER_YANDEX_IOS_ID}`,
+  bannerYandexAndroidId: `${process.env.BANNER_YANDEX_ANDROID_ID}`,
+  bannerGoogleIosId: `${process.env.BANNER_GOOGLE_IOS_ID}`,
+  bannerGoogleAndroidId: `${process.env.BANNER_GOOGLE_ANDROID_ID}`,
 };
 
 export const SearchScreen = () => {
   const [link, setLink] = useState('');
   const dispatch = useAppDispatch();
   const getDataRedux: ResponseData[] = useAppSelector(getLoadData);
+  const getProviderRedux = useAppSelector(getProvider);
   const [data, setData] = useState<ResponseData | undefined>();
+  const [provider, setProvider] = useState<string | null>('');
   const [isLoad, setIsLoad] = useState(false);
   const [isLoadVideo, setIsLoadVideo] = useState(false);
   const [isLoadMusic, setIsLoadMusic] = useState(false);
   const [showLoad, setShowLoad] = useState(false);
-  const [country, setCountry] = useState('');
 
   const internetState: NetInfoState = useNetInfo();
   const colorScheme = Appearance.getColorScheme();
@@ -68,12 +68,6 @@ export const SearchScreen = () => {
   Platform.OS === 'ios'
     ? (bannerGoogleAdvId = bannerIds.bannerGoogleIosId)
     : (bannerGoogleAdvId = bannerIds.bannerGoogleAndroidId);
-
-  useEffect(() => {
-    const getLocation = getCountry();
-    setCountry(getLocation);
-    console.log(getLocation);
-  }, [country]);
 
   const getData = () => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
@@ -95,6 +89,11 @@ export const SearchScreen = () => {
         setIsLoad(false);
       });
   };
+
+  useEffect(() => {
+    const provider = getProviderRedux;
+    setProvider(provider);
+  }, [getProviderRedux]);
 
   useEffect(() => {
     const allData = getDataRedux;
@@ -257,6 +256,7 @@ export const SearchScreen = () => {
       saveVideo={saveVideo}
       preview={data?.video?.cover}
       link={link}
+      provider={provider}
       setLink={setLink}
       setInputValue={setInputValue}
       isLoad={isLoad}
@@ -264,7 +264,6 @@ export const SearchScreen = () => {
       isLoadVideo={isLoadVideo}
       showLoad={showLoad}
       textInputColorText={textInputColorText}
-      country={country}
       bannerGoogleAdvId={bannerGoogleAdvId}
       bannerYandexAdvId={bannerYandexAdvId}
     />
