@@ -1,6 +1,6 @@
 import { ThunkActionResult } from '../types/action';
 
-import { saveData } from './actions';
+import { saveData, setProvider } from './actions';
 import { Alert } from 'react-native';
 import { strings } from '@constants';
 
@@ -29,5 +29,21 @@ export const loadData =
       .catch(() => {
         Alert.alert(`${strings.getString('oops')}`);
         setIsLoad(false);
+      });
+  };
+
+export const loadProvider =
+  (): ThunkActionResult =>
+  async (dispatch, _getState, api): Promise<void> => {
+    const apiUrl = `https://fliptok.app/api/ads-provider`;
+    api
+      .get(apiUrl)
+      .then((response) => {
+        const res = response.data;
+        dispatch(setProvider(res));
+        console.log(res);
+      })
+      .catch(() => {
+        Alert.alert(`${strings.getString('oops')}`);
       });
   };
