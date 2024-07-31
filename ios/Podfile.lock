@@ -1465,8 +1465,6 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNLocalize (3.2.0):
-    - React-Core
   - RNPermissions (4.1.5):
     - React-Core
   - RNReanimated (3.13.0):
@@ -1602,7 +1600,6 @@ DEPENDENCIES:
   - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNGoogleMobileAds (from `../node_modules/react-native-google-mobile-ads`)
-  - RNLocalize (from `../node_modules/react-native-localize`)
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -1775,8 +1772,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-gesture-handler"
   RNGoogleMobileAds:
     :path: "../node_modules/react-native-google-mobile-ads"
-  RNLocalize:
-    :path: "../node_modules/react-native-localize"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNReanimated:
@@ -1880,7 +1875,6 @@ SPEC CHECKSUMS:
   RNFBMessaging: b82ef70d252500d3ad104284c0c7f8e1cd22b51e
   RNGestureHandler: 5538c370587d7e757667b9283ca867dd7635f154
   RNGoogleMobileAds: 5e81ded2017251e9b2b3a19b34c5ab4dc648d68c
-  RNLocalize: b77875884750cb6a58cd6865863fe2ba2729b72b
   RNPermissions: 294531ede5a64d1528463e88fffef05675842042
   RNReanimated: 308bcd09703f16e26367dfd0c2bba43fc296aa47
   RNScreens: fd2722bcc59f36a629205af8cc7b48e4bc0d09f5
@@ -1891,6 +1885,6 @@ SPEC CHECKSUMS:
   YandexMobileMetrica: f5368ee93f286c793d73b58da00929babfc897c1
   Yoga: dafebc41bc66910af33077aaa41078e89fd635bf
 
-PODFILE CHECKSUM: 137f694eb1d11e8351bcd277fd200d606c31eb5c
+PODFILE CHECKSUM: 1c7942a524a59ee455d954e555c7813a88b857f7
 
 COCOAPODS: 1.15.2
