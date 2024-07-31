@@ -1,8 +1,8 @@
-import { TextInputProps, TextProps, ViewProps } from 'react-native';
+import { TextInputProps, TextProps } from 'react-native';
 
 export type SearchScreenProps = {
   link: TextProps['children'];
-  country: TextProps['children'];
+  provider: TextProps['children'];
   bannerGoogleAdvId: TextProps['children'];
   bannerYandexAdvId: TextProps['children'];
   setInputValue: TextInputProps['onChangeText'];
@@ -10,5 +10,9 @@ export type SearchScreenProps = {
   saveMusic: TextInputProps['onChangeText'];
   setLink: TextInputProps['onChangeText'];
   preview: TextProps['children'];
-  textInputColorText: TextInputProps['children'];
+  textInputColorText: TextInputProps['style'];
+  isLoad: boolean;
+  isLoadMusic: boolean;
+  isLoadVideo: boolean;
+  showLoad: boolean;
 };
