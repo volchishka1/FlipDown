@@ -1,6 +1,6 @@
-import { ButtonProps } from 'react-native';
+import { TouchableOpacityProps } from 'react-native';
 
 export type DownloadScreenProps = {
   photos: any;
-  navigationToFullVideoScreen: ButtonProps['onPress'];
+  navigateToFullVideoScreen: TouchableOpacityProps['onPress'];
 };
