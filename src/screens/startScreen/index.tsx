@@ -7,11 +7,8 @@ import { ROUTES } from '@constants/routes';
 import { MainStackScreenNavigatorParamList } from '@navigation/types';
 
 import { StartScreenView } from './startScreenView';
-import axios from 'axios';
-import { Alert } from 'react-native';
-import { strings } from '@constants';
 import { useDispatch } from 'react-redux';
-import { setProvider } from '@root/store/actions.ts';
+import { loadProvider } from '@root/store/api-actions.ts';
 
 export type StartScreenComponentProps = CompositeScreenProps<
   NativeStackScreenProps<MainStackScreenNavigatorParamList, ROUTES.START_SCREEN>,
@@ -22,22 +19,8 @@ export const StartScreen: FC<StartScreenComponentProps> = (props) => {
   const { navigation } = props;
   const dispatch = useDispatch();
 
-  const getProvider = () => {
-    const apiUrl = `https://fliptok.app/api/ads-provider`;
-    axios
-      .get(apiUrl)
-      .then((response) => {
-        const res = response.data;
-        dispatch(setProvider(res));
-        console.log(res);
-      })
-      .catch(() => {
-        Alert.alert(`${strings.getString('oops')}`);
-      });
-  };
-
   useEffect(() => {
-    getProvider();
+    dispatch(loadProvider());
   }, []);
 
   const navigateToMainScreen = () => {
