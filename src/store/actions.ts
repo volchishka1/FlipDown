@@ -2,8 +2,8 @@ import { createAction } from '@reduxjs/toolkit';
 
 import { ActionType } from '../types/action';
 
-export const addIsActive = createAction(ActionType.ChangeActive, (isActive: boolean) => ({
-  payload: isActive,
+export const setProvider = createAction(ActionType.SetProvider, (SetProvider: string) => ({
+  payload: SetProvider,
 }));
 
 export const saveData = createAction(ActionType.SaveData, (saveData: any) => ({

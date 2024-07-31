@@ -5,7 +5,7 @@ import { ThunkAction } from 'redux-thunk';
 import { RootState } from '../store/root-reducer';
 
 export enum ActionType {
-  ChangeActive = 'user/ChangeActive',
+  SetProvider = 'user/SetProvider',
   SaveData = 'user/SaveData',
   SetUrl = 'user/SetUrl',
 }

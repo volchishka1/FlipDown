@@ -1,5 +1,5 @@
 export type HomeScreen = {
-  isActive: boolean;
+  setProvider: string;
   url: string;
   itemData: [];
 };
