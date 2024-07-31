@@ -3,10 +3,8 @@ import { Alert, Appearance, Keyboard, PermissionsAndroid, Platform } from 'react
 import React, { useEffect, useState } from 'react';
 
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
-import axios from 'axios';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { saveData } from '../../store/actions';
 import { getLoadData, getProvider } from '../../store/homeScreen/selectors';
 
 import { SearchScreenView } from './searchScreenView';
@@ -16,6 +14,7 @@ import { useNetInfo, NetInfoState } from '@react-native-community/netinfo';
 import { strings } from '@constants';
 import { textColorBlackStyles } from '@components/globalStyles/globalStyles';
 import { MobileAds } from 'react-native-yandex-mobile-ads';
+import { loadData } from '@root/store/api-actions.ts';
 
 export interface ResponseData {
   music: {
@@ -44,9 +43,8 @@ export const SearchScreen = () => {
   const [link, setLink] = useState('');
   const dispatch = useAppDispatch();
   const getDataRedux: ResponseData[] = useAppSelector(getLoadData);
-  const getProviderRedux = useAppSelector(getProvider);
+  const getProviderRedux: string = useAppSelector(getProvider);
   const [data, setData] = useState<ResponseData | undefined>();
-  const [provider, setProvider] = useState<string | null>('');
   const [isLoad, setIsLoad] = useState(false);
   const [isLoadVideo, setIsLoadVideo] = useState(false);
   const [isLoadMusic, setIsLoadMusic] = useState(false);
@@ -68,32 +66,6 @@ export const SearchScreen = () => {
   Platform.OS === 'ios'
     ? (bannerGoogleAdvId = bannerIds.bannerGoogleIosId)
     : (bannerGoogleAdvId = bannerIds.bannerGoogleAndroidId);
-
-  const getData = () => {
-    const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
-    setIsLoad(true);
-    showLoad && setShowLoad(false);
-    axios
-      .get(apiUrl)
-      .then((response) => {
-        const res = response.data;
-        dispatch(saveData(res));
-        setIsLoad(true);
-        setTimeout(() => {
-          setShowLoad(true);
-          setIsLoad(false);
-        }, 3000);
-      })
-      .catch(() => {
-        Alert.alert(`${strings.getString('oops')}`);
-        setIsLoad(false);
-      });
-  };
-
-  useEffect(() => {
-    const provider = getProviderRedux;
-    setProvider(provider);
-  }, [getProviderRedux]);
 
   useEffect(() => {
     const allData = getDataRedux;
@@ -233,7 +205,7 @@ export const SearchScreen = () => {
   const setTextValue = () => {
     if (link !== '') {
       setLink(link);
-      getData();
+      dispatch(loadData(link, setIsLoad, setShowLoad, showLoad));
       Keyboard.dismiss();
     } else if (link === '') {
       Alert.alert(`${strings.getString('enter_your_link')}`);
@@ -256,7 +228,7 @@ export const SearchScreen = () => {
       saveVideo={saveVideo}
       preview={data?.video?.cover}
       link={link}
-      provider={provider}
+      provider={getProviderRedux}
       setLink={setLink}
       setInputValue={setInputValue}
       isLoad={isLoad}
