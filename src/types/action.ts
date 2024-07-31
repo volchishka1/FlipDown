@@ -8,6 +8,10 @@ export enum ActionType {
   SetProvider = 'user/SetProvider',
   SaveData = 'user/SaveData',
   SetUrl = 'user/SetUrl',
+  SetIsLoad = 'user/SetIsLoad',
+  SetIsLoadVideo = 'user/SetIsLoadVideo',
+  SetIsLoadMusic = 'user/SetIsLoadMusic',
+  SetShowLoad = 'user/SetShowLoad',
 }
 
 export type ThunkActionResult<R = Promise<void | boolean>> = ThunkAction<

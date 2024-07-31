@@ -5,7 +5,14 @@ import React, { useEffect, useState } from 'react';
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { getLoadData, getProvider } from '../../store/homeScreen/selectors';
+import {
+  getIsLoad,
+  getIsLoadMusic,
+  getIsLoadVideo,
+  getLoadData,
+  getProvider,
+  getShowLoad,
+} from '../../store/homeScreen/selectors';
 
 import { SearchScreenView } from './searchScreenView';
 import ReactNativeBlobUtil from 'react-native-blob-util';
@@ -15,6 +22,7 @@ import { strings } from '@constants';
 import { textColorBlackStyles } from '@components/globalStyles/globalStyles';
 import { MobileAds } from 'react-native-yandex-mobile-ads';
 import { loadData } from '@root/store/api-actions.ts';
+import { setIsLoadMusic, setIsLoadVideo } from '@root/store/actions.ts';
 
 export interface ResponseData {
   music: {
@@ -44,11 +52,11 @@ export const SearchScreen = () => {
   const dispatch = useAppDispatch();
   const getDataRedux: ResponseData[] = useAppSelector(getLoadData);
   const getProviderRedux: string = useAppSelector(getProvider);
+  const isLoad: boolean = useAppSelector(getIsLoad);
+  const isLoadVideo: boolean = useAppSelector(getIsLoadVideo);
+  const isLoadMusic: boolean = useAppSelector(getIsLoadMusic);
+  const showLoad: boolean = useAppSelector(getShowLoad);
   const [data, setData] = useState<ResponseData | undefined>();
-  const [isLoad, setIsLoad] = useState(false);
-  const [isLoadVideo, setIsLoadVideo] = useState(false);
-  const [isLoadMusic, setIsLoadMusic] = useState(false);
-  const [showLoad, setShowLoad] = useState(false);
 
   const internetState: NetInfoState = useNetInfo();
   const colorScheme = Appearance.getColorScheme();
@@ -151,18 +159,18 @@ export const SearchScreen = () => {
         isPreferred: true,
         text: `${strings.getString('yes')}`,
         onPress: () => {
-          setIsLoadMusic(true);
+          dispatch(setIsLoadMusic(true));
           setTimeout(() => {
             Platform.OS === 'android'
               ? saveMusicOnAndroid()
                   .then(() => {
-                    setIsLoadMusic(false);
+                    dispatch(setIsLoadMusic(false));
                     Alert.alert(`${strings.getString('music_saved')}`);
                   })
                   .catch(() => {})
               : saveMusicOnIos()
                   .then(() => {
-                    setIsLoadMusic(false);
+                    dispatch(setIsLoadMusic(false));
                   })
                   .catch(() => {});
           }, 3000);
@@ -183,11 +191,11 @@ export const SearchScreen = () => {
         isPreferred: true,
         text: `${strings.getString('yes')}`,
         onPress: () => {
-          setIsLoadVideo(true);
+          dispatch(setIsLoadVideo(true));
           saveVideoOnPhone()
             .then(() => {
               Alert.alert(`${strings.getString('video_saved')}`);
-              setIsLoadVideo(false);
+              dispatch(setIsLoadVideo(false));
             })
             .catch(() => {});
         },
@@ -205,7 +213,7 @@ export const SearchScreen = () => {
   const setTextValue = () => {
     if (link !== '') {
       setLink(link);
-      dispatch(loadData(link, setIsLoad, setShowLoad, showLoad));
+      dispatch(loadData(link, showLoad));
       Keyboard.dismiss();
     } else if (link === '') {
       Alert.alert(`${strings.getString('enter_your_link')}`);
