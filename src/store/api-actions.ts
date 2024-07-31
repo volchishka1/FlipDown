@@ -1,8 +1,6 @@
 import { ThunkActionResult } from '../types/action';
 
 import { saveData, setIsLoad, setProvider, setShowLoad } from './actions';
-import { Alert } from 'react-native';
-import { strings } from '@constants';
 
 export const loadData =
   (link: string, showLoad: boolean): ThunkActionResult =>
@@ -22,7 +20,6 @@ export const loadData =
         }, 3000);
       })
       .catch(() => {
-        Alert.alert(`${strings.getString('oops')}`);
         dispatch(setIsLoad(false));
       });
   };
@@ -39,6 +36,6 @@ export const loadProvider =
         console.log(res);
       })
       .catch(() => {
-        Alert.alert(`${strings.getString('oops')}`);
+        // Alert.alert(`${strings.getString('oops')}`);
       });
   };

@@ -18,9 +18,11 @@ const createAPI = (): AxiosInstance => {
       const { response } = error;
 
       if (response && response.status >= HttpCode.ServerError) {
-        Alert.alert(`server error: ${error.message}`);
+        // Alert.alert(`server error: ${error.message}`);
+        Alert.alert(`Oops`);
       } else if (response && response.status >= HttpCode.ClientError) {
-        Alert.alert(`client error: ${error.message}`);
+        // Alert.alert(`client error: ${error.message}`);
+        Alert.alert(`Oops`);
       } else {
         Alert.alert(error.message);
       }
