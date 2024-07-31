@@ -3,8 +3,8 @@ import {
   Text,
   TextProps,
   TouchableOpacity,
-  TouchableOpacityProps, ViewProps
-} from "react-native";
+  TouchableOpacityProps,
+} from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -13,7 +13,7 @@ import { customButtonStyles } from './styles';
 export type CustomButtonProps = {
   onPress: TouchableOpacityProps['onPress'];
   textButton: TextProps['children'];
-  textButtonStyle: TextProps['children'];
+  textButtonStyle: TextProps['style'];
   style?: TouchableOpacityProps['style'];
   isLoad?: TouchableOpacityProps['aria-selected'];
 };
