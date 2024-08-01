@@ -157,6 +157,7 @@ import {
   RIGHTS_TO_LIMIT,
   RIGHTS_TO_REQUEST,
   SALE_OF_PERSONAL_DATA,
+  SCREEN_IS_EMPTY,
   SEARCH,
   SECOND_PART,
   SECOND_PART_OF_TERMS,
@@ -441,6 +442,7 @@ import {
   RIGHTS_TO_LIMIT_RU,
   RIGHTS_TO_REQUEST_RU,
   SALE_OF_PERSONAL_DATA_RU,
+  SCREEN_IS_EMPTY_RU,
   SEARCH_RU,
   SECOND_PART_OF_TERMS_RU,
   SECOND_PART_RU,
@@ -598,6 +600,7 @@ export const strings = new LocalizedStrings({
     exit_app: EXIT_APP,
     do_you_want_to_exit: DO_YOU_WANT_TO_EXIT,
     deleted_video: VIDEO_DELETED,
+    screen_is_empty: SCREEN_IS_EMPTY,
 
     // ABOUT STRINGS
 
@@ -896,6 +899,7 @@ export const strings = new LocalizedStrings({
     exit_app: EXIT_APP_RU,
     do_you_want_to_exit: DO_YOU_WANT_TO_EXIT_RU,
     deleted_video: VIDEO_DELETED_RU,
+    screen_is_empty: SCREEN_IS_EMPTY_RU,
 
     // ABOUT STRINGS
 

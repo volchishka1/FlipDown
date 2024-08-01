@@ -24,6 +24,7 @@ export const INSERT_YOUR_LINK = 'Insert TikTok link';
 export const DO_YOU_WANT_TO_EXIT = 'Do you want to exit';
 export const EXIT_APP = 'Exit app';
 export const VIDEO_DELETED = 'Video deleted';
+export const SCREEN_IS_EMPTY = 'Download screen is empty';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT = 'What is the FlipTok Project?';

@@ -24,6 +24,7 @@ export const INSERT_YOUR_LINK_RU = 'Вставьте ссылку TikTok';
 export const DO_YOU_WANT_TO_EXIT_RU = 'Вы хотите выйти';
 export const EXIT_APP_RU = 'Выход из приложения';
 export const VIDEO_DELETED_RU = 'Видео удалено';
+export const SCREEN_IS_EMPTY_RU = 'Экран загрузок пуст';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT_RU = 'Проект FlipTok - что это?';
