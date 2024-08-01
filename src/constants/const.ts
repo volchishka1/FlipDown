@@ -1,23 +1,3 @@
-// export enum APIRoute {
-//   User = "/user",
-//   Avatar = "/avatar",
-//   AvatarUpdate = "/avatar/user",
-//   CreateAvatar = "/user/cteate/avatar",
-//   UpdateAvatar = "/avatar/update/avatarItem",
-//   Energy = "/checkIn/energy",
-//   LifeBalance = "/checkIn_count/percent",
-//   LastCheckIns = "/checkIn/last",
-//   CheckInCount = "/checkIn_count/count",
-//   CheckInPlaces = "/location/place/near",
-//   Location = "/checkIn/location",
-//   TypeLocation = "/typelocation",
-//   City = "/city",
-//   AvatarAbilities = "/avatar/stats",
-//   Wardrobe = "/user_item/item/user",
-//   WardrobeUpdateNew = "/user_item",
-//   PinnedItem = "/user_item"
-// }
-
 export enum HttpCode {
   ServerError = 500,
   ClientError = 400,
