@@ -29,7 +29,7 @@ export const SCREEN_IS_EMPTY = 'Download screen is empty';
 // ABOUT STRINGS
 export const ABOUT_PROJECT = 'What is the FlipTok Project?';
 export const IF_YOU_NEED =
-  'If you need to download videos from TikTok and you do not know how to do it, we advise you to pay attention to the FlipTok project. FlipTok is a website that allows you to deal with the task in just a few seconds. The service is characterized by a simple and clear interface, which means that it allows you to find and download any videos from TikTok, and will be easy to understand for teenagers and older users. There will be no difficulties because we offer the best solution to save clips on any device.';
+  'If you need to download videos from TikTok and you do not know how to do it, we advise you to pay attention to the FlipTok project. FlipTok is an application that allows you to deal with the task in just a few seconds. The service is characterized by a simple and clear interface, which means that it allows you to find and download any videos from TikTok, and will be easy to understand for teenagers and older users. There will be no difficulties because we offer the best solution to save clips on any device.';
 export const HOW_TO_USE = 'How to use the service?';
 export const WORKING_WITH =
   'Working with the application involves very simple steps. To download videos and music from TikTok, you only need a few steps. All you need is this:';
@@ -40,7 +40,7 @@ export const OPEN_THE_APP =
 export const THE_FINAL_STEP =
   'The final step is to click the "Download" button and wait for the video to download. It will be found in the "Downloads" or "My Files" folder. Please note that only FlipTok allows you to download videos from TikTok without a watermark, other similar services can\'t do this.\n' +
   '\n' +
-  'On this website, you can download not only short video clips but also music from TikTok. The algorithm of actions does not change. It is just as easy and simple.\n';
+  'On this application, you can download not only short video clips but also music from TikTok. The algorithm of actions does not change. It is just as easy and simple.\n';
 export const BENEFITS = 'Benefits of FlipTok. What should a user know?';
 export const IF_YOU_CHOSEN =
   'If you have chosen FlipTok for downloading files, you definitely have not made a mistake, because the service has a lot of advantages. The main pros are:';
@@ -51,11 +51,11 @@ export const HIGH_QUALITY =
 export const ANY_FORMAT =
   'any video format. We can download videos in MP4, AVI, 3GP and other formats without any problems. In any case, the download will be as fast as possible and the clip will be of high quality;';
 export const CONFIDENTIALITY =
-  'confidentiality. FlipTok will not save user data even if you open the site daily and download a lot of content.';
+  'confidentiality. FlipTok will not save user data even if you open the application daily and download a lot of content.';
 export const USING_THE_FLIPTOK =
-  'Using the FlipTok website is not difficult at all, and there is no need to register and authorize. There is no need to download additional extensions, plugins, add-ons, because the website works in any browser.\n' +
+  'Using the FlipTok apllication is not difficult at all, and there is no need to register and authorize. There is no need to download additional extensions, plugins, add-ons, because the website works in any browser.\n' +
   '\n' +
-  'Another important advantage of the website is the ability to download content to any device. It can be a tablet, a smartphone, or a laptop, in other words, any device on which you usually watch videos.\n' +
+  'Another important advantage of the application is the ability to download content to any device. It can be a tablet, a smartphone, or a laptop, in other words, any device on which you usually watch videos.\n' +
   '\n' +
   'Downloading is fast, literally in a few seconds for standard-sized videos up to 60 seconds long. Longer videos will take longer to save, but the quality will remain original.\n' +
   '\n' +
@@ -69,7 +69,7 @@ export const EMAIL = 'Email: fliptokapp@gmail.com';
 export const IF_YOU_HAVE_QUESTIONS =
   'If you have questions, suggestions or comments, please do not hesitate to contact us. We are always ready to help you and answer all your questions.';
 export const WE_VALUE_YOUR_ATTENTION =
-  'We value your attention to our site and are always ready to help you. Regardless of questions or requests, you can be sure that you will receive our professional and friendly support.';
+  'We value your attention to our app and are always ready to help you. Regardless of questions or requests, you can be sure that you will receive our professional and friendly support.';
 
 // PRIVACY POLICY STRINGS
 
@@ -275,7 +275,7 @@ export const WE_MAY_DISCLOSE =
 export const WE_MAY_USE_YOUR_PERSONAL_INFO =
   'We may use your personal information for our own business purposes, such as for undertaking internal research for technological development and demonstration. This is not considered to be "selling" of your personal information.';
 export const FLIPTOK_HAS_NOT_DISCLOSED =
-  'FlipTok has not disclosed, sold, or shared any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. FlipTok will not sell or share personal information in the future belonging to website visitors, users, and other consumers.';
+  'FlipTok has not disclosed, sold, or shared any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. FlipTok will not sell or share personal information in the future belonging to users, and other consumers.';
 export const YOUR_RIGHTS_WITH_RESPECT = 'Your rights with respect to your personal data';
 export const RIGHTS_TO_REQUEST = 'Right to request deletion of the data — Request to delete';
 export const YOU_CAN_ASK =
@@ -336,7 +336,7 @@ export const RIGHT_TO_BE_INFORMED_WHETHER_OR_NOT =
   'Right to request deletion of your personal data\n' +
   'Right to obtain a copy of the personal data you previously shared with us\n' +
   'Right to opt out of the processing of your personal data if it is used for targeted advertising, the sale of personal data, or profiling in furtherance of decisions that produce legal or similarly significant effects ("profiling")\n' +
-  'FlipTok has not sold any personal data to third parties for business or commercial purposes. FlipTok will not sell personal data in the future belonging to website visitors, users, and other consumers.';
+  'FlipTok has not sold any personal data to third parties for business or commercial purposes. FlipTok will not sell personal data in the future belonging to users, and other consumers.';
 export const EXERCISE_YOUR_RIGHTS = 'Exercise your rights provided under the Virginia CDPA';
 export const MORE_INFO =
   'More information about our data collection and sharing practices can be found in this privacy notice.';
@@ -365,7 +365,7 @@ export const BASED_ON_THE_APP_LAW =
 export const AGREEMENT_TO_OUR_LEGAL_TERMS = 'AGREEMENT TO OUR LEGAL TERMS';
 export const WE_ARE_FLIPTOK = 'We are FlipTok ("Company," "we," "us," "our").';
 export const WE_OPERATE =
-  'We operate the service https://fliptok.app (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").';
+  'We operate the service https://fliptok.app, as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").';
 export const YOU_CAN_CONTACT = 'You can contact us by email at fliptokapp@gmail.com';
 export const THESE_LEGAL_TERMS =
   'These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and FlipTok, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.';
@@ -404,7 +404,7 @@ export const THE_SERVICES =
   'The Services are not tailored to comply with industry-specific regulations (Health Insurance Portability and Accountability Act (HIPAA), Federal Information Security Management Act (FISMA), etc.), so if your interactions would be subjected to such laws, you may not use the Services. You may not use the Services in a way that would violate the Gramm-Leach-Bliley Act (GLBA).';
 export const OUR_INTELLECTUAL_PROPERTY = 'Our intellectual property';
 export const WE_ARE_THE_OWNER =
-  'We are the owner or the licensee of all intellectual property rights in our Services, including all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics in the Services (collectively, the "Content"), as well as the trademarks, service marks, and logos contained therein (the "Marks").';
+  'We are the owner or the licensee of all intellectual property rights in our Services, including all source code, databases, functionality, software, designs, audio, video, text, photographs, and graphics in the Services (collectively, the "Content"), as well as the trademarks, service marks, and logos contained therein (the "Marks").';
 export const OUR_CONTENT =
   'Our Content and Marks are protected by copyright and trademark laws (and various other intellectual property rights and unfair competition laws) and treaties in the United States and around the world.';
 export const THE_CONTENT_AND_MARKS =
@@ -462,7 +462,7 @@ export const AS_A_USER_OF_SERVICES =
   'Make any unauthorized use of the Services, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts by automated means or under false pretenses.\n' +
   'Use the Services as part of any effort to compete with us or otherwise use the Services and/or the Content for any revenue-generating endeavor or commercial enterprise.';
 export const THE_SERVICES_DOES_NOT =
-  'The Services does not offer users to submit or post content. We may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Services, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Services and through third-party websites. As such, any Contributions you transmit may be treated in accordance with the Services\' Privacy Policy. When you create or make available any Contributions, you thereby represent and warrant that:\n' +
+  'The Services does not offer users to submit or post content. We may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Services, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, "Contributions"). Contributions may be viewable by other users of the Services and through third-party application. As such, any Contributions you transmit may be treated in accordance with the Services\' Privacy Policy. When you create or make available any Contributions, you thereby represent and warrant that:\n' +
   'The creation, distribution, transmission, public display, or performance, and the accessing, downloading, or copying of your Contributions do not and will not infringe the proprietary rights, including but not limited to the copyright, patent, trademark, trade secret, or moral rights of any third party.\n' +
   'You are the creator and owner of or have the necessary licenses, rights, consents, releases, and permissions to use and to authorize us, the Services, and other users of the Services to use your Contributions in any manner contemplated by the Services and these Legal Terms.\n' +
   'You have the written consent, release, and/or permission of each and every identifiable individual person in your Contributions to use the name or likeness of each and every such identifiable individual person to enable inclusion and use of your Contributions in any manner contemplated by the Services and these Legal Terms.\n' +
