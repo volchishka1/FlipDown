@@ -1,10 +1,12 @@
-import { Dimensions, ImageStyle, StyleSheet, TextStyle, ViewStyle } from "react-native";
+import { Dimensions, ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 
 export type DownloadScreenStyles = {
   saveAriaView: ViewStyle;
   rootContainer: ViewStyle;
   centerContainer: ViewStyle;
   imageContainer: ViewStyle;
+  textEmptyScreenContainer: ViewStyle;
+  textEmptyScreen: TextStyle;
   button: ViewStyle;
   images: ImageStyle;
   videoStyle: ViewStyle;
@@ -27,6 +29,14 @@ export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
   centerContainer: {
     flexWrap: 'wrap',
     flexDirection: 'row',
+  },
+  textEmptyScreenContainer: {
+    alignItems: 'center',
+  },
+  textEmptyScreen: {
+    color: '#ffffff',
+    fontFamily: 'Roboto-Bold',
+    fontSize: Dimensions.get('window').width > 600 ? 30 : 20,
   },
   images: {
     height: Dimensions.get('window').width > 600 ? 320 : 180,
