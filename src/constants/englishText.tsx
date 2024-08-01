@@ -69,7 +69,7 @@ export const EMAIL = 'Email: fliptokapp@gmail.com';
 export const IF_YOU_HAVE_QUESTIONS =
   'If you have questions, suggestions or comments, please do not hesitate to contact us. We are always ready to help you and answer all your questions.';
 export const WE_VALUE_YOUR_ATTENTION =
-  'We value your attention to our app and are always ready to help you. Regardless of questions or requests, you can be sure that you will receive our professional and friendly support.';
+  'We value your attention to our application and are always ready to help you. Regardless of questions or requests, you can be sure that you will receive our professional and friendly support.';
 
 // PRIVACY POLICY STRINGS
 
