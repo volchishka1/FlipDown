@@ -18,7 +18,7 @@ export type FullScreenVideoProps = CompositeScreenProps<
 export const FullVideoScreen: FC<FullScreenVideoProps> = (props) => {
   const { navigation } = props;
 
-  const url = useAppSelector(getUrl);
+  const url: string = useAppSelector(getUrl);
   const dispatch = useAppDispatch();
 
   const backToDownloadStackScreen = () => {
