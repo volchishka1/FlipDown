@@ -8,4 +8,5 @@ export type MainStackScreenNavigatorParamList = {
   [ROUTES.DOWNLOAD_SCREEN]: undefined;
   [ROUTES.DOWNLOAD_STACK_SCREEN]: undefined;
   [ROUTES.MAIN_STACK_SCREEN]: undefined;
+  [ROUTES.PERSONAL_INFO]: undefined;
 };

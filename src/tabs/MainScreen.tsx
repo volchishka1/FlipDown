@@ -13,7 +13,7 @@ import { DownloadStackNavigator } from '@root/stack/DownloadStack';
 import { useAppSelector } from '@root/hooks/hooks';
 import { getUrl } from '@root/store/homeScreen/selectors';
 import { MainStackScreenNavigatorParamList } from '@navigation/types';
-import { Dimensions } from "react-native";
+import { Dimensions } from 'react-native';
 
 export const MainScreenTabNavigator = () => {
   const Tab = createBottomTabNavigator<MainStackScreenNavigatorParamList>();
@@ -22,10 +22,14 @@ export const MainScreenTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarStyle: {display: url ? 'none' : 'flex'},
+        tabBarStyle: { display: url ? 'none' : 'flex' },
         headerShown: false,
         tabBarShowLabel: true,
-        tabBarLabelStyle: { color: '#6563ff', fontSize: Dimensions.get('window').width > 600 ? 18 : 12, fontFamily: 'Roboto-Medium' },
+        tabBarLabelStyle: {
+          color: '#6563ff',
+          fontSize: Dimensions.get('window').width > 600 ? 18 : 12,
+          fontFamily: 'Roboto-Medium',
+        },
       }}
     >
       <Tab.Screen
@@ -33,7 +37,7 @@ export const MainScreenTabNavigator = () => {
         component={SearchScreen}
         options={{
           tabBarLabel: `${strings.getString('search')}`,
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: () => {
             return <SearchSvg />;
           },
         }}
@@ -43,7 +47,7 @@ export const MainScreenTabNavigator = () => {
         component={DownloadStackNavigator}
         options={{
           tabBarLabel: `${strings.getString('downloads')}`,
-          tabBarIcon: (focused) => {
+          tabBarIcon: () => {
             return <FolderSvg />;
           },
         }}
@@ -53,7 +57,7 @@ export const MainScreenTabNavigator = () => {
         component={InfoScreen}
         options={{
           tabBarLabel: `${strings.getString('information')}`,
-          tabBarIcon: (focused) => {
+          tabBarIcon: () => {
             return <SettingSvg />;
           },
         }}
