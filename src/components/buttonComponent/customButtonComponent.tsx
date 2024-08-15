@@ -13,7 +13,7 @@ import { customButtonStyles } from './styles';
 export type CustomButtonProps = {
   onPress: TouchableOpacityProps['onPress'];
   textButton: TextProps['children'];
-  textButtonStyle: TextProps['style'];
+  textButtonStyle?: TextProps['style'];
   style?: TouchableOpacityProps['style'];
   isLoad?: TouchableOpacityProps['aria-selected'];
 };
