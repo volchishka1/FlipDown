@@ -1,13 +1,13 @@
-import { TextInputProps, TextProps } from 'react-native';
+import { TextInputProps, TextProps, TouchableOpacityProps } from 'react-native';
 
 export type SearchScreenProps = {
-  link: TextProps['children'];
+  link: TextInputProps['children'];
   provider: TextProps['children'];
   bannerGoogleAdvId: TextProps['children'];
   bannerYandexAdvId: TextProps['children'];
-  setInputValue: TextInputProps['onChangeText'];
-  saveVideo: TextInputProps['onChangeText'];
-  saveMusic: TextInputProps['onChangeText'];
+  setInputValue: TouchableOpacityProps['onPress'];
+  saveVideo: TouchableOpacityProps['onPress'];
+  saveMusic: TouchableOpacityProps['onPress'];
   setLink: TextInputProps['onChangeText'];
   preview: TextProps['children'];
   textInputColorText: TextInputProps['style'];
