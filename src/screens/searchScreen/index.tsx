@@ -76,7 +76,7 @@ export const SearchScreen = () => {
     : (bannerGoogleAdvId = bannerIds.bannerGoogleAndroidId);
 
   useEffect(() => {
-    const allData = getDataRedux;
+    const allData: ResponseData[] = getDataRedux;
     setData(allData);
   }, [getDataRedux]);
 
