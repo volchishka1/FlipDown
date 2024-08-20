@@ -1,4 +1,4 @@
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView, TouchableOpacityProps, View } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -15,7 +15,7 @@ import { strings } from '@constants/textConst';
 import { CloseWindowSvg } from '@assets/closeModalWindow';
 
 export type AboutScreenProps = {
-  goToCloseBottomSheet: () => void;
+  goToCloseBottomSheet: TouchableOpacityProps['onPress'];
 };
 
 export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) => {
@@ -41,9 +41,21 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           textStyles={globalStyles.descriptionText}
           text={strings.getString('working_with')}
         />
-        <DotComponent textStyles={globalStyles.descriptionText} text={strings.getString('go_to_the_app')} style={globalStyles.dotComponent} />
-        <DotComponent textStyles={globalStyles.descriptionText} text={strings.getString('copy_link')} style={globalStyles.dotComponent} />
-        <DotComponent textStyles={globalStyles.descriptionText} text={strings.getString('open_the_app')} style={globalStyles.dotComponent} />
+        <DotComponent
+          textStyles={globalStyles.descriptionText}
+          text={strings.getString('go_to_the_app')}
+          style={globalStyles.dotComponent}
+        />
+        <DotComponent
+          textStyles={globalStyles.descriptionText}
+          text={strings.getString('copy_link')}
+          style={globalStyles.dotComponent}
+        />
+        <DotComponent
+          textStyles={globalStyles.descriptionText}
+          text={strings.getString('open_the_app')}
+          style={globalStyles.dotComponent}
+        />
         <TextComponent
           textStyles={globalStyles.descriptionText}
           text={strings.getString('the_final_step')}
@@ -56,9 +68,21 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           textStyles={globalStyles.descriptionText}
           text={strings.getString('if_you_chosen')}
         />
-        <DotComponent textStyles={globalStyles.descriptionText} style={globalStyles.dotComponent} text={strings.getString('no_user_fees')} />
-        <DotComponent textStyles={globalStyles.descriptionText} style={globalStyles.dotComponent} text={strings.getString('high_quality')} />
-        <DotComponent textStyles={globalStyles.descriptionText} style={globalStyles.dotComponent} text={strings.getString('any_format')} />
+        <DotComponent
+          textStyles={globalStyles.descriptionText}
+          style={globalStyles.dotComponent}
+          text={strings.getString('no_user_fees')}
+        />
+        <DotComponent
+          textStyles={globalStyles.descriptionText}
+          style={globalStyles.dotComponent}
+          text={strings.getString('high_quality')}
+        />
+        <DotComponent
+          textStyles={globalStyles.descriptionText}
+          style={globalStyles.dotComponent}
+          text={strings.getString('any_format')}
+        />
         <DotComponent
           textStyles={globalStyles.descriptionText}
           style={globalStyles.dotComponent}
