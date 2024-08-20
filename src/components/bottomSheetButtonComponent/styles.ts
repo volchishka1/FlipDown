@@ -9,6 +9,6 @@ export const bottomSheetButtonStyles = StyleSheet.create<BottomSheetButtonStyles
     fontFamily: 'Roboto-Bold',
     color: '#ffffff',
     fontSize: Dimensions.get('window').width > 600 ? 30 : 22,
-    lineHeight: 40,
+    lineHeight: 45,
   },
 });
