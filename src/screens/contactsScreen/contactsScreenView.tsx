@@ -1,4 +1,4 @@
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView, TouchableOpacityProps, View } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -14,7 +14,7 @@ import { strings } from '@constants';
 import { CloseWindowSvg } from '@assets/closeModalWindow';
 
 export type ContactsScreenProps = {
-  goToCloseBottomSheet: () => void;
+  goToCloseBottomSheet: TouchableOpacityProps['onPress'];
 };
 
 export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomSheet }) => {
