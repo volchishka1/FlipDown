@@ -8,9 +8,8 @@ import { dotComponentStyles } from './styles';
 
 export interface DotComponentProps {
   text?: TextProps['children'];
-  textStyles?: TextProps['children'];
+  textStyles?: TextProps['style'];
   style?: TextProps['style'];
-
 }
 export const DotComponent: FC<DotComponentProps> = (props) => {
   const { text, style, textStyles } = props;
