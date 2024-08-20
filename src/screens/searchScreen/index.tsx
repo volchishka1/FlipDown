@@ -76,8 +76,7 @@ export const SearchScreen = () => {
     : (bannerGoogleAdvId = bannerIds.bannerGoogleAndroidId);
 
   useEffect(() => {
-    const allData: ResponseData[] = getDataRedux;
-    setData(allData);
+    setData(getDataRedux);
   }, [getDataRedux]);
 
   const checkAndroidPermission = async () => {
