@@ -16,6 +16,7 @@ import { CloseWindowSvg } from '@assets/closeModalWindow';
 export type ContactsScreenProps = {
   goToCloseBottomSheet: () => void;
 };
+
 export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomSheet }) => {
   return (
     <SafeAreaView style={contactScreenStyles.rootContainer}>
