@@ -1,4 +1,4 @@
-import { FC, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
 import { BottomSheetModal } from '@gorhom/bottom-sheet/src';
 
@@ -7,9 +7,7 @@ import { Alert, Linking } from 'react-native';
 import { NetInfoState, useNetInfo } from '@react-native-community/netinfo';
 import { strings } from '@constants';
 
-export type InfoScreenProps = {};
-export const InfoScreen: FC<InfoScreenProps> = (props) => {
-  const {} = props;
+export const InfoScreen = () => {
   const [actionTriggered, setActionTriggered] = useState('');
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
   const snapPoints = useMemo(() => ['90%', '90%'], []);
