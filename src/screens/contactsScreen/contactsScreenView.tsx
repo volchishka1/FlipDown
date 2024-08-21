@@ -22,16 +22,28 @@ export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomShe
     <SafeAreaView style={contactScreenStyles.rootContainer}>
       <View style={globalStyles.topContainer}>
         <ParagraphComponent
-          style={globalStyles.headerName}
+          textStyles={globalStyles.headerName}
           paragraphName={strings.getString('contact_us')}
         />
         <CloseWindowComponent iconSvg={<CloseWindowSvg />} goToCloseButton={goToCloseBottomSheet} />
       </View>
       <ScrollView style={contactScreenStyles.centerContainer}>
-        <TextComponent text={strings.getString('you_can_contact_us')} />
-        <TextComponent text={strings.getString('email')} />
-        <TextComponent text={strings.getString('if_you_have_questions')} />
-        <TextComponent text={strings.getString('we_value_your_attention')} />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={strings.getString('you_can_contact_us')}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={strings.getString('email')}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={strings.getString('if_you_have_questions')}
+        />
+        <TextComponent
+          textStyles={globalStyles.descriptionText}
+          text={strings.getString('we_value_your_attention')}
+        />
       </ScrollView>
     </SafeAreaView>
   );
