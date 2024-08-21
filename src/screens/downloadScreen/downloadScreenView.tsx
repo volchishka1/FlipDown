@@ -14,7 +14,7 @@ export const DownloadScreenView: FC<DownloadScreenProps> = (props) => {
   const dispatch = useAppDispatch();
   return (
     <SafeAreaView style={downloadScreenStyles.saveAriaView}>
-      {photos === [] ? (
+      {photos.length === 0 ? (
         <View style={downloadScreenStyles.textEmptyScreenContainer}>
           <Text style={downloadScreenStyles.textEmptyScreen}>{`${strings.getString(
             'screen_is_empty',
