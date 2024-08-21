@@ -42,6 +42,7 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
     flexDirection: 'row',
     width: '90%',
     justifyContent: 'space-around',
+    marginTop: Dimensions.get('window').width > 600 ? -100 : 0,
   },
   buttonDataContainer: {
     flexDirection: 'column',
@@ -58,8 +59,8 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
     width: Dimensions.get('window').width > 600 ? 120 : 80,
   },
   imageStyle: {
-    width: 120,
-    height: 180,
+    width: Dimensions.get('window').width > 600 ? 160 : 120,
+    height: Dimensions.get('window').width > 600 ? 280 : 180,
   },
   bottomContainer: {
     width: '100%',
