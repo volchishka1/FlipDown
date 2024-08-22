@@ -38,7 +38,7 @@ export const COPY_LINK = 'copy the link using the "Share" button;';
 export const OPEN_THE_APP =
   'open the FlipTok application and paste the copied link into the input field.';
 export const THE_FINAL_STEP =
-  'The final step is to click the "Download" button and wait for the video to download. It will be found in the "Downloads" or "My Files" folder. Please note that only FlipTok allows you to download videos from TikTok without a watermark, other similar services can\'t do this.\n' +
+  'The final step is to click the "Download" button and wait for the video to download. It will be found in the "Downloads" or "Gallery" folder. Please note that only FlipTok allows you to download videos from TikTok without a watermark, other similar services can\'t do this.\n' +
   '\n' +
   'On this application, you can download not only short video clips but also music from TikTok. The algorithm of actions does not change. It is just as easy and simple.\n';
 export const BENEFITS = 'Benefits of FlipTok. What should a user know?';
