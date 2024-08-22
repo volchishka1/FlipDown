@@ -119,7 +119,7 @@ dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
     implementation('com.google.android.gms:play-services-ads:22.2.0')
-    implementation('com.yandex.android:mobileads:7.2.0')
+    implementation('com.yandex.android:mobileads:7.4.0')
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
