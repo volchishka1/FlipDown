@@ -7,6 +7,8 @@ import { ROUTES } from '@constants';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { MainStackScreenNavigatorParamList } from '@navigation/types';
+import { setUrl } from '@root/store/actions.ts';
+import { useAppDispatch } from '@root/hooks/hooks.ts';
 
 export type DownloadScreenComponentProps = CompositeScreenProps<
   NativeStackScreenProps<MainStackScreenNavigatorParamList, ROUTES.DOWNLOAD_SCREEN>,
@@ -15,6 +17,7 @@ export type DownloadScreenComponentProps = CompositeScreenProps<
 
 export const DownloadScreen: FC<DownloadScreenComponentProps> = ({ navigation }) => {
   const [photos, setPhotos] = useState<PhotoIdentifier[] | undefined>([]);
+  const dispatch = useAppDispatch();
   const fetchPhotos = useCallback(async () => {
     const res = await CameraRoll.getPhotos({
       first: 1000,
@@ -26,7 +29,8 @@ export const DownloadScreen: FC<DownloadScreenComponentProps> = ({ navigation })
     setPhotos(res?.edges);
   }, []);
 
-  const navigateToFullVideoScreen = () => {
+  const navigateToFullVideoScreen = (img: any) => {
+    dispatch(setUrl(img));
     navigation.navigate(ROUTES.FULL_VIDEO_SCREEN);
   };
 
