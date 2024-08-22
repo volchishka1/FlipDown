@@ -38,7 +38,7 @@ export const COPY_LINK = 'copy the link using the "Share" button;';
 export const OPEN_THE_APP =
   'open the FlipTok application and paste the copied link into the input field.';
 export const THE_FINAL_STEP =
-  'The final step is to click the "Download" button and wait for the video to download. It will be found in the "Downloads" or "Gallery" folder. Please note that only FlipTok allows you to download videos from TikTok without a watermark, other similar services can\'t do this.\n' +
+  'The final step is to click the "Download" button and wait for the video to download. It will be found in the "Downloads" or "Gallery" folder.\n' +
   '\n' +
   'On this application, you can download not only short video clips but also music from TikTok. The algorithm of actions does not change. It is just as easy and simple.\n';
 export const BENEFITS = 'Benefits of FlipTok. What should a user know?';
@@ -53,7 +53,7 @@ export const ANY_FORMAT =
 export const CONFIDENTIALITY =
   'confidentiality. FlipTok will not save user data even if you open the application daily and download a lot of content.';
 export const USING_THE_FLIPTOK =
-  'Using the FlipTok apllication is not difficult at all, and there is no need to register and authorize. There is no need to download additional extensions, plugins, add-ons, because the website works in any browser.\n' +
+  'Using the FlipTok application is not difficult at all, and there is no need to register and authorize. There is no need to download additional extensions, plugins or add-ons.\n' +
   '\n' +
   'Another important advantage of the application is the ability to download content to any device. It can be a tablet, a smartphone, or a laptop, in other words, any device on which you usually watch videos.\n' +
   '\n' +
