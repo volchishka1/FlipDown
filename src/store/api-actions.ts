@@ -32,8 +32,8 @@ export const loadProvider =
       .get(apiUrl)
       .then((response) => {
         const res = response.data;
-        dispatch(setProvider(res));
-        console.log(res);
+        dispatch(setProvider(res.provider));
+        console.log(res.provider);
       })
       .catch(() => {
         // Alert.alert(`${strings.getString('oops')}`);
