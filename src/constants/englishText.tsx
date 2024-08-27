@@ -1,4 +1,5 @@
 export const FIND = 'Search';
+export const PASTE = 'Paste';
 export const DOWNLOADS = 'Downloads';
 export const SEARCH = 'Search';
 export const INFORMATION = 'Information';

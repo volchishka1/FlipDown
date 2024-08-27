@@ -34,6 +34,7 @@ import {
   OKAY,
   OOPS,
   OPEN_THE_APP,
+  PASTE,
   PRIVACY_POLICY,
   SCREEN_IS_EMPTY,
   SEARCH,
@@ -82,6 +83,7 @@ import {
   OKAY_RU,
   OOPS_RU,
   OPEN_THE_APP_RU,
+  PASTE_RU,
   PRIVACY_POLICY_RU,
   SCREEN_IS_EMPTY_RU,
   SEARCH_RU,
@@ -100,6 +102,7 @@ import {
 export const strings = new LocalizedStrings({
   en: {
     find: FIND,
+    paste: PASTE,
     downloads: DOWNLOADS,
     search: SEARCH,
     information: INFORMATION,
@@ -155,6 +158,7 @@ export const strings = new LocalizedStrings({
   },
   ru: {
     find: FIND_RU,
+    paste: PASTE_RU,
     downloads: DOWNLOADS_RU,
     search: SEARCH_RU,
     information: INFORMATION_RU,

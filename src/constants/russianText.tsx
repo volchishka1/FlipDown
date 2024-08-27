@@ -1,4 +1,5 @@
 export const FIND_RU = 'Поиск';
+export const PASTE_RU = 'Вставить';
 export const DOWNLOADS_RU = 'Загрузки';
 export const SEARCH_RU = 'Поиск';
 export const INFORMATION_RU = 'Информация';
