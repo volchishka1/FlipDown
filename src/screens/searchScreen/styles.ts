@@ -9,10 +9,13 @@ export type Styles = {
   dataContainer: ViewStyle;
   buttonStyle: ViewStyle;
   searchButtonStyle: ViewStyle;
+  pasteButtonContainerStyle: ViewStyle;
+  pasteButtonStyle: ViewStyle;
   bottomContainer: ViewStyle;
   bannerAdvertising: ViewStyle;
   imageStyle: ImageStyle;
   textButtonStyle: TextStyle;
+  textPasteButtonStyle: TextStyle;
 };
 
 export const searchScreenStyles = StyleSheet.create<Styles>({
@@ -31,7 +34,7 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
     justifyContent: 'center',
   },
   input: {
-    width: Dimensions.get('window').width > 600 ? '75%' : '70%',
+    width: Dimensions.get('window').width > 600 ? '75%' : '48%',
     height: 50,
     padding: 10,
     backgroundColor: 'white',
@@ -55,8 +58,22 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
   textButtonStyle: {
     fontSize: Dimensions.get('window').width > 600 ? 18 : 14,
   },
+  textPasteButtonStyle: {
+    fontSize: Dimensions.get('window').width > 600 ? 14 : 12,
+  },
   searchButtonStyle: {
     width: Dimensions.get('window').width > 600 ? 120 : 80,
+  },
+  pasteButtonContainerStyle: {
+    width: 90,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  pasteButtonStyle: {
+    width: Dimensions.get('window').width > 600 ? 110 : 70,
+    height: 30,
+    borderRadius: 10,
   },
   imageStyle: {
     width: Dimensions.get('window').width > 600 ? 160 : 120,
