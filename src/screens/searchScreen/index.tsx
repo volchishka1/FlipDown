@@ -1,4 +1,5 @@
 import { Alert, Appearance, Keyboard, PermissionsAndroid, Platform } from 'react-native';
+import Clipboard from '@react-native-clipboard/clipboard';
 
 import React, { useEffect, useState } from 'react';
 
@@ -61,6 +62,11 @@ export const SearchScreen = () => {
   const internetState: NetInfoState = useNetInfo();
   const colorScheme = Appearance.getColorScheme();
   const textInputColorText = colorScheme === 'dark' && textColorBlackStyles;
+
+  const fetchCopiedText = async () => {
+    const text = await Clipboard.getString();
+    setLink(text);
+  };
 
   MobileAds.initialize({ userConsent: true, locationConsent: true });
 
@@ -245,6 +251,7 @@ export const SearchScreen = () => {
       textInputColorText={textInputColorText}
       bannerGoogleAdvId={bannerGoogleAdvId}
       bannerYandexAdvId={bannerYandexAdvId}
+      fetchCopiedText={fetchCopiedText}
     />
   );
 };

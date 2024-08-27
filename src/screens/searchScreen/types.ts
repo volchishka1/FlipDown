@@ -8,6 +8,7 @@ export type SearchScreenProps = {
   setInputValue: TouchableOpacityProps['onPress'];
   saveVideo: TouchableOpacityProps['onPress'];
   saveMusic: TouchableOpacityProps['onPress'];
+  fetchCopiedText: TouchableOpacityProps['onPress'];
   setLink: TextInputProps['onChangeText'];
   preview: TextProps['children'];
   textInputColorText: TextInputProps['style'];

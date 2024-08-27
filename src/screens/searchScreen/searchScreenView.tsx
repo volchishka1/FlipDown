@@ -27,6 +27,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     saveMusic = () => {},
     saveVideo = () => {},
     setLink = () => {},
+    fetchCopiedText = () => {},
     isLoad = false,
     isLoadMusic = false,
     isLoadVideo = false,
@@ -49,6 +50,15 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
             placeholder={strings.getString('insert_your_link')}
             style={[searchScreenStyles.input, textInputColorText]}
           />
+          <View style={searchScreenStyles.pasteButtonContainerStyle}>
+            <CustomButton
+              onPress={fetchCopiedText}
+              textButton={strings.getString('paste')}
+              textButtonStyle={searchScreenStyles.textPasteButtonStyle}
+              isLoad={false}
+              style={searchScreenStyles.pasteButtonStyle}
+            />
+          </View>
           <CustomButton
             onPress={setInputValue}
             textButton={strings.getString('find')}
