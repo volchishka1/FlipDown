@@ -3,7 +3,7 @@ import { ThunkActionResult } from '../types/action';
 import { saveData, setIsLoad, setProvider, setShowLoad } from './actions';
 
 export const loadData =
-  (link: string, showLoad: boolean): ThunkActionResult =>
+  (link: string | string[], showLoad: boolean): ThunkActionResult =>
   async (dispatch, _getState, api): Promise<void> => {
     const apiUrl = `https://fliptok.app/api/fetch?url=${link}`;
     dispatch(setIsLoad(true));
