@@ -24,6 +24,7 @@ import { textColorBlackStyles } from '@components/globalStyles/globalStyles';
 import { MobileAds } from 'react-native-yandex-mobile-ads';
 import { loadData } from '@root/store/api-actions.ts';
 import { setIsLoadMusic, setIsLoadVideo } from '@root/store/actions.ts';
+import ShareMenu, { ShareData } from 'react-native-share-menu';
 
 export interface ResponseData {
   music: {
@@ -49,7 +50,7 @@ const bannerIds = {
 };
 
 export const SearchScreen = () => {
-  const [link, setLink] = useState('');
+  const [link, setLink] = useState<string | string[]>('');
   const dispatch = useAppDispatch();
   const getDataRedux: ResponseData[] = useAppSelector(getLoadData);
   const getProviderRedux: string = useAppSelector(getProvider);
@@ -234,6 +235,26 @@ export const SearchScreen = () => {
       setTextValue();
     }
   };
+
+  const handleShareToTheApp = (item: ShareData | undefined) => {
+    if (!item) {
+      return;
+    }
+    const { data } = item;
+
+    setLink(data);
+  };
+
+  useEffect(() => {
+    ShareMenu.getInitialShare(handleShareToTheApp);
+  }, []);
+
+  useEffect(() => {
+    const listener = ShareMenu.addNewShareListener(handleShareToTheApp);
+    return () => {
+      listener.remove();
+    };
+  }, []);
 
   return (
     <SearchScreenView
