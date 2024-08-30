@@ -3023,6 +3023,11 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.12.tgz#12bb1e2be27293c1406acb6af1c3f3a1481d98c6"
   integrity sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==
 
+"@types/react-native-share-menu@^5.0.5":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@types/react-native-share-menu/-/react-native-share-menu-5.0.5.tgz#790c635ed991fb1541abce078c3d326369f204d3"
+  integrity sha512-RhJO1UYSbS9HAjJdbpkSs7seXUopuE8O7dXNFweo0bnA/zrUamggLhCKzBmYwyYQQ5D2NPC69G3eBI44gQN5MA==
+
 "@types/react-test-renderer@^18.0.0":
   version "18.3.0"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-18.3.0.tgz#839502eae70058a4ae161f63385a8e7929cef4c0"
@@ -8339,6 +8344,16 @@ react-native-screens@^3.29.0:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
+
+react-native-share-menu@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-share-menu/-/react-native-share-menu-6.0.0.tgz#0398dd4537ca1138b774fcbff9b05a88c8329cf6"
+  integrity sha512-KdmRnqjI/B2MigSxGmhbYJ3WMJxKXj+0c47ANcVZ/PTzc2vtz6d1r4KQJgkBImXgNC+vowpuD2UGdPllxadr2A==
+
+react-native-share@^10.2.1:
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-share/-/react-native-share-10.2.1.tgz#baf94848c2acee6e52f6b28e05c47fa5fa9402be"
+  integrity sha512-Z2LWGYWH7raM4H6Oauttv1tEhaB43XSWJAN8iS6oaSG9CnyrUBeYFF4QpU1AH5RgNeylXQdN8CtbizCHHt6coQ==
 
 react-native-svg@^14.1.0:
   version "14.2.0"
