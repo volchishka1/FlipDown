@@ -11,7 +11,7 @@ export const DownloadScreenView: FC<DownloadScreenProps> = (props) => {
   const { photos, navigateToFullVideoScreen = () => {} } = props;
   return (
     <SafeAreaView style={downloadScreenStyles.saveAriaView}>
-      {photos === false ? (
+      {photos.length === 0 ? (
         <View style={downloadScreenStyles.textEmptyScreenContainer}>
           <Text style={downloadScreenStyles.textEmptyScreen}>{`${strings.getString(
             'screen_is_empty',
