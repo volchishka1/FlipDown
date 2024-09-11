@@ -1,4 +1,4 @@
-package com.fliptok
+package com.flipdown
 
 import android.app.Application
 import com.facebook.react.PackageList

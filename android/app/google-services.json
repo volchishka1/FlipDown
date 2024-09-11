@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "458298693137",
-    "project_id": "fliptok-9cb3f",
-    "storage_bucket": "fliptok-9cb3f.appspot.com"
+    "project_number": "253046536963",
+    "project_id": "flipdown-3f7f1",
+    "storage_bucket": "flipdown-3f7f1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:458298693137:android:fb82b527023700135fc3b0",
+        "mobilesdk_app_id": "1:253046536963:android:dc7e957b8c8431e66f0736",
         "android_client_info": {
-          "package_name": "com.fliptok"
+          "package_name": "com.flipdown"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDDEUIaWEKrM6E9BPC7bowAGco7rTlGOdQ"
+          "current_key": "AIzaSyBUVReAhXRLsfQNq20ClOIxUelRQnYyT8U"
         }
       ],
       "services": {

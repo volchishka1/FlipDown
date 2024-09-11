@@ -1,9 +1,9 @@
 {
-  "name": "FlipTok",
-  "displayName": "FlipTok",
+  "name": "FlipDown",
+  "displayName": "FlipDown",
   "react-native-google-mobile-ads": {
-    "android_app_id": "ca-app-pub-6980974319222646~6736325662",
-    "ios_app_id": "ca-app-pub-6980974319222646~5423243995",
+    "android_app_id": "ca-app-pub-6980974319222646~5971321139",
+    "ios_app_id": "ca-app-pub-6980974319222646~9169126278",
     "user_tracking_usage_description": "This identifier will be used to deliver personalized ads to you.",
     "sk_ad_network_items": [
       "cstr6suwn9.skadnetwork",
