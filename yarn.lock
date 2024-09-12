@@ -3040,6 +3040,11 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.12.tgz#12bb1e2be27293c1406acb6af1c3f3a1481d98c6"
   integrity sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==
 
+"@types/react-native-share-menu@^5.0.5":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@types/react-native-share-menu/-/react-native-share-menu-5.0.5.tgz#790c635ed991fb1541abce078c3d326369f204d3"
+  integrity sha512-RhJO1UYSbS9HAjJdbpkSs7seXUopuE8O7dXNFweo0bnA/zrUamggLhCKzBmYwyYQQ5D2NPC69G3eBI44gQN5MA==
+
 "@types/react-test-renderer@^18.0.0":
   version "18.3.0"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-18.3.0.tgz#839502eae70058a4ae161f63385a8e7929cef4c0"
@@ -8357,6 +8362,11 @@ react-native-screens@^3.29.0:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
 
+react-native-share-menu@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-share-menu/-/react-native-share-menu-6.0.0.tgz#0398dd4537ca1138b774fcbff9b05a88c8329cf6"
+  integrity sha512-KdmRnqjI/B2MigSxGmhbYJ3WMJxKXj+0c47ANcVZ/PTzc2vtz6d1r4KQJgkBImXgNC+vowpuD2UGdPllxadr2A==
+
 react-native-svg@^14.1.0:
   version "14.2.0"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-14.2.0.tgz#20ef9447c623b3f9a6d9e1c03746ac74f55ea55d"
@@ -8369,6 +8379,11 @@ react-native-video@^6.3.0:
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-6.5.0.tgz#bcb591eeecc4784438a6f074ea3a456b22d6d1b7"
   integrity sha512-P3FmyQgKigS4BmFG+6heRHzSp591U/Z+Iw08wWmiNsNiyLRa6x8B0ob4wqWTW4QfzsBf80udg1/T2W49KxxzYw==
+
+react-native-yandex-mobile-ads@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/react-native-yandex-mobile-ads/-/react-native-yandex-mobile-ads-0.9.1.tgz#3c04921e479b07f25329ab7a52361d5a88f79bde"
+  integrity sha512-Rp0SCG4BIZbXRpRW6iDu8OLjVnD3ZXZpm+KF8+c7hASFtNz024S2g8MZZHL5QjEjE0WzzMiLxCj5IBGmMDr/9Q==
 
 react-native@0.74.1:
   version "0.74.1"
