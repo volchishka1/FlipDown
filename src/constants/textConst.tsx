@@ -40,15 +40,14 @@ import {
   SEARCH,
   SORRY,
   TERMS_AND_CONDITIONS,
-  THE_FINAL_STEP,
-  USING_THE_FLIPTOK,
+  THE_FINAL_STEP, USING_THE_FLIPDOWN,
   VIDEO_DELETED,
   VIDEO_SAVED,
   WE_VALUE_YOUR_ATTENTION,
   WORKING_WITH,
   YES,
-  YOU_CAN_CONTACT_US,
-} from './englishText';
+  YOU_CAN_CONTACT_US
+} from "./englishText";
 import {
   ABOUT_PROJECT_RU,
   ABOUT_RU,
@@ -89,15 +88,14 @@ import {
   SEARCH_RU,
   SORRY_RU,
   TERMS_AND_CONDITIONS_RU,
-  THE_FINAL_STEP_RU,
-  USING_THE_FLIPTOK_RU,
+  THE_FINAL_STEP_RU, USING_THE_FLIPDOWN_RU,
   VIDEO_DELETED_RU,
   VIDEO_SAVED_RU,
   WE_VALUE_YOUR_ATTENTION_RU,
   WORKING_WITH_RU,
   YES_RU,
-  YOU_CAN_CONTACT_US_RU,
-} from './russianText';
+  YOU_CAN_CONTACT_US_RU
+} from "./russianText";
 
 export const strings = new LocalizedStrings({
   en: {
@@ -146,7 +144,7 @@ export const strings = new LocalizedStrings({
     high_quality: HIGH_QUALITY,
     any_format: ANY_FORMAT,
     confidentiality: CONFIDENTIALITY,
-    using_the_fliptok: USING_THE_FLIPTOK,
+    using_the_flipdown: USING_THE_FLIPDOWN,
 
     // CONTACTS STRINGS
 
@@ -202,7 +200,7 @@ export const strings = new LocalizedStrings({
     high_quality: HIGH_QUALITY_RU,
     any_format: ANY_FORMAT_RU,
     confidentiality: CONFIDENTIALITY_RU,
-    using_the_fliptok: USING_THE_FLIPTOK_RU,
+    using_the_flipdown: USING_THE_FLIPDOWN_RU,
 
     // CONTACTS STRINGS
 
