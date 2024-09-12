@@ -25,7 +25,8 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
     justifyContent: 'space-between',
   },
   topContainer: {
-    marginVertical: '15%',
+    marginTop: '12%',
+    marginBottom: '10%'
   },
   inputContainer: {
     marginBottom: '10%',
