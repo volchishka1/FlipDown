@@ -48,12 +48,12 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
         />
         <DotComponent
           textStyles={globalStyles.descriptionText}
-          text={strings.getString('copy_link')}
+          text={strings.getString('share_link')}
           style={globalStyles.dotComponent}
         />
         <DotComponent
           textStyles={globalStyles.descriptionText}
-          text={strings.getString('open_the_app')}
+          text={strings.getString('copy_link')}
           style={globalStyles.dotComponent}
         />
         <TextComponent
