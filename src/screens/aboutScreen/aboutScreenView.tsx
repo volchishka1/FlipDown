@@ -90,7 +90,7 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
         />
         <TextComponent
           textStyles={globalStyles.footerDescriptionText}
-          text={strings.getString('using_the_fliptok')}
+          text={strings.getString('using_the_flipdown')}
         />
       </ScrollView>
     </SafeAreaView>
