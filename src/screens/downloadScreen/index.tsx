@@ -23,7 +23,7 @@ export const DownloadScreen: FC<DownloadScreenComponentProps> = ({ navigation })
       first: 1000,
       assetType: 'Videos',
       groupTypes: 'Album',
-      groupName: 'FlipTok',
+      groupName: 'FlipDown',
       include: ['fileSize', 'playableDuration'],
     });
     setPhotos(res?.edges);

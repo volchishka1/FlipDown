@@ -120,7 +120,7 @@ export const SearchScreen = () => {
     await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
       {
         name: `${musicTitle}`, // name of the file
-        parentFolder: 'FlipTok', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
+        parentFolder: 'FlipDown', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
         mimeType: 'audio/mpeg', // MIME type of the file
       },
       'Audio', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
@@ -146,11 +146,11 @@ export const SearchScreen = () => {
       indicator: true,
     }).fetch('GET', url);
     Platform.OS === 'ios'
-      ? (url = res.path()) && (await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipTok' }))
+      ? (url = res.path()) && (await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipDown' }))
       : await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
           {
-            name: 'FlipTokVideo' + `${videoId}`, // name of the file
-            parentFolder: 'FlipTok', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
+            name: 'FlipDownVideo' + `${videoId}`, // name of the file
+            parentFolder: 'FlipDown', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
             mimeType: 'video/mp4', // MIME type of the file
             path: path,
           },
