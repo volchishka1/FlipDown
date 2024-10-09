@@ -35,18 +35,22 @@ import {
   OOPS,
   PASTE,
   PRIVACY_POLICY,
+  RATE_APPS,
   SCREEN_IS_EMPTY,
-  SEARCH, SHARE_LINK,
+  SEARCH,
+  SHARE_LINK,
   SORRY,
   TERMS_AND_CONDITIONS,
-  THE_FINAL_STEP, USING_THE_FLIPDOWN,
+  THANKS_FOR_RATE,
+  THE_FINAL_STEP,
+  USING_THE_FLIPDOWN,
   VIDEO_DELETED,
   VIDEO_SAVED,
   WE_VALUE_YOUR_ATTENTION,
   WORKING_WITH,
   YES,
-  YOU_CAN_CONTACT_US
-} from "./englishText";
+  YOU_CAN_CONTACT_US,
+} from './englishText';
 import {
   ABOUT_PROJECT_RU,
   ABOUT_RU,
@@ -82,18 +86,22 @@ import {
   OOPS_RU,
   PASTE_RU,
   PRIVACY_POLICY_RU,
+  RATE_APPS_RU,
   SCREEN_IS_EMPTY_RU,
-  SEARCH_RU, SHARE_LINK_RU,
+  SEARCH_RU,
+  SHARE_LINK_RU,
   SORRY_RU,
   TERMS_AND_CONDITIONS_RU,
-  THE_FINAL_STEP_RU, USING_THE_FLIPDOWN_RU,
+  THANKS_FOR_RATE_RU,
+  THE_FINAL_STEP_RU,
+  USING_THE_FLIPDOWN_RU,
   VIDEO_DELETED_RU,
   VIDEO_SAVED_RU,
   WE_VALUE_YOUR_ATTENTION_RU,
   WORKING_WITH_RU,
   YES_RU,
-  YOU_CAN_CONTACT_US_RU
-} from "./russianText";
+  YOU_CAN_CONTACT_US_RU,
+} from './russianText';
 
 export const strings = new LocalizedStrings({
   en: {
@@ -125,6 +133,8 @@ export const strings = new LocalizedStrings({
     do_you_want_to_exit: DO_YOU_WANT_TO_EXIT,
     deleted_video: VIDEO_DELETED,
     screen_is_empty: SCREEN_IS_EMPTY,
+    rate_apps: RATE_APPS,
+    thanks_for_rate: THANKS_FOR_RATE,
 
     // ABOUT STRINGS
 
@@ -181,6 +191,8 @@ export const strings = new LocalizedStrings({
     do_you_want_to_exit: DO_YOU_WANT_TO_EXIT_RU,
     deleted_video: VIDEO_DELETED_RU,
     screen_is_empty: SCREEN_IS_EMPTY_RU,
+    rate_apps: RATE_APPS_RU,
+    thanks_for_rate: THANKS_FOR_RATE_RU,
 
     // ABOUT STRINGS
 

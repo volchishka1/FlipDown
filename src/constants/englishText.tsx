@@ -26,6 +26,8 @@ export const DO_YOU_WANT_TO_EXIT = 'Do you want to exit';
 export const EXIT_APP = 'Exit app';
 export const VIDEO_DELETED = 'Video deleted';
 export const SCREEN_IS_EMPTY = 'Download screen is empty';
+export const RATE_APPS = 'Rate apps';
+export const THANKS_FOR_RATE = 'Thanks for rating';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT = 'What is the FlipDown Project?';
@@ -35,8 +37,10 @@ export const HOW_TO_USE = 'How to use the service?';
 export const WORKING_WITH =
   'Working with the application involves very simple steps. To download videos and music from TT, you only need a few steps. All you need is this:';
 export const GO_TO_THE_APP = 'go to the app and find a clip you like;';
-export const SHARE_LINK = 'push the button share in the app, find the more option, and then select FlipDown';
-export const COPY_LINK = 'or copy the link using the "Share" button and open the FlipDown application and paste the copied link into the input field.';
+export const SHARE_LINK =
+  'push the button share in the app, find the more option, and then select FlipDown';
+export const COPY_LINK =
+  'or copy the link using the "Share" button and open the FlipDown application and paste the copied link into the input field.';
 export const THE_FINAL_STEP =
   'The final step is to click the "Download" button and wait for the video to download. It will be found in the "Downloads" or "Gallery" folder.\n' +
   '\n' +

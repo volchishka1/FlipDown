@@ -3,6 +3,7 @@ import { Modal, StatusBar, TouchableOpacityProps, View } from 'react-native';
 import { modalGradeComponentStyles } from '@components/modalGradeComponent/styles.ts';
 import { CustomButton } from '@components/buttonComponent/customButtonComponent.tsx';
 import StarRating from 'react-native-star-rating-widget';
+import { strings } from '@constants';
 
 export type ModalGradeComponentProps = {
   closeTheModal: TouchableOpacityProps['onPress'];
@@ -23,7 +24,7 @@ export const ModalGradeComponentView: FC<ModalGradeComponentProps> = (props) => 
           </View>
           <CustomButton
             onPress={closeTheModal}
-            textButton={'Оценить приложение'}
+            textButton={`${strings.getString('rate_apps')}`}
             isLoad={false}
             style={modalGradeComponentStyles.buttonStyle}
           />
