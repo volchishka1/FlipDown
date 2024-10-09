@@ -17,6 +17,7 @@ import { SearchScreenProps } from './types';
 import { strings } from '@constants/textConst';
 import { BannerAdSize, GAMBannerAd } from 'react-native-google-mobile-ads';
 import { BannerView } from 'react-native-yandex-mobile-ads';
+import { ModalGradeComponent } from '@components/modalGradeComponent';
 
 export const SearchScreenView: FC<SearchScreenProps> = (props) => {
   const {
@@ -32,6 +33,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     isLoadMusic = false,
     isLoadVideo = false,
     showLoad = false,
+    showGradeModal = false,
     textInputColorText,
     bannerYandexAdvId = '',
     bannerGoogleAdvId = '',
@@ -39,6 +41,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <SafeAreaView style={searchScreenStyles.rootContainer}>
+        {showGradeModal && <ModalGradeComponent />}
         <View style={searchScreenStyles.topContainer}>
           <LogoComponent />
         </View>

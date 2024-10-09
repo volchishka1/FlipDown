@@ -1,9 +1,9 @@
 import { Alert, Appearance, Keyboard, PermissionsAndroid, Platform } from 'react-native';
 import Clipboard from '@react-native-clipboard/clipboard';
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
-import { CameraRoll } from '@react-native-camera-roll/camera-roll';
+import { CameraRoll, PhotoIdentifier } from '@react-native-camera-roll/camera-roll';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import {
@@ -12,6 +12,7 @@ import {
   getIsLoadVideo,
   getLoadData,
   getProvider,
+  getShowGradeModal,
   getShowLoad,
 } from '../../store/homeScreen/selectors';
 
@@ -23,7 +24,7 @@ import { strings } from '@constants';
 import { textColorBlackStyles } from '@components/globalStyles/globalStyles';
 import { MobileAds } from 'react-native-yandex-mobile-ads';
 import { loadData } from '@root/store/api-actions.ts';
-import { setIsLoadMusic, setIsLoadVideo } from '@root/store/actions.ts';
+import { setIsLoadMusic, setIsLoadVideo, setShowGradeModal } from '@root/store/actions.ts';
 import ShareMenu, { ShareData } from 'react-native-share-menu';
 
 export interface ResponseData {
@@ -58,6 +59,8 @@ export const SearchScreen = () => {
   const isLoadVideo: boolean = useAppSelector(getIsLoadVideo);
   const isLoadMusic: boolean = useAppSelector(getIsLoadMusic);
   const showLoad: boolean = useAppSelector(getShowLoad);
+  const showGradeModal: boolean = useAppSelector(getShowGradeModal);
+  const [photos, setPhotos] = useState<PhotoIdentifier[] | undefined>([]);
   const [data, setData] = useState<ResponseData | undefined>();
 
   const internetState: NetInfoState = useNetInfo();
@@ -146,7 +149,8 @@ export const SearchScreen = () => {
       indicator: true,
     }).fetch('GET', url);
     Platform.OS === 'ios'
-      ? (url = res.path()) && (await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipDown' }))
+      ? (url = res.path()) &&
+        (await CameraRoll.saveAsset(url, { type: 'video', album: 'FlipDown' }))
       : await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
           {
             name: 'FlipDownVideo' + `${videoId}`, // name of the file
@@ -191,6 +195,24 @@ export const SearchScreen = () => {
       },
     ]);
   };
+
+  const fetchPhotos = useCallback(async () => {
+    const res = await CameraRoll.getPhotos({
+      first: 1000,
+      assetType: 'Videos',
+      groupTypes: 'Album',
+      groupName: 'FlipDown',
+      include: ['fileSize', 'playableDuration'],
+    });
+    setPhotos(res?.edges);
+  }, []);
+
+  useEffect(() => {
+    fetchPhotos()
+      .then()
+      .catch(() => {});
+  }, [fetchPhotos, photos]);
+
   const saveVideo = () => {
     Alert.alert(`${strings.getString('do_you_want_to_save_video')}`, '', [
       {
@@ -200,7 +222,16 @@ export const SearchScreen = () => {
           dispatch(setIsLoadVideo(true));
           saveVideoOnPhone()
             .then(() => {
-              Alert.alert(`${strings.getString('video_saved')}`);
+              Alert.alert(`${strings.getString('video_saved')}`, '', [
+                {
+                  isPreferred: false,
+                  text: `${strings.getString('okay')}`,
+                  onPress: () => {
+                    photos?.length === 2 && dispatch(setShowGradeModal(true));
+                  },
+                  style: 'destructive',
+                },
+              ]);
               dispatch(setIsLoadVideo(false));
             })
             .catch(() => {});
@@ -273,6 +304,7 @@ export const SearchScreen = () => {
       bannerGoogleAdvId={bannerGoogleAdvId}
       bannerYandexAdvId={bannerYandexAdvId}
       fetchCopiedText={fetchCopiedText}
+      showGradeModal={showGradeModal}
     />
   );
 };
