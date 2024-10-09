@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 import Svg, { Path } from 'react-native-svg';
-export const SettingSvg = (props) => (
-  <Svg xmlns={'http://www.w3.org/2000/svg'} data-name={'Layer 1'} viewBox={'0 -7 24 38'} {...props}>
+export const SettingSvg = () => (
+  <Svg data-name={'Layer 1'} viewBox={'0 -7 24 38'}>
     <Path
       fill={'#6563ff'}
       d={
