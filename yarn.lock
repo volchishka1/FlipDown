@@ -8367,6 +8367,11 @@ react-native-share-menu@^6.0.0:
   resolved "https://registry.yarnpkg.com/react-native-share-menu/-/react-native-share-menu-6.0.0.tgz#0398dd4537ca1138b774fcbff9b05a88c8329cf6"
   integrity sha512-KdmRnqjI/B2MigSxGmhbYJ3WMJxKXj+0c47ANcVZ/PTzc2vtz6d1r4KQJgkBImXgNC+vowpuD2UGdPllxadr2A==
 
+react-native-star-rating-widget@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/react-native-star-rating-widget/-/react-native-star-rating-widget-1.9.1.tgz#1a3fd0fc04c3a0ae01661311ab5d785f25af9a2e"
+  integrity sha512-7q2gFcSYPSTgc0D0iNevYMiw6zEYOBdG5YVrFooABeZBS7je3xJPTJ/KbYZAOVak12sFKZSTIeBjBWK+/CAnfQ==
+
 react-native-svg@^14.1.0:
   version "14.2.0"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-14.2.0.tgz#20ef9447c623b3f9a6d9e1c03746ac74f55ea55d"
