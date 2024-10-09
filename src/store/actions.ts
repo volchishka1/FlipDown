@@ -35,3 +35,10 @@ export const setIsLoadMusic = createAction(
 export const setShowLoad = createAction(ActionType.SetShowLoad, (SetShowLoad: boolean) => ({
   payload: SetShowLoad,
 }));
+
+export const setShowGradeModal = createAction(
+  ActionType.SetShowGradeModal,
+  (SetShowGradeModal: boolean) => ({
+    payload: SetShowGradeModal,
+  }),
+);

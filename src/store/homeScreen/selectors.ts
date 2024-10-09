@@ -9,3 +9,5 @@ export const getIsLoadVideo = (state: RootState): boolean =>
 export const getIsLoadMusic = (state: RootState): boolean =>
   state[NameSpace.homeScreen].isLoadMusic;
 export const getShowLoad = (state: RootState): boolean => state[NameSpace.homeScreen].showLoad;
+export const getShowGradeModal = (state: RootState): boolean =>
+  state[NameSpace.homeScreen].showGradeModal;

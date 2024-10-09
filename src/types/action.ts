@@ -12,6 +12,7 @@ export enum ActionType {
   SetIsLoadVideo = 'user/SetIsLoadVideo',
   SetIsLoadMusic = 'user/SetIsLoadMusic',
   SetShowLoad = 'user/SetShowLoad',
+  SetShowGradeModal = 'user/SetShowGradeModal',
 }
 
 export type ThunkActionResult<R = Promise<void | boolean>> = ThunkAction<

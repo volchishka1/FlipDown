@@ -7,6 +7,7 @@ import {
   setIsLoadMusic,
   setIsLoadVideo,
   setProvider,
+  setShowGradeModal,
   setShowLoad,
   setUrl,
 } from '../actions';
@@ -19,6 +20,7 @@ const initialState: HomeScreen = {
   isLoadMusic: false,
   showLoad: false,
   itemData: [],
+  showGradeModal: false,
 };
 
 export const homeScreen = createReducer(initialState, (builder) => {
@@ -43,5 +45,8 @@ export const homeScreen = createReducer(initialState, (builder) => {
     })
     .addCase(setShowLoad, (state, action) => {
       state.showLoad = action.payload;
+    })
+    .addCase(setShowGradeModal, (state, action) => {
+      state.showGradeModal = action.payload;
     });
 });

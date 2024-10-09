@@ -6,4 +6,5 @@ export type HomeScreen = {
   isLoadMusic: boolean;
   isLoadVideo: boolean;
   itemData: [];
+  showGradeModal: boolean;
 };
