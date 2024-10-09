@@ -16,4 +16,5 @@ export type SearchScreenProps = {
   isLoadMusic: boolean;
   isLoadVideo: boolean;
   showLoad: boolean;
+  showGradeModal: boolean;
 };
