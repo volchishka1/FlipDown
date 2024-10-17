@@ -10,7 +10,9 @@ export const ModalGradeComponent = () => {
   const [starRating, setStarRating] = useState(0);
   const closeTheModal = () => {
     dispatch(setShowGradeModal(false));
-    starRating <= 3 ? Alert.alert(`${strings.getString('thanks_for_rate')}`) : null;
+    starRating <= 3
+      ? Alert.alert(`${strings.getString('thanks_for_rate')}`)
+      : Alert.alert(`${strings.getString('thanks_for_rate')}`);
   };
   return (
     <ModalGradeComponentView
