@@ -26,8 +26,8 @@ export const MainScreenTabNavigator = () => {
         headerShown: false,
         tabBarShowLabel: true,
         tabBarLabelStyle: {
-          color: '#6563ff',
-          fontSize: Dimensions.get('window').width > 600 ? 18 : 12,
+          color: '#514ffa',
+          fontSize: Dimensions.get('window').width > 600 ? 20 : 14,
           fontFamily: 'Roboto-Medium',
         },
       }}

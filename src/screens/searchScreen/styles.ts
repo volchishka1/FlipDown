@@ -26,7 +26,7 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
   },
   topContainer: {
     marginTop: '12%',
-    marginBottom: '10%'
+    marginBottom: '10%',
   },
   inputContainer: {
     marginBottom: '10%',
@@ -57,10 +57,10 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
     width: 120,
   },
   textButtonStyle: {
-    fontSize: Dimensions.get('window').width > 600 ? 18 : 14,
+    fontSize: Dimensions.get('window').width > 600 ? 19 : 15,
   },
   textPasteButtonStyle: {
-    fontSize: Dimensions.get('window').width > 600 ? 14 : 12,
+    fontSize: Dimensions.get('window').width > 600 ? 15 : 13,
   },
   searchButtonStyle: {
     width: Dimensions.get('window').width > 600 ? 120 : 80,

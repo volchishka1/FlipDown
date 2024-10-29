@@ -9,14 +9,14 @@ export const customButtonStyles = StyleSheet.create<CustomButtonStylesProps>({
   buttonStyle: {
     width: 80,
     height: 50,
-    backgroundColor: '#be54ff',
+    backgroundColor: '#b446f8',
     borderTopRightRadius: 7,
     borderBottomRightRadius: 7,
     justifyContent: 'center',
     alignItems: 'center',
   },
   textButton: {
-    fontFamily: 'Roboto-Medium',
-    color: 'white',
+    fontFamily: 'Roboto-Bold',
+    color: '#ffffff',
   },
 });
