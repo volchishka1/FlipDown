@@ -26,7 +26,7 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
   },
   topContainer: {
     marginTop: '12%',
-    marginBottom: '10%',
+    marginBottom: '5%',
   },
   inputContainer: {
     marginBottom: '10%',
@@ -89,6 +89,6 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
   bannerAdvertising: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 40,
+    marginBottom: 25,
   },
 });
