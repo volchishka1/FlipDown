@@ -60,6 +60,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
               textButtonStyle={searchScreenStyles.textPasteButtonStyle}
               isLoad={false}
               style={searchScreenStyles.pasteButtonStyle}
+              label={'Paste'}
             />
           </View>
           <CustomButton
@@ -68,6 +69,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
             textButtonStyle={searchScreenStyles.textButtonStyle}
             isLoad={isLoad}
             style={searchScreenStyles.searchButtonStyle}
+            label={'Find'}
           />
         </View>
         <View style={searchScreenStyles.bottomContainer}>
@@ -80,12 +82,14 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
                   textButton={strings.getString('download_video')}
                   style={searchScreenStyles.buttonStyle}
                   isLoad={isLoadVideo}
+                  label={'Download video'}
                 />
                 <CustomButton
                   onPress={saveMusic}
                   textButton={strings.getString('download_mp3')}
                   style={searchScreenStyles.buttonStyle}
                   isLoad={isLoadMusic}
+                  label={'Download music'}
                 />
               </View>
             </View>
