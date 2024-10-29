@@ -27,6 +27,7 @@ export const ModalGradeComponentView: FC<ModalGradeComponentProps> = (props) => 
             textButton={`${strings.getString('rate_apps')}`}
             isLoad={false}
             style={modalGradeComponentStyles.buttonStyle}
+            label={'Rate App'}
           />
         </View>
       </View>

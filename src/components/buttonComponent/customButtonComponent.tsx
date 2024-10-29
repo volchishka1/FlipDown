@@ -16,16 +16,17 @@ export type CustomButtonProps = {
   textButtonStyle?: TextProps['style'];
   style?: TouchableOpacityProps['style'];
   isLoad?: TouchableOpacityProps['aria-selected'];
+  label: TouchableOpacityProps['accessibilityLabel'];
 };
 
 export const CustomButton: FC<CustomButtonProps> = (props) => {
-  const { onPress, textButton, style, isLoad, textButtonStyle } = props;
+  const { onPress, textButton, style, isLoad, textButtonStyle, label } = props;
 
   return (
     <TouchableOpacity
       style={[customButtonStyles.buttonStyle, style]}
       onPress={onPress}
-      accessibilityRole='button'
+      accessibilityLabel={label}
     >
       {isLoad === false ? (
         <Text style={[customButtonStyles.textButton, textButtonStyle]}>{textButton}</Text>
