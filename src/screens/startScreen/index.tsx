@@ -32,5 +32,6 @@ export const StartScreen: FC<StartScreenComponentProps> = (props) => {
       navigateToMainScreen();
     }, 3000);
   });
+
   return <StartScreenView />;
 };

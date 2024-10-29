@@ -8,7 +8,7 @@ export type Style = {
 export const startScreenStyles = StyleSheet.create<Style>({
   rootContainer: { height: '100%', backgroundColor: '#1d014b' },
   centerContainer: {
-    top: '20%',
+    top: '25%',
     height: '15%',
     justifyContent: 'center',
     alignItems: 'center',
