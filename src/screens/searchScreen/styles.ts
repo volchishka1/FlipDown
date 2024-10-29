@@ -73,7 +73,7 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
   },
   pasteButtonStyle: {
     width: Dimensions.get('window').width > 600 ? 110 : 70,
-    height: 30,
+    height: 38,
     borderRadius: 10,
   },
   imageStyle: {
