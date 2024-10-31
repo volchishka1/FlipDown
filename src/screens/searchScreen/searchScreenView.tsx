@@ -51,7 +51,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
           <TextInput
             value={link}
             onChangeText={setLink}
-            accessibilityLabel={'Text input field'}
+            accessibilityLabel={'Insert your link'}
             placeholder={strings.getString('insert_your_link')}
             style={[searchScreenStyles.input, textInputColorText]}
             placeholderTextColor={searchScreenStyles.inputTextColor}
