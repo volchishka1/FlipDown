@@ -9,6 +9,7 @@ import { MainStackScreenNavigatorParamList } from '@navigation/types';
 import { StartScreenView } from './startScreenView';
 import { useDispatch } from 'react-redux';
 import { loadProvider } from '@root/store/api-actions.ts';
+import SplashScreen from 'react-native-splash-screen';
 
 export type StartScreenComponentProps = CompositeScreenProps<
   NativeStackScreenProps<MainStackScreenNavigatorParamList, ROUTES.START_SCREEN>,
@@ -18,6 +19,10 @@ export type StartScreenComponentProps = CompositeScreenProps<
 export const StartScreen: FC<StartScreenComponentProps> = (props) => {
   const { navigation } = props;
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
   useEffect(() => {
     dispatch(loadProvider());
