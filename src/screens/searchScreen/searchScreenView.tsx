@@ -54,6 +54,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
             accessibilityLabel={'Text input field'}
             placeholder={strings.getString('insert_your_link')}
             style={[searchScreenStyles.input, textInputColorText]}
+            placeholderTextColor={searchScreenStyles.inputTextColor}
           />
           <View style={searchScreenStyles.pasteButtonContainerStyle}>
             <CustomButton

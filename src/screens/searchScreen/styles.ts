@@ -16,6 +16,7 @@ export type Styles = {
   imageStyle: ImageStyle;
   textButtonStyle: TextStyle;
   textPasteButtonStyle: TextStyle;
+  inputTextColor: TextStyle;
 };
 
 export const searchScreenStyles = StyleSheet.create<Styles>({
@@ -38,9 +39,12 @@ export const searchScreenStyles = StyleSheet.create<Styles>({
     width: Dimensions.get('window').width > 600 ? '75%' : '48%',
     height: 50,
     padding: 10,
-    backgroundColor: 'white',
+    backgroundColor: '#ffffff',
     borderTopLeftRadius: 7,
     borderBottomLeftRadius: 7,
+  },
+  inputTextColor: {
+    color: '#605c5c',
   },
   dataContainer: {
     flexDirection: 'row',

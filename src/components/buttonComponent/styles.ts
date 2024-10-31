@@ -9,7 +9,7 @@ export const customButtonStyles = StyleSheet.create<CustomButtonStylesProps>({
   buttonStyle: {
     width: 80,
     height: 50,
-    backgroundColor: '#b446f8',
+    backgroundColor: '#af3ef5',
     borderTopRightRadius: 7,
     borderBottomRightRadius: 7,
     justifyContent: 'center',
