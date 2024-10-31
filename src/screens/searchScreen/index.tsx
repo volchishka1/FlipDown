@@ -1,4 +1,4 @@
-import { Alert, Appearance, Keyboard, PermissionsAndroid, Platform } from 'react-native';
+import { Alert, Appearance, Keyboard, LogBox, PermissionsAndroid, Platform } from 'react-native';
 import Clipboard from '@react-native-clipboard/clipboard';
 
 import React, { useCallback, useEffect, useState } from 'react';
@@ -25,7 +25,7 @@ import { textColorBlackStyles } from '@components/globalStyles/globalStyles';
 import { MobileAds } from 'react-native-yandex-mobile-ads';
 import { loadData } from '@root/store/api-actions.ts';
 import { setIsLoadMusic, setIsLoadVideo, setShowGradeModal } from '@root/store/actions.ts';
-import ShareMenu, { ShareData } from 'react-native-share-menu';
+import ShareMenu, { ShareData, ShareListener } from 'react-native-share-menu';
 
 export interface ResponseData {
   music: {
@@ -281,11 +281,13 @@ export const SearchScreen = () => {
   }, []);
 
   useEffect(() => {
-    const listener = ShareMenu.addNewShareListener(handleShareToTheApp);
+    const listener: ShareListener = ShareMenu.addNewShareListener(handleShareToTheApp);
     return () => {
       listener.remove();
     };
   }, []);
+
+  LogBox.ignoreLogs(['new NativeEventEmitter']); // temporary for this library - shareMenu
 
   return (
     <SearchScreenView
