@@ -23,9 +23,10 @@ import { useNetInfo, NetInfoState } from '@react-native-community/netinfo';
 import { strings } from '@constants';
 import { textColorBlackStyles } from '@components/globalStyles/globalStyles';
 import { MobileAds } from 'react-native-yandex-mobile-ads';
-import { loadData } from '@root/store/api-actions.ts';
+import { loadData, loadProvider } from '@root/store/api-actions.ts';
 import { setIsLoadMusic, setIsLoadVideo, setShowGradeModal } from '@root/store/actions.ts';
 import ShareMenu, { ShareData, ShareListener } from 'react-native-share-menu';
+import SplashScreen from 'react-native-splash-screen';
 
 export interface ResponseData {
   music: {
@@ -66,6 +67,14 @@ export const SearchScreen = () => {
   const internetState: NetInfoState = useNetInfo();
   const colorScheme = Appearance.getColorScheme();
   const textInputColorText = colorScheme === 'dark' && textColorBlackStyles;
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
+  useEffect(() => {
+    dispatch(loadProvider());
+  }, []);
 
   const fetchCopiedText = async () => {
     const text = await Clipboard.getString();

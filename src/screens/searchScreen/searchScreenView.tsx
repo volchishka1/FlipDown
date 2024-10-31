@@ -2,6 +2,7 @@ import {
   Image,
   Keyboard,
   SafeAreaView,
+  StatusBar,
   TextInput,
   TouchableWithoutFeedback,
   View,
@@ -41,6 +42,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <SafeAreaView style={searchScreenStyles.rootContainer}>
+        <StatusBar backgroundColor={'#1d014b'} />
         {showGradeModal && <ModalGradeComponent />}
         <View style={searchScreenStyles.topContainer}>
           <LogoComponent />
