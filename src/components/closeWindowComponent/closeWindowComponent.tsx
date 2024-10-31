@@ -17,7 +17,7 @@ export const CloseWindowComponent: FC<CloseWindowComponentProps> = (props) => {
     <View style={[closeWindowStyle.rootContainer, style]}>
       <TouchableOpacity
         style={[closeWindowStyle.buttonStyle, buttonStyle]}
-        accessibilityLabel={'Close button'}
+        accessibilityLabel={'Close Window'}
         onPress={goToCloseButton}
       >
         {iconSvg}
