@@ -10,7 +10,7 @@ export type InfoScreenStylesProps = {
 
 export const infoScreenStyles = StyleSheet.create<InfoScreenStylesProps>({
   rootContainer: {
-    backgroundColor: '#1d014b',
+    backgroundColor: '#0b1d4d',
     flex: 1,
     justifyContent: 'space-between',
   },

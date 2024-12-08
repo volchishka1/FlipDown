@@ -21,7 +21,7 @@ export type Styles = {
 
 export const searchScreenStyles = StyleSheet.create<Styles>({
   rootContainer: {
-    backgroundColor: '#1d014b',
+    backgroundColor: '#0b1d4d',
     flex: 1,
     justifyContent: 'space-between',
   },

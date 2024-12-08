@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 
 import React, { FC } from 'react';
 
@@ -11,6 +11,7 @@ export const MainScreenView: FC<MainScreenProps> = (props) => {
   const {} = props;
   return (
     <View style={mainScreenStyles.rootContainer}>
+      <StatusBar backgroundColor={'#0b1d4d'} />
       <MainScreenTabNavigator />
     </View>
   );

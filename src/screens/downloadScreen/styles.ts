@@ -19,7 +19,7 @@ export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
     alignSelf: 'stretch',
   },
   saveAriaView: {
-    backgroundColor: '#1d014b',
+    backgroundColor: '#0b1d4d',
     flex: 1,
     justifyContent: 'center',
   },
