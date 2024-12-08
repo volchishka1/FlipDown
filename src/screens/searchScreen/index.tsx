@@ -110,6 +110,7 @@ export const SearchScreen = () => {
 
   useEffect(() => {
     Platform.OS === 'android' &&
+      Platform.Version < 32 &&
       checkAndroidPermission()
         .then()
         .catch((err) => {
