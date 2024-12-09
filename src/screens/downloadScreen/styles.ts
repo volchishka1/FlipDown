@@ -25,6 +25,7 @@ export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
   },
   rootContainer: {
     marginHorizontal: 1,
+    marginTop: 30,
   },
   centerContainer: {
     flexWrap: 'wrap',
