@@ -39,6 +39,7 @@ import {
   SCREEN_IS_EMPTY,
   SEARCH,
   SHARE_LINK,
+  SOMETHING_WENT_WRONG,
   SORRY,
   TERMS_AND_CONDITIONS,
   THANKS_FOR_RATE,
@@ -90,6 +91,7 @@ import {
   SCREEN_IS_EMPTY_RU,
   SEARCH_RU,
   SHARE_LINK_RU,
+  SOMETHING_WENT_WRONG_RU,
   SORRY_RU,
   TERMS_AND_CONDITIONS_RU,
   THANKS_FOR_RATE_RU,
@@ -135,6 +137,7 @@ export const strings = new LocalizedStrings({
     screen_is_empty: SCREEN_IS_EMPTY,
     rate_apps: RATE_APPS,
     thanks_for_rate: THANKS_FOR_RATE,
+    something_went_wrong: SOMETHING_WENT_WRONG,
 
     // ABOUT STRINGS
 
@@ -193,6 +196,7 @@ export const strings = new LocalizedStrings({
     screen_is_empty: SCREEN_IS_EMPTY_RU,
     rate_apps: RATE_APPS_RU,
     thanks_for_rate: THANKS_FOR_RATE_RU,
+    something_went_wrong: SOMETHING_WENT_WRONG_RU,
 
     // ABOUT STRINGS
 

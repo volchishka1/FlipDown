@@ -28,6 +28,7 @@ export const VIDEO_DELETED = 'Video deleted';
 export const SCREEN_IS_EMPTY = 'Download screen is empty';
 export const RATE_APPS = 'Rate apps';
 export const THANKS_FOR_RATE = 'Thanks for rating';
+export const SOMETHING_WENT_WRONG = 'Something went wrong, please try again';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT = 'What is the FlipDown Project?';

@@ -28,6 +28,7 @@ export const VIDEO_DELETED_RU = 'Видео удалено';
 export const SCREEN_IS_EMPTY_RU = 'Экран загрузок пуст';
 export const RATE_APPS_RU = 'Оценить приложение';
 export const THANKS_FOR_RATE_RU = 'Спасибо за оценку';
+export const SOMETHING_WENT_WRONG_RU = 'Что-то пошло не так, повторите попытку';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT_RU = 'Проект FlipDown - что это?';
