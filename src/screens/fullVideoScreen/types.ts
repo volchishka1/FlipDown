@@ -4,4 +4,5 @@ export type FullVideoScreenViewProps = {
   url: TextProps['children'];
   backToDownloadStackScreen: ButtonProps['onPress'];
   deleteFile: ButtonProps['onPress'];
+  shareFile: ButtonProps['onPress'];
 };

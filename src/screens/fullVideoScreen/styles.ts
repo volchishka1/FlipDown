@@ -5,6 +5,7 @@ export type FullScreenVideoStyles = {
   closeWindowButtonStyle: ViewStyle;
   closeWindowStyle: ViewStyle;
   deleteItemStyle: ViewStyle;
+  shareItemStyle: ViewStyle;
 };
 
 export const fullScreenVideoStyles = StyleSheet.create<FullScreenVideoStyles>({
@@ -21,6 +22,12 @@ export const fullScreenVideoStyles = StyleSheet.create<FullScreenVideoStyles>({
   deleteItemStyle: {
     position: 'absolute',
     top: 100,
+    right: 20,
+    zIndex: 100,
+  },
+  shareItemStyle: {
+    position: 'absolute',
+    top: 160,
     right: 20,
     zIndex: 100,
   },

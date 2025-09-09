@@ -6,9 +6,10 @@ import { CloseWindowSvg } from '@assets/closeModalWindow';
 import { BasketSvg } from '@assets/basket';
 import React, { FC } from 'react';
 import { FullVideoScreenViewProps } from '@screens/fullVideoScreen/types';
+import { ShareSvg } from '@assets/share.tsx';
 
 export const FullVideoScreenView: FC<FullVideoScreenViewProps> = (props) => {
-  const { url, backToDownloadStackScreen, deleteFile } = props;
+  const { url, backToDownloadStackScreen, deleteFile, shareFile } = props;
 
   return (
     <View>
@@ -30,6 +31,12 @@ export const FullVideoScreenView: FC<FullVideoScreenViewProps> = (props) => {
         iconSvg={<BasketSvg />}
         goToCloseButton={deleteFile}
         style={fullScreenVideoStyles.deleteItemStyle}
+        buttonStyle={fullScreenVideoStyles.closeWindowButtonStyle}
+      />
+      <CloseWindowComponent
+        iconSvg={<ShareSvg />}
+        goToCloseButton={shareFile}
+        style={fullScreenVideoStyles.shareItemStyle}
         buttonStyle={fullScreenVideoStyles.closeWindowButtonStyle}
       />
     </View>
