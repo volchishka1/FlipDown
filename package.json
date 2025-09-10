@@ -15,6 +15,7 @@
     "open-android-studio": "open -a /Applications/Android\\ Studio.app android",
     "open-xcode": "xed -b ios",
     "pod-repo-update": "cd ios && pod repo update",
+
     "prepare": "husky install",
     "prettier-the-whole-project": "prettier --write '**/*.{css,js,json,jsx,markdown,md,scss,ts,tsx}'",
     "reinstall-node-modules": "rm -rf node_modules && yarn",
@@ -63,6 +64,7 @@
     "react": "18.2.0",
     "react-native": "0.74.1",
     "react-native-blob-util": "^0.19.9",
+    "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "^2.15.0",
     "react-native-google-mobile-ads": "^14.1.0",
     "react-native-localization": "^2.3.2",

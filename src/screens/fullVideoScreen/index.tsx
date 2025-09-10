@@ -1,6 +1,5 @@
 import React, { FC, useEffect } from 'react';
 import { Alert, BackHandler, Platform } from 'react-native';
-import Share from 'react-native-share';
 import { ROUTES, strings } from '@constants';
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
 import ReactNativeBlobUtil from 'react-native-blob-util';
@@ -11,6 +10,7 @@ import { useAppDispatch, useAppSelector } from '@root/hooks/hooks';
 import { getUrl } from '@root/store/homeScreen/selectors';
 import { setUrl } from '@root/store/actions';
 import { FullVideoScreenView } from '@screens/fullVideoScreen/fullVideoScreenView';
+import Share from 'react-native-share';
 
 export type FullScreenVideoProps = CompositeScreenProps<
   NativeStackScreenProps<MainStackScreenNavigatorParamList, ROUTES.FULL_VIDEO_SCREEN>,
@@ -77,90 +77,44 @@ export const FullVideoScreen: FC<FullScreenVideoProps> = (props) => {
   const shareFile = async () => {
     try {
       if (!url) {
-        Alert.alert(`${strings.getString('oops')}`, `${strings.getString('something_went_wrong')}`);
         return;
       }
+      let videoPath = url;
 
-      console.log('Original URL:', url);
+      if (Platform.OS === 'android' && url.startsWith('content://')) {
+        try {
+          const fileInfo = await ReactNativeBlobUtil.fs.stat(url);
+          const fileName = fileInfo.filename || `video_${Date.now()}.mp4`;
 
-      let shareUrl = url;
-      let fileType = getFileType(url);
+          const tempPath = `${ReactNativeBlobUtil.fs.dirs.CacheDir}/${fileName}`;
 
-      if (Platform.OS === 'android') {
-        if (url.startsWith('content://')) {
-          try {
-            const fileName = url.includes('.mp4')
-              ? 'temp_video.mp4'
-              : url.includes('.mp3')
-              ? 'temp_audio.mp3'
-              : 'temp_file';
-            const tempPath = `${ReactNativeBlobUtil.fs.dirs.CacheDir}/${fileName}`;
-
-            const response = await ReactNativeBlobUtil.fs.cp(url, tempPath);
-            shareUrl = `file://${tempPath}`;
-
-            console.log('Copied to temp file:', shareUrl);
-          } catch (copyError) {
-            console.error('Failed to copy file:', copyError);
-            Alert.alert(
-              `${strings.getString('oops')}`,
-              `${strings.getString('something_went_wrong')}`,
-            );
-            return;
-          }
-        } else if (!url.startsWith('file://')) {
-          shareUrl = `file://${url}`;
+          await ReactNativeBlobUtil.fs.cp(url, tempPath);
+          videoPath = `file://${tempPath}`;
+        } catch (copyError) {
+          console.error('Copy error:', copyError);
+          return;
         }
       }
 
       const shareOptions = {
-        title: 'Поделиться файлом',
-        message: 'Посмотрите этот файл',
-        url: shareUrl,
-        type: fileType,
+        url: videoPath,
+        type: 'video/mp4',
+        filename: `video_${Date.now()}.mp4`,
+        showAppsToView: true,
       };
 
-      console.log('Final share options:', shareOptions);
+      await Share.open(shareOptions);
 
-      const result = await Share.open(shareOptions);
-
-      if (result.success) {
-        console.log('✅ File shared successfully');
-      } else {
-        console.log('Share cancelled or failed');
-      }
-
-      if (Platform.OS === 'android' && shareUrl.includes('temp_')) {
+      if (Platform.OS === 'android' && videoPath.includes('temp_')) {
         try {
-          await ReactNativeBlobUtil.fs.unlink(shareUrl.replace('file://', ''));
-        } catch (cleanupError) {}
+          await ReactNativeBlobUtil.fs.unlink(videoPath.replace('file://', ''));
+        } catch (cleanupError) {
+          console.log('Cleanup error:', cleanupError);
+        }
       }
-    } catch (error: any) {
-      let errorMessage = `${strings.getString('something_went_wrong')}`;
-
-      if (error.message) {
-        errorMessage = error.message;
-      }
-
-      Alert.alert(`${strings.getString('oops')}`, errorMessage);
+    } catch (error) {
+      console.error('Video share error:', error);
     }
-  };
-
-  // Вспомогательная функция для определения типа файла
-  const getFileType = (fileUrl: string): string => {
-    const url = fileUrl.toLowerCase();
-
-    if (url.includes('.mp4') || url.includes('.mov') || url.includes('.avi')) {
-      return 'video/mp4';
-    } else if (url.includes('.mp3') || url.includes('.m4a') || url.includes('.wav')) {
-      return 'audio/mpeg';
-    } else if (url.includes('.jpg') || url.includes('.jpeg')) {
-      return 'image/jpeg';
-    } else if (url.includes('.png')) {
-      return 'image/png';
-    }
-
-    return 'application/octet-stream';
   };
 
   return (
