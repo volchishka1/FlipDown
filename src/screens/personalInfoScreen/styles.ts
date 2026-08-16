@@ -6,6 +6,7 @@ export type InfoScreenStylesProps = {
   bottomContainer: ViewStyle;
   textDescriptionContainer: ViewStyle;
   textDescriptionStyle: TextStyle;
+  buttonStyles: TextStyle;
 };
 
 export const infoScreenStyles = StyleSheet.create<InfoScreenStylesProps>({
@@ -28,5 +29,11 @@ export const infoScreenStyles = StyleSheet.create<InfoScreenStylesProps>({
   textDescriptionStyle: {
     fontSize: Dimensions.get('window').width > 600 ? 20 : 16,
     lineHeight: Dimensions.get('window').width > 600 ? 24 : 18,
+  },
+  buttonStyles: {
+    fontFamily: 'Roboto-Bold',
+    color: '#ffffff',
+    fontSize: Dimensions.get('window').width > 600 ? 30 : 22,
+    lineHeight: Dimensions.get('window').width > 600 ? 74 : 50,
   },
 });

@@ -1,8 +1,6 @@
-import { ButtonProps, TextProps } from 'react-native';
-
 export type FullVideoScreenViewProps = {
-  url: TextProps['children'];
-  backToDownloadStackScreen: ButtonProps['onPress'];
-  deleteFile: ButtonProps['onPress'];
-  shareFile: ButtonProps['onPress'];
+  url: string;
+  backToDownloadStackScreen: () => void;
+  deleteFile: () => void;
+  shareFile: () => void;
 };

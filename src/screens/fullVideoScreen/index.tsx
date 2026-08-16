@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { Alert, BackHandler, Platform } from 'react-native';
 import { ROUTES, strings } from '@constants';
 import { CameraRoll } from '@react-native-camera-roll/camera-roll';
@@ -9,7 +9,7 @@ import { MainStackScreenNavigatorParamList } from '@navigation/types';
 import { useAppDispatch, useAppSelector } from '@root/hooks/hooks';
 import { getUrl } from '@root/store/homeScreen/selectors';
 import { setUrl } from '@root/store/actions';
-import { FullVideoScreenView } from '@screens/fullVideoScreen/fullVideoScreenView';
+import { FullVideoScreenView } from '@screens/fullVideoScreen/FullVideoScreenView.tsx';
 import Share from 'react-native-share';
 
 export type FullScreenVideoProps = CompositeScreenProps<

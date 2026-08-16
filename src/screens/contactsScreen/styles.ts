@@ -7,8 +7,9 @@ export type ContactScreenStyles = {
 
 export const contactScreenStyles = StyleSheet.create<ContactScreenStyles>({
   rootContainer: {
-    backgroundColor: '#8c54ea',
+    backgroundColor: '#0b1d4d',
     flex: 1,
+    paddingVertical: '15%',
   },
   centerContainer: {
     marginHorizontal: '3%',

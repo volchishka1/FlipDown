@@ -1,4 +1,4 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 
 export type AboutScreenStyles = {
   rootContainer: ViewStyle;
@@ -7,8 +7,8 @@ export type AboutScreenStyles = {
 
 export const aboutScreenStyles = StyleSheet.create<AboutScreenStyles>({
   rootContainer: {
-    backgroundColor: '#8c54ea',
-    paddingBottom: '15%',
+    backgroundColor: '#0b1d4d',
+    paddingVertical: '15%',
   },
   centerContainer: {
     marginHorizontal: '3%',

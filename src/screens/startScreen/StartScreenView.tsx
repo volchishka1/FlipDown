@@ -5,7 +5,7 @@ import React, { FC } from 'react';
 import { LogoSvg } from '@assets/logo';
 import { LoaderComponent } from '@components/loaderComponent/loaderComponent';
 
-import { startScreenStyles } from './style';
+import { startScreenStyles } from './styles.ts';
 import { StartScreenViewProps } from './types';
 
 export const StartScreenView: FC<StartScreenViewProps> = () => {

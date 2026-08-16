@@ -1,3 +1,10 @@
+export type MusicTrack = {
+  id: string;
+  title: string;
+  url: string;
+  savedAt: string;
+};
+
 export type HomeScreen = {
   setProvider: string;
   url: string;

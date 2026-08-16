@@ -1,8 +1,5 @@
-import { SafeAreaView, TouchableOpacityProps, View } from 'react-native';
-
-import React, { FC } from 'react';
-
-import { ScrollView } from 'react-native-gesture-handler';
+import { FC } from 'react';
+import { SafeAreaView, View, ScrollView } from 'react-native';
 
 import { CloseWindowComponent } from '@components/closeWindowComponent/closeWindowComponent';
 import { ParagraphComponent } from '@components/textComponent/paragraphComponent';
@@ -14,10 +11,10 @@ import { strings } from '@constants';
 import { CloseWindowSvg } from '@assets/closeModalWindow';
 
 export type ContactsScreenProps = {
-  goToCloseBottomSheet: TouchableOpacityProps['onPress'];
+  goBack: () => void;
 };
 
-export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomSheet }) => {
+export const ContactsScreenView: FC<ContactsScreenProps> = ({ goBack }) => {
   return (
     <SafeAreaView style={contactScreenStyles.rootContainer}>
       <View style={globalStyles.topContainer}>
@@ -25,7 +22,7 @@ export const ContactsScreenView: FC<ContactsScreenProps> = ({ goToCloseBottomShe
           textStyles={globalStyles.headerName}
           paragraphName={strings.getString('contact_us')}
         />
-        <CloseWindowComponent iconSvg={<CloseWindowSvg />} goToCloseButton={goToCloseBottomSheet} />
+        <CloseWindowComponent iconSvg={<CloseWindowSvg />} goToCloseButton={goBack} />
       </View>
       <ScrollView style={contactScreenStyles.centerContainer}>
         <TextComponent

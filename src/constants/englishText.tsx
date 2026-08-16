@@ -13,7 +13,7 @@ export const NO_INTERNET = 'No Internet! ❌';
 export const SORRY = 'Sorry, check your internet connection.';
 export const OKAY = 'Okay';
 export const OOPS = 'Oops';
-export const MUSIC_SAVED = 'Music saved in your Storage to the folder MusicFlipDown';
+export const MUSIC_SAVED = 'Music saved';
 export const VIDEO_SAVED = 'Video saved';
 export const DO_YOU_WANT_TO_SAVE_MUSIC = 'Do you want to save this music';
 export const DO_YOU_WANT_TO_SAVE_VIDEO = 'Do you want to save this video';
@@ -24,11 +24,13 @@ export const DO_YOU_WANT_TO_DELETE_FILE = 'Do you want to delete file';
 export const INSERT_YOUR_LINK = 'Link on your video';
 export const DO_YOU_WANT_TO_EXIT = 'Do you want to exit';
 export const EXIT_APP = 'Exit app';
-export const VIDEO_DELETED = 'Video deleted';
+export const VIDEO_DELETED = 'File deleted';
 export const SCREEN_IS_EMPTY = 'Download screen is empty';
 export const RATE_APPS = 'Rate apps';
 export const THANKS_FOR_RATE = 'Thanks for rating';
 export const SOMETHING_WENT_WRONG = 'Something went wrong, please try again';
+export const MUSIC = 'Music';
+export const VIDEO = 'Video';
 
 // ABOUT STRINGS
 export const ABOUT_PROJECT = 'What is the FlipDown Project?';

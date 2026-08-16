@@ -6,7 +6,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ROUTES } from '@constants/routes';
 import { MainStackScreenNavigatorParamList } from '@navigation/types';
 
-import { StartScreenView } from './startScreenView';
+import { StartScreenView } from './StartScreenView.tsx';
 import { useDispatch } from 'react-redux';
 import { loadProvider } from '@root/store/api-actions.ts';
 import SplashScreen from 'react-native-splash-screen';

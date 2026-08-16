@@ -27,6 +27,7 @@ import {
   IF_YOU_NEED,
   INFORMATION,
   INSERT_YOUR_LINK,
+  MUSIC,
   MUSIC_SAVED,
   NO,
   NO_INTERNET,
@@ -45,6 +46,7 @@ import {
   THANKS_FOR_RATE,
   THE_FINAL_STEP,
   USING_THE_FLIPDOWN,
+  VIDEO,
   VIDEO_DELETED,
   VIDEO_SAVED,
   WE_VALUE_YOUR_ATTENTION,
@@ -79,6 +81,7 @@ import {
   IF_YOU_NEED_RU,
   INFORMATION_RU,
   INSERT_YOUR_LINK_RU,
+  MUSIC_RU,
   MUSIC_SAVED_RU,
   NO_INTERNET_RU,
   NO_RU,
@@ -98,6 +101,7 @@ import {
   THE_FINAL_STEP_RU,
   USING_THE_FLIPDOWN_RU,
   VIDEO_DELETED_RU,
+  VIDEO_RU,
   VIDEO_SAVED_RU,
   WE_VALUE_YOUR_ATTENTION_RU,
   WORKING_WITH_RU,
@@ -138,6 +142,8 @@ export const strings = new LocalizedStrings({
     rate_apps: RATE_APPS,
     thanks_for_rate: THANKS_FOR_RATE,
     something_went_wrong: SOMETHING_WENT_WRONG,
+    music: MUSIC,
+    video: VIDEO,
 
     // ABOUT STRINGS
 
@@ -197,6 +203,8 @@ export const strings = new LocalizedStrings({
     rate_apps: RATE_APPS_RU,
     thanks_for_rate: THANKS_FOR_RATE_RU,
     something_went_wrong: SOMETHING_WENT_WRONG_RU,
+    music: MUSIC_RU,
+    video: VIDEO_RU,
 
     // ABOUT STRINGS
 

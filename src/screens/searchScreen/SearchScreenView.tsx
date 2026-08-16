@@ -2,13 +2,12 @@ import {
   Image,
   Keyboard,
   SafeAreaView,
-  StatusBar,
   TextInput,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
 
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { CustomButton } from '@components/buttonComponent/customButtonComponent';
 import { LogoComponent } from '@components/logoComponent/logoComponent';
