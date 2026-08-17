@@ -7,6 +7,7 @@ export const ABOUT = 'About';
 export const CONTACTS = 'Contacts';
 export const PRIVACY_POLICY = 'Privacy policy';
 export const TERMS_AND_CONDITIONS = 'Terms and conditions';
+export const NOT_DOWNLOAD_VIDEO = 'Unavailable';
 export const DOWNLOAD_VIDEO = 'Download video';
 export const DOWNLOAD_MP3 = 'Download mp3';
 export const NO_INTERNET = 'No Internet! ❌';

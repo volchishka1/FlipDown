@@ -7,6 +7,7 @@ export const ABOUT_RU = 'О проекте';
 export const CONTACTS_RU = 'Контакты';
 export const PRIVACY_POLICY_RU = 'Политика конфиденциальности';
 export const TERMS_AND_CONDITIONS_RU = 'Условия и положения';
+export const NOT_DOWNLOAD_VIDEO_RU = 'Недоступно';
 export const DOWNLOAD_VIDEO_RU = 'Скачать видео';
 export const DOWNLOAD_MP3_RU = 'Скачать mp3';
 export const NO_INTERNET_RU = 'Нет подключения к интернету! ❌';

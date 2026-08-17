@@ -1,11 +1,11 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
-export type ModalGradeComponentStyles = {
+interface ModalGradeComponentStyles {
   modalContainer: ViewStyle;
   rootContainer: ViewStyle;
   starsContainer: ViewStyle;
   buttonStyle: ViewStyle;
-};
+}
 
 export const modalGradeComponentStyles = StyleSheet.create<ModalGradeComponentStyles>({
   modalContainer: {

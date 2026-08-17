@@ -1,6 +1,6 @@
 import { Dimensions, ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 
-export type DownloadScreenStyles = {
+interface DownloadScreenStyles {
   saveAriaView: ViewStyle;
   rootContainer: ViewStyle;
   centerContainer: ViewStyle;
@@ -34,7 +34,7 @@ export type DownloadScreenStyles = {
   musicActions: ViewStyle;
   actionButton: ViewStyle;
   actionButtonStyle: ViewStyle;
-};
+}
 
 export const downloadScreenStyles = StyleSheet.create<DownloadScreenStyles>({
   videoContainer: {},

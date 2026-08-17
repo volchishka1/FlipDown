@@ -1,18 +1,15 @@
 import { FC } from 'react';
 import { SafeAreaView, View, ScrollView } from 'react-native';
 
-import { CloseWindowComponent } from '@components/closeWindowComponent/closeWindowComponent';
-import { ParagraphComponent } from '@components/textComponent/paragraphComponent';
-import { TextComponent } from '@components/textComponent/textComponent';
+import { CloseWindowComponent } from '@components/closeWindowComponent/CloseWindowComponent.tsx';
+import { ParagraphComponent } from '@components/paragraphComponent/ParagraphComponent.tsx';
+import { TextComponent } from '@components/textComponent/TextComponent.tsx';
 
 import { contactScreenStyles } from './styles';
 import { globalStyles } from '@components/globalStyles/globalStyles';
 import { strings } from '@constants';
 import { CloseWindowSvg } from '@assets/closeModalWindow';
-
-export type ContactsScreenProps = {
-  goBack: () => void;
-};
+import { ContactsScreenProps } from '@screens/contactsScreen/types.ts';
 
 export const ContactsScreenView: FC<ContactsScreenProps> = ({ goBack }) => {
   return (

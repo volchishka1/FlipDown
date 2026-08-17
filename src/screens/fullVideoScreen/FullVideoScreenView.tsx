@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { StatusBar, View } from 'react-native';
 import Video from 'react-native-video';
 import { fullScreenVideoStyles } from '@screens/fullVideoScreen/styles';
-import { CloseWindowComponent } from '@components/closeWindowComponent/closeWindowComponent';
+import { CloseWindowComponent } from '@components/closeWindowComponent/CloseWindowComponent.tsx';
 import { CloseWindowSvg } from '@assets/closeModalWindow';
 import { BasketSvg } from '@assets/basket';
 import { FullVideoScreenViewProps } from '@screens/fullVideoScreen/types';

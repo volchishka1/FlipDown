@@ -4,7 +4,7 @@ import React from 'react';
 
 import { LogoSvg } from '@assets/logo';
 
-import { logoComponentStyles } from './logoComponentStyles';
+import { logoComponentStyles } from './styles.ts';
 
 export const LogoComponent = () => {
   return (

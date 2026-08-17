@@ -1,9 +1,9 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
-export type ContactScreenStyles = {
+interface ContactScreenStyles {
   rootContainer: ViewStyle;
   centerContainer: ViewStyle;
-};
+}
 
 export const contactScreenStyles = StyleSheet.create<ContactScreenStyles>({
   rootContainer: {

@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
-import { LogoComponent } from '@components/logoComponent/logoComponent';
-import { TextComponent } from '@components/textComponent/textComponent';
+import { LogoComponent } from '@components/logoComponent/LogoComponent.tsx';
+import { TextComponent } from '@components/textComponent/TextComponent.tsx';
 
 import { infoScreenStyles } from './styles';
 import { InfoScreenViewProps } from './types';

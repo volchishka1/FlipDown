@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { View, ScrollView } from 'react-native';
 
-import { CloseWindowComponent } from '@components/closeWindowComponent/closeWindowComponent';
-import { DotComponent } from '@components/dotComponent/dotComponent';
-import { ParagraphComponent } from '@components/textComponent/paragraphComponent';
-import { TextComponent } from '@components/textComponent/textComponent';
+import { CloseWindowComponent } from '@components/closeWindowComponent/CloseWindowComponent.tsx';
+import { DotComponent } from '@components/dotComponent/DotComponent.tsx';
+import { ParagraphComponent } from '@components/paragraphComponent/ParagraphComponent.tsx';
+import { TextComponent } from '@components/textComponent/TextComponent.tsx';
 
 import { aboutScreenStyles } from './styles';
 import { globalStyles } from '@components/globalStyles/globalStyles';

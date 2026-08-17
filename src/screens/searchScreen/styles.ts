@@ -1,6 +1,6 @@
 import { StyleSheet, ViewStyle, ImageStyle, Dimensions, TextStyle } from 'react-native';
 
-export type Styles = {
+interface SearchScreenStyles {
   rootContainer: ViewStyle;
   topContainer: ViewStyle;
   inputContainer: ViewStyle;
@@ -17,9 +17,9 @@ export type Styles = {
   textButtonStyle: TextStyle;
   textPasteButtonStyle: TextStyle;
   inputTextColor: TextStyle;
-};
+}
 
-export const searchScreenStyles = StyleSheet.create<Styles>({
+export const searchScreenStyles = StyleSheet.create<SearchScreenStyles>({
   rootContainer: {
     backgroundColor: '#0b1d4d',
     flex: 1,

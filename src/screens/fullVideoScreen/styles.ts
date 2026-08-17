@@ -1,12 +1,12 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
-export type FullScreenVideoStyles = {
+interface FullScreenVideoStyles {
   videoStyles: ViewStyle;
   closeWindowButtonStyle: ViewStyle;
   closeWindowStyle: ViewStyle;
   deleteItemStyle: ViewStyle;
   shareItemStyle: ViewStyle;
-};
+}
 
 export const fullScreenVideoStyles = StyleSheet.create<FullScreenVideoStyles>({
   videoStyles: {

@@ -1,15 +1,7 @@
-import { TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
-
-import React, { FC } from 'react';
-
+import { FC } from 'react';
+import { TouchableOpacity, View } from 'react-native';
 import { closeWindowStyle } from './styles';
-
-export type CloseWindowComponentProps = {
-  goToCloseButton?: TouchableOpacityProps['onPress'];
-  style?: TouchableOpacityProps['style'];
-  buttonStyle?: TouchableOpacityProps['style'];
-  iconSvg?: any;
-};
+import { CloseWindowComponentProps } from '@components/closeWindowComponent/types.ts';
 
 export const CloseWindowComponent: FC<CloseWindowComponentProps> = (props) => {
   const { goToCloseButton, style, buttonStyle, iconSvg } = props;

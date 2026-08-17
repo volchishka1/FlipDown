@@ -41,6 +41,10 @@ export interface ResponseData {
   };
   download_music_url: string;
   download_video_url: string;
+  images?: Array<{
+    download_url: string;
+    url: string;
+  }>;
 }
 
 const bannerIds = {
@@ -123,6 +127,7 @@ export const SearchScreen = () => {
   let urlMusic = `https://tttcdn.online/?url=${musicUrl}&type=mp3`;
   const musicTitle = data?.music?.title;
   const videoId = data?.video?.id;
+  const isPhotoModeContent = Boolean(data?.images && data.images.length > 0);
 
   const saveMusicOnAndroid = async (): Promise<void> => {
     try {
@@ -156,6 +161,15 @@ export const SearchScreen = () => {
   };
 
   const saveVideoOnPhone = async (): Promise<void> => {
+    if (isPhotoModeContent) {
+      Alert.alert(
+        'Фото-режим',
+        'Этот контент является фото с музыкой. Скачивание видео недоступно.',
+        [{ text: 'OK' }],
+      );
+      return;
+    }
+
     let path = ReactNativeBlobUtil.fs.dirs.MovieDir + videoId;
     const res = await ReactNativeBlobUtil.config({
       fileCache: true,
@@ -321,6 +335,7 @@ export const SearchScreen = () => {
       bannerYandexAdvId={bannerYandexAdvId}
       fetchCopiedText={fetchCopiedText}
       showGradeModal={showGradeModal}
+      isPhotoMode={isPhotoModeContent}
     />
   );
 };

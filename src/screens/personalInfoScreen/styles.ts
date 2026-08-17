@@ -1,13 +1,13 @@
 import { Dimensions, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 
-export type InfoScreenStylesProps = {
+interface InfoScreenStylesProps {
   rootContainer: ViewStyle;
   centerContainer: ViewStyle;
   bottomContainer: ViewStyle;
   textDescriptionContainer: ViewStyle;
   textDescriptionStyle: TextStyle;
   buttonStyles: TextStyle;
-};
+}
 
 export const infoScreenStyles = StyleSheet.create<InfoScreenStylesProps>({
   rootContainer: {

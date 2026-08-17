@@ -1,9 +1,9 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
-export type AboutScreenStyles = {
+interface AboutScreenStyles {
   rootContainer: ViewStyle;
   centerContainer: ViewStyle;
-};
+}
 
 export const aboutScreenStyles = StyleSheet.create<AboutScreenStyles>({
   rootContainer: {

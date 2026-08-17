@@ -1,6 +1,6 @@
-import { Dimensions, StyleSheet, TextStyle, ViewStyle } from "react-native";
+import { Dimensions, StyleSheet, TextStyle, ViewStyle } from 'react-native';
 
-export type GlobalStyles = {
+export interface GlobalStyles {
   tableContainer: ViewStyle;
   topContainer: ViewStyle;
   dotComponent: ViewStyle;
@@ -16,7 +16,7 @@ export type GlobalStyles = {
   paragraphDescriptionName: TextStyle;
   paragraphDescriptionNameBold: TextStyle;
   boldUnderlineText: TextStyle;
-};
+}
 
 export const globalStyles = StyleSheet.create<GlobalStyles>({
   topContainer: {
@@ -83,7 +83,7 @@ export const globalStyles = StyleSheet.create<GlobalStyles>({
     lineHeight: Dimensions.get('window').width > 600 ? 22 : 18,
     fontSize: Dimensions.get('window').width > 600 ? 18 : 14,
     marginBottom: '40%',
-  }
+  },
 });
 
 export const textColorBlackStyles = {

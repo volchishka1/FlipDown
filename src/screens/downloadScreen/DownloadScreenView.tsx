@@ -5,7 +5,7 @@ import { DownloadScreenProps, TabType } from './types';
 import { MusicTrack } from '../../types/state';
 import { strings } from '@constants';
 import { useMusicPlayer } from '@root/hooks/useMusicPlayer';
-import { CloseWindowComponent } from '@components/closeWindowComponent/closeWindowComponent.tsx';
+import { CloseWindowComponent } from '@components/closeWindowComponent/CloseWindowComponent.tsx';
 import { ShareSvg } from '@assets/share.tsx';
 import { BasketSvg } from '@assets/basket.tsx';
 

@@ -1,15 +1,10 @@
-import React, { FC } from 'react';
-import { Modal, StatusBar, TouchableOpacityProps, View } from 'react-native';
+import { FC } from 'react';
+import { Modal, StatusBar, View } from 'react-native';
 import { modalGradeComponentStyles } from '@components/modalGradeComponent/styles.ts';
-import { CustomButton } from '@components/buttonComponent/customButtonComponent.tsx';
+import { CustomButton } from '@components/buttonComponent/CustomButtonComponent.tsx';
 import StarRating from 'react-native-star-rating-widget';
 import { strings } from '@constants';
-
-export type ModalGradeComponentProps = {
-  closeTheModal: TouchableOpacityProps['onPress'];
-  setStarRating: (arg: number) => void;
-  starRating: number;
-};
+import { ModalGradeComponentProps } from '@components/modalGradeComponent/types.ts';
 
 export const ModalGradeComponentView: FC<ModalGradeComponentProps> = (props) => {
   const { closeTheModal, setStarRating, starRating } = props;
@@ -20,7 +15,7 @@ export const ModalGradeComponentView: FC<ModalGradeComponentProps> = (props) => 
       <View style={modalGradeComponentStyles.modalContainer}>
         <View style={modalGradeComponentStyles.rootContainer}>
           <View style={modalGradeComponentStyles.starsContainer}>
-            <StarRating rating={starRating} onChange={setStarRating} enableHalfStar={false} />
+            <StarRating rating={starRating} onChange={setStarRating} />
           </View>
           <CustomButton
             onPress={closeTheModal}
