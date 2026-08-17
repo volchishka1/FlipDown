@@ -2,16 +2,15 @@ import {
   Image,
   Keyboard,
   SafeAreaView,
-  StatusBar,
   TextInput,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
 
-import React, { FC } from 'react';
+import { FC } from 'react';
 
-import { CustomButton } from '@components/buttonComponent/customButtonComponent';
-import { LogoComponent } from '@components/logoComponent/logoComponent';
+import { CustomButton } from '@components/buttonComponent/CustomButtonComponent.tsx';
+import { LogoComponent } from '@components/logoComponent/LogoComponent.tsx';
 
 import { searchScreenStyles } from './styles';
 import { SearchScreenProps } from './types';
@@ -38,6 +37,7 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
     textInputColorText,
     bannerYandexAdvId = '',
     bannerGoogleAdvId = '',
+    isPhotoMode,
   } = props;
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -80,9 +80,17 @@ export const SearchScreenView: FC<SearchScreenProps> = (props) => {
               <Image style={searchScreenStyles.imageStyle} source={{ uri: `${preview}` }} />
               <View style={searchScreenStyles.buttonDataContainer}>
                 <CustomButton
+                  disabled={isPhotoMode}
                   onPress={saveVideo}
-                  textButton={strings.getString('download_video')}
-                  style={searchScreenStyles.buttonStyle}
+                  textButton={
+                    isPhotoMode
+                      ? strings.getString('not_download_video')
+                      : strings.getString('download_video')
+                  }
+                  style={[
+                    searchScreenStyles.buttonStyle,
+                    isPhotoMode ? { opacity: 0.5, backgroundColor: 'gray' } : {},
+                  ]}
                   isLoad={isLoadVideo}
                   label={'Download video'}
                 />

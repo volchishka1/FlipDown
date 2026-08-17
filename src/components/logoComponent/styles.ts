@@ -1,6 +1,6 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
-export type LogoComponentStyles = {
+type LogoComponentStyles = {
   centerContainer: ViewStyle;
 };
 

@@ -1,4 +1,4 @@
-import { ModalGradeComponentView } from '@components/modalGradeComponent/modalGradeComponentView.tsx';
+import { ModalGradeComponentView } from '@components/modalGradeComponent/ModalGradeComponentView.tsx';
 import { useAppDispatch } from '@root/hooks/hooks.ts';
 import { setShowGradeModal } from '@root/store/actions.ts';
 import { Alert, Linking } from 'react-native';

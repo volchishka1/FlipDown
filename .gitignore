@@ -24,7 +24,6 @@ DerivedData
 
 # Android/IntelliJ
 #
-build/
 .idea
 .gradle
 local.properties
@@ -34,6 +33,7 @@ local.properties
 *.keystore
 !debug.keystore
 .env
+.kotlin/
 
 # node.js
 #

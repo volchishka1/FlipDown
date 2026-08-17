@@ -1,32 +1,26 @@
-import { SafeAreaView, TouchableOpacityProps, View } from 'react-native';
+import { FC } from 'react';
+import { View, ScrollView } from 'react-native';
 
-import React, { FC } from 'react';
-
-import { ScrollView } from 'react-native-gesture-handler';
-
-import { CloseWindowComponent } from '@components/closeWindowComponent/closeWindowComponent';
-import { DotComponent } from '@components/dotComponent/dotComponent';
-import { ParagraphComponent } from '@components/textComponent/paragraphComponent';
-import { TextComponent } from '@components/textComponent/textComponent';
+import { CloseWindowComponent } from '@components/closeWindowComponent/CloseWindowComponent.tsx';
+import { DotComponent } from '@components/dotComponent/DotComponent.tsx';
+import { ParagraphComponent } from '@components/paragraphComponent/ParagraphComponent.tsx';
+import { TextComponent } from '@components/textComponent/TextComponent.tsx';
 
 import { aboutScreenStyles } from './styles';
 import { globalStyles } from '@components/globalStyles/globalStyles';
 import { strings } from '@constants/textConst';
 import { CloseWindowSvg } from '@assets/closeModalWindow';
+import { AboutScreenProps } from '@screens/aboutScreen/types.ts';
 
-export type AboutScreenProps = {
-  goToCloseBottomSheet: TouchableOpacityProps['onPress'];
-};
-
-export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) => {
+export const AboutScreenView: FC<AboutScreenProps> = ({ goBack }) => {
   return (
-    <SafeAreaView style={aboutScreenStyles.rootContainer}>
+    <View style={aboutScreenStyles.rootContainer}>
       <View style={globalStyles.topContainer}>
         <ParagraphComponent
           textStyles={globalStyles.headerName}
           paragraphName={strings.getString('about_project')}
         />
-        <CloseWindowComponent iconSvg={<CloseWindowSvg />} goToCloseButton={goToCloseBottomSheet} />
+        <CloseWindowComponent iconSvg={<CloseWindowSvg />} goToCloseButton={goBack} />
       </View>
       <ScrollView style={aboutScreenStyles.centerContainer}>
         <TextComponent
@@ -93,6 +87,6 @@ export const AboutScreenView: FC<AboutScreenProps> = ({ goToCloseBottomSheet }) 
           text={strings.getString('using_the_flipdown')}
         />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };

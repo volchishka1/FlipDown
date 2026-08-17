@@ -1,9 +1,9 @@
 import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
 
-export type CustomButtonStylesProps = {
+interface CustomButtonStylesProps {
   buttonStyle: ViewStyle;
   textButton: TextStyle;
-};
+}
 
 export const customButtonStyles = StyleSheet.create<CustomButtonStylesProps>({
   buttonStyle: {

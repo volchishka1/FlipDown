@@ -1,4 +1,4 @@
-import { MainScreenView } from './mainScreenView';
+import { MainScreenView } from './MainScreenView.tsx';
 import { Alert, BackHandler } from 'react-native';
 import { FC, useEffect } from 'react';
 import { ROUTES, strings } from '@constants';

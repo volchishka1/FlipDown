@@ -1,10 +1,10 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
-export type DotComponentStyles = {
+interface DotComponentStyles {
   rootContainer: ViewStyle;
   textContainer: ViewStyle;
   dot: ViewStyle;
-};
+}
 
 export const dotComponentStyles = StyleSheet.create<DotComponentStyles>({
   rootContainer: {

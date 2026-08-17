@@ -1,7 +1,6 @@
+import { useCallback, useEffect, useState } from 'react';
 import { Alert, Appearance, Keyboard, LogBox, PermissionsAndroid, Platform } from 'react-native';
 import Clipboard from '@react-native-clipboard/clipboard';
-
-import React, { useCallback, useEffect, useState } from 'react';
 
 import { CameraRoll, PhotoIdentifier } from '@react-native-camera-roll/camera-roll';
 
@@ -16,7 +15,7 @@ import {
   getShowLoad,
 } from '../../store/homeScreen/selectors';
 
-import { SearchScreenView } from './searchScreenView';
+import { SearchScreenView } from './SearchScreenView.tsx';
 import ReactNativeBlobUtil from 'react-native-blob-util';
 
 import { useNetInfo, NetInfoState } from '@react-native-community/netinfo';
@@ -42,6 +41,10 @@ export interface ResponseData {
   };
   download_music_url: string;
   download_video_url: string;
+  images?: Array<{
+    download_url: string;
+    url: string;
+  }>;
 }
 
 const bannerIds = {
@@ -124,21 +127,27 @@ export const SearchScreen = () => {
   let urlMusic = `https://tttcdn.online/?url=${musicUrl}&type=mp3`;
   const musicTitle = data?.music?.title;
   const videoId = data?.video?.id;
+  const isPhotoModeContent = Boolean(data?.images && data.images.length > 0);
 
   const saveMusicOnAndroid = async (): Promise<void> => {
-    const res = await ReactNativeBlobUtil.config({
-      fileCache: true,
-      appendExt: 'mp3',
-    }).fetch('GET', url);
-    await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
-      {
-        name: `${musicTitle}`, // name of the file
-        parentFolder: 'FlipDown', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
-        mimeType: 'audio/mpeg', // MIME type of the file
-      },
-      'Audio', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
-      res.path(), // Path to the file being copied in the apps own storage
-    );
+    try {
+      const res = await ReactNativeBlobUtil.config({
+        fileCache: true,
+        appendExt: 'mp3',
+      }).fetch('GET', url);
+      await ReactNativeBlobUtil.MediaCollection.copyToMediaStore(
+        {
+          name: `${musicTitle}`, // name of the file
+          parentFolder: 'FlipDown', // subdirectory in the Media Store, e.g. HawkIntech/Files to create a folder HawkIntech with a subfolder Files and save the image within this folder
+          mimeType: 'audio/mpeg', // MIME type of the file
+        },
+        'Audio', // Media Collection to store the file in ("Audio" | "Image" | "Video" | "Download")
+        res.path(), // Path to the file being copied in the apps own storage
+      );
+    } catch (error) {
+      console.error('Error saving music on Android:', error);
+      throw error;
+    }
   };
 
   const saveMusicOnIos = async (): Promise<void> => {
@@ -152,6 +161,15 @@ export const SearchScreen = () => {
   };
 
   const saveVideoOnPhone = async (): Promise<void> => {
+    if (isPhotoModeContent) {
+      Alert.alert(
+        'Фото-режим',
+        'Этот контент является фото с музыкой. Скачивание видео недоступно.',
+        [{ text: 'OK' }],
+      );
+      return;
+    }
+
     let path = ReactNativeBlobUtil.fs.dirs.MovieDir + videoId;
     const res = await ReactNativeBlobUtil.config({
       fileCache: true,
@@ -317,6 +335,7 @@ export const SearchScreen = () => {
       bannerYandexAdvId={bannerYandexAdvId}
       fetchCopiedText={fetchCopiedText}
       showGradeModal={showGradeModal}
+      isPhotoMode={isPhotoModeContent}
     />
   );
 };

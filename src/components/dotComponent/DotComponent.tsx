@@ -1,16 +1,9 @@
-import { TextProps, View } from 'react-native';
-
-import React, { FC } from 'react';
-
-import { TextComponent } from '../textComponent/textComponent';
-
+import { FC } from 'react';
+import { View } from 'react-native';
+import { TextComponent } from '../textComponent/TextComponent.tsx';
 import { dotComponentStyles } from './styles';
+import { DotComponentProps } from '@components/dotComponent/types.ts';
 
-export interface DotComponentProps {
-  text?: TextProps['children'];
-  textStyles?: TextProps['style'];
-  style?: TextProps['style'];
-}
 export const DotComponent: FC<DotComponentProps> = (props) => {
   const { text, style, textStyles } = props;
   return (

@@ -1,34 +1,25 @@
-import { useMemo, useRef, useState } from 'react';
-
-import { BottomSheetModal } from '@gorhom/bottom-sheet/src';
-
-import { InfoScreenView } from './infoScreenView';
+import { InfoScreenView } from './InfoScreenView.tsx';
 import { Alert, Linking } from 'react-native';
 import { NetInfoState, useNetInfo } from '@react-native-community/netinfo';
-import { strings } from '@constants';
+import { ROUTES, strings } from '@constants';
+import { FC } from 'react';
 
-export const InfoScreen = () => {
-  const [actionTriggered, setActionTriggered] = useState('');
-  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-  const snapPoints = useMemo(() => ['90%', '90%'], []);
+type InfoScreenComponentProps = {
+  navigation: any;
+};
 
+export const InfoScreen: FC<InfoScreenComponentProps> = ({ navigation }) => {
   const internetState: NetInfoState = useNetInfo();
 
-  const goToContactsModal = () => {
-    bottomSheetModalRef.current?.present();
-    setActionTriggered('contacts');
+  const goToAbout = () => {
+    navigation.navigate(ROUTES.ABOUT_SCREEN);
   };
 
-  const goToAboutSheet = () => {
-    bottomSheetModalRef.current?.present();
-    setActionTriggered('about');
+  const goToContacts = () => {
+    navigation.navigate(ROUTES.CONTACTS_SCREEN);
   };
 
-  const goToCloseBottomSheet = () => {
-    bottomSheetModalRef.current?.close();
-  };
-
-  const goToPrivacyPolicyLink = () => {
+  const goToPrivacyPolicy = () => {
     if (internetState.isConnected === false) {
       Alert.alert(`${strings.getString('no_internet')}`, `${strings.getString('sorry')}`, [
         { text: `${strings.getString('okay')}` },
@@ -39,7 +30,7 @@ export const InfoScreen = () => {
       );
     }
   };
-  const goToTermsAndConditionsLink = () => {
+  const goToTermsAndConditions = () => {
     if (internetState.isConnected === false) {
       Alert.alert(`${strings.getString('no_internet')}`, `${strings.getString('sorry')}`, [
         { text: `${strings.getString('okay')}` },
@@ -53,14 +44,10 @@ export const InfoScreen = () => {
 
   return (
     <InfoScreenView
-      bottomSheetModalRef={bottomSheetModalRef}
-      snapPoints={snapPoints}
-      actionTriggered={actionTriggered}
-      goToContactsModal={goToContactsModal}
-      goToCloseBottomSheet={goToCloseBottomSheet}
-      goToAboutSheet={goToAboutSheet}
-      goToPrivacyPolicyLink={goToPrivacyPolicyLink}
-      goToTermsAndConditionsLink={goToTermsAndConditionsLink}
+      goToContacts={goToContacts}
+      goToAbout={goToAbout}
+      goToPrivacyPolicy={goToPrivacyPolicy}
+      goToTermsAndConditions={goToTermsAndConditions}
     />
   );
 };

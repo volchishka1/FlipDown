@@ -1,6 +1,14 @@
-import { TouchableOpacityProps } from 'react-native';
+import { MusicTrack } from '@root/types/state.ts';
 
-export type DownloadScreenProps = {
-  photos: any;
-  navigateToFullVideoScreen: TouchableOpacityProps['onPress'];
-};
+export type TabType = 'video' | 'music';
+
+export interface DownloadScreenProps {
+  photos: any[];
+  musicTracks: MusicTrack[];
+  isLoadingMusic: boolean;
+  activeTab: TabType;
+  setActiveTab: (activeTab: TabType) => void;
+  navigateToFullVideoScreen: (uri: string) => void;
+  onDeleteMusic?: (track: MusicTrack) => void;
+  onShareMusic?: (track: MusicTrack) => void;
+}

@@ -2,7 +2,7 @@ import { Alert } from 'react-native';
 
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 
-import { HttpCode } from '../constants/const';
+import { HttpCode } from '@constants';
 
 const createAPI = (): AxiosInstance => {
   const api = axios.create({
