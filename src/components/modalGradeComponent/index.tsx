@@ -1,0 +1,26 @@
+import { ModalGradeComponentView } from '@components/modalGradeComponent/ModalGradeComponentView.tsx';
+import { useAppDispatch } from '@root/hooks/hooks.ts';
+import { setShowGradeModal } from '@root/store/actions.ts';
+import { Alert, Linking } from 'react-native';
+import { useState } from 'react';
+import { strings } from '@constants';
+
+export const ModalGradeComponent = () => {
+  const dispatch = useAppDispatch();
+  const [starRating, setStarRating] = useState(0);
+  const closeTheModal = () => {
+    dispatch(setShowGradeModal(false));
+    starRating <= 3
+      ? Alert.alert(`${strings.getString('thanks_for_rate')}`)
+      : Linking.openURL('https://play.google.com/store/apps/details?id=com.flipdown').catch((err) =>
+          console.error('An error occurred', err),
+        );
+  };
+  return (
+    <ModalGradeComponentView
+      closeTheModal={closeTheModal}
+      setStarRating={setStarRating}
+      starRating={starRating}
+    />
+  );
+};

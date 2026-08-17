@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "253046536963",
+    "project_id": "flipdown-3f7f1",
+    "storage_bucket": "flipdown-3f7f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253046536963:android:dc7e957b8c8431e66f0736",
+        "android_client_info": {
+          "package_name": "com.flipdown"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUVReAhXRLsfQNq20ClOIxUelRQnYyT8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
